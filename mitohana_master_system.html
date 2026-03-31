@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澪花本講座システム - Maki専用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FAF7F0;
+            --deep-green: #2C5530;
+            --light-green: #7FA87F;
+            --accent-brown: #8B6F47;
+            --text-dark: #333333;
+            --border-color: #D4C5B9;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 30px;
+            border-bottom: 3px solid var(--deep-green);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        h1 {
+            color: var(--deep-green);
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: var(--accent-brown);
+            font-size: 14px;
+        }
+
+        .search-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid var(--deep-green);
+            border-radius: 8px;
+            background: var(--cream);
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--light-green);
+            box-shadow: 0 0 0 3px rgba(127, 168, 127, 0.1);
+        }
+
+        .search-label {
+            display: block;
+            color: var(--deep-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .main-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .nav-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .nav-card:hover {
+            border-color: var(--deep-green);
+            box-shadow: 0 4px 12px rgba(44, 85, 48, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-card.active {
+            background: var(--deep-green);
+            color: white;
+            border-color: var(--deep-green);
+        }
+
+        .nav-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .nav-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .nav-desc {
+            font-size: 13px;
+            color: var(--accent-brown);
+        }
+
+        .nav-card.active .nav-desc {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .content-area {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            min-height: 500px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: var(--cream);
+            border-radius: 10px;
+            border-left: 5px solid var(--deep-green);
+        }
+
+        .section-title {
+            color: var(--deep-green);
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subsection {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .subsection-title {
+            color: var(--accent-brown);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .protocol-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: var(--deep-green);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .protocol-progress {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .protocol-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--deep-green);
+        }
+
+        .btn-primary:hover {
+            background: var(--cream);
+        }
+
+        .btn-secondary {
+            background: var(--light-green);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--deep-green);
+        }
+
+        .protocol-card {
+            background: linear-gradient(135deg, #FAF7F0 0%, #F5F0E8 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid var(--deep-green);
+        }
+
+        .protocol-header {
+            background: var(--deep-green);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .protocol-part {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .protocol-detail {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .protocol-label {
+            font-weight: 600;
+            color: var(--deep-green);
+        }
+
+        .protocol-value {
+            color: var(--text-dark);
+        }
+
+        .voice-example {
+            background: #FFF9E6;
+            border-left: 4px solid var(--accent-brown);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .voice-label {
+            color: var(--accent-brown);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .warning-box {
+            background: #FFE5E5;
+            border-left: 4px solid #CC0000;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .warning-label {
+            color: #CC0000;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .student-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .student-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .student-card:hover {
+            border-color: var(--deep-green);
+            box-shadow: 0 4px 12px rgba(44, 85, 48, 0.1);
+        }
+
+        .student-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--deep-green);
+            margin-bottom: 10px;
+        }
+
+        .student-info {
+            font-size: 14px;
+            color: var(--accent-brown);
+            margin-bottom: 5px;
+        }
+
+        .day-schedule {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .day-header {
+            background: var(--deep-green);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .day-number {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .day-theme {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .time-block {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 20px;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .time-block:last-child {
+            border-bottom: none;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--deep-green);
+        }
+
+        .activity {
+            color: var(--text-dark);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--deep-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--light-green);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 3px;
+            font-weight: 600;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--accent-brown);
+        }
+
+        .empty-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .protocol-detail {
+                grid-template-columns: 1fr;
+            }
+
+            .time-block {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .point-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .point-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .point-list li:before {
+            content: "◆";
+            position: absolute;
+            left: 5px;
+            color: var(--deep-green);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8IS0tIOa+q+iKseODreOCtOOBruOCpOODoeODvOOCuCAtLT4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk1IiBmaWxsPSJub25lIiBzdHJva2U9IiM4QjZGNDciIHN0cm9rZS13aWR0aD0iMiIvPgogIAogIDwhLS0g55Sf5ZG95LmL6Iqx44Gu44OR44K/44O844OzIC0tPgogIDxnIHN0cm9rZT0iIzhCNkY0NyIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIj4KICAgIDwhLS0g5Lit5b+D44Gu6Iqx44Gu5a2QIC0tPgogICAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIzMCIvPgogICAgCiAgICA8IS0tIOWRqOWbsuOBruiKseOBrue3muOBv+OCs+ODs+ODkeOCuSAtLT4KICAgIDwhLS0g5LiK44Gu6Iqx5by0IC0tPgogICAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iNDAiIHI9IjMwIi8+CiAgICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSI3MCIgcj0iMzAiLz4KICAgIDxjaXJjbGUgY3g9IjE2MCIgY3k9IjEzMCIgcj0iMzAiLz4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjE2MCIgcj0iMzAiLz4KICAgIDxjaXJjbGUgY3g9IjQwIiBjeT0iMTMwIiByPSIzMCIvPgogICAgPGNpcmNsZSBjeD0iNDAiIGN5PSI3MCIgcj0iMzAiLz4KICAgIAogICAgPCEtLSDlhoXpg6jjga7oirHjga7oirHmqKEgLS0+CiAgICA8cGF0aCBkPSJNIDEwMCA3MCBMIDEwMCAxMzAiLz4KICAgIDxwYXRoIGQ9Ik0gNzUgODUgTCAxMjUgODUiLz4KICAgIDxwYXRoIGQ9Ik0gNzUgMTE1IEwgMTI1IDExNSIvPgogICAgPHBhdGggZD0iTSA4NSA3NSBMIDg1IDEyNSIvPgogICAgPHBhdGggZD0iTSAxMTUgNzUgTCAxMTUgMTI1Ii8+CiAgICA8cGF0aCBkPSJNIDg1IDg1IEwgMTE1IDExNSIvPgogICAgPHBhdGggZD0iTSAxMTUgODUgTCA4NSAxMTUiLz4KICA8L2c+CiAgCiAgPCEtLSDjg4bjgq3jgrnjg4ggLS0+CiAgPHRleHQgeD0iMTcwIiB5PSIxMTAiIGZvbnQtZmFtaWx5PSJOb3RvIFNlcmlmIEpQLCBzZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzJDNTUzMCIgZm9udC13ZWlnaHQ9IjYwMCI+CiAgICDmvpvoirEKICA8L3RleHQ+Cjwvc3ZnPg==" alt="澪花ロゴ">
+            </div>
+            <div class="header-text">
+                <h1>澪花 本講座システム</h1>
+                <div class="subtitle">Maki専用 - 合宿コース指導ツール</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-container">
+            <label class="search-label">🔍 全体検索（手技・部位・筋肉・臓器・症状など）</label>
+            <input type="text" class="search-box" id="globalSearch" placeholder="例：肝臓、腰方形筋、Step 15、骨盤前傾、横隔膜...">
+        </div>
+
+        <div class="main-nav">
+            <div class="nav-card active" data-section="schedule">
+                <div class="nav-icon">📅</div>
+                <div class="nav-title">合宿スケジュール</div>
+                <div class="nav-desc">3泊4日の全工程</div>
+            </div>
+            <div class="nav-card" data-section="protocol">
+                <div class="nav-icon">🫴</div>
+                <div class="nav-title">施術プロトコル</div>
+                <div class="nav-desc">手技①〜70 工程順</div>
+            </div>
+            <div class="nav-card" data-section="theory">
+                <div class="nav-icon">📚</div>
+                <div class="nav-title">理論講義</div>
+                <div class="nav-desc">筋膜・東洋医学・五臓</div>
+            </div>
+            <div class="nav-card" data-section="students">
+                <div class="nav-icon">👥</div>
+                <div class="nav-title">受講者管理</div>
+                <div class="nav-desc">生徒別メモ・評価</div>
+            </div>
+        </div>
+
+        <div class="content-area" id="contentArea">
+            <!-- コンテンツが動的に表示される -->
+        </div>
+    </div>
+
+    <script>
+        // データ構造
+        const campSchedule = [
+            {
+                day: 1,
+                theme: '評価の基礎と背面アプローチ',
+                subtitle: '身体の見立てと土台の構築',
+                schedule: [
+                    { time: '10:30-12:00', activity: '集合・準備（部屋案内、食事準備）' },
+                    { time: '12:00-12:10', activity: 'グラウンディング（呼吸を整える儀式）' },
+                    { time: '12:10-13:50', activity: '姿勢評価 理論・実演・実践（チェックシート記入、役割交代）' },
+                    { time: '14:00-15:40', activity: '実技：背面（背中）仙骨、腰部、脊柱起立筋、広背筋、僧帽筋' },
+                    { time: '15:40-16:50', activity: '実技：背面（肩甲骨周り）肩甲骨タイプ別アプローチ' },
+                    { time: '16:50-18:00', activity: '実技：背面（臀部・足）大殿筋、中殿筋、ハムストリングス、腓腹筋' },
+                    { time: '18:00〜', activity: '夕食準備・夕食・温泉・就寝' }
+                ],
+                theory: '姿勢評価法、チェックシートの使い方、肩甲骨6タイプ判定、骨盤アラインメント（前傾・後傾・ねじれ）の理論',
+                practice: '手技①～㉖。脊柱の流れ確認から足首の背屈ストレッチまで',
+                point: '「正確な評価」。ランドマークを正しく触診し、個々の身体の状態をチェックシートに視覚化すること'
+            },
+            {
+                day: 2,
+                theme: '腹部（内臓アプローチ）と巫女実技',
+                subtitle: '内臓の解放とエネルギーの調和',
+                schedule: [
+                    { time: '07:00-09:00', activity: '朝食・洗濯・ハーブボール作成・香作り' },
+                    { time: '09:00-10:20', activity: '実技：前面足部（足首モビライゼーション、前脛骨筋）' },
+                    { time: '10:40-12:00', activity: '実技：腹部（基本）腹直筋、腹斜筋、腹膜' },
+                    { time: '12:00-12:40', activity: '昼食（ハーブボール準備）' },
+                    { time: '12:40-15:30', activity: '実技：腹部（内臓・深部）肝、胆、脾、胃、腸、腸腰筋、子宮・膀胱反射区' },
+                    { time: '15:30-16:20', activity: '実技：巫女実技（骨盤底リリース）' },
+                    { time: '16:20-17:00', activity: '復習・苦手部位の集中練習' },
+                    { time: '17:00〜', activity: '夕食・温泉・就寝' }
+                ],
+                theory: '内臓反射点理論、腹部の鼓音チェック、骨盤底の機能とエネルギー的な意味',
+                practice: '手技㉗～59。オイル塗布から内臓の癒着剥がし、巫女の香による温めまで',
+                point: '「安心感と深部への浸透」。デリケートな腹部に対し、適切な圧とリズムで内臓の癒着を剥がす感覚を掴むこと'
+            },
+            {
+                day: 3,
+                theme: '胸郭・頭部の解放とトータル統合',
+                subtitle: '全身の統合と技術の完成',
+                schedule: [
+                    { time: '07:00-09:00', activity: '朝食・写真撮影（個人・集合）' },
+                    { time: '09:00-10:10', activity: '実技：胸部（肋骨反射点、肺・心、胸郭ポンプ）' },
+                    { time: '10:10-11:20', activity: '実技：頭部（後頭下筋群、側頭筋、V字解放、第六チャクラ）' },
+                    { time: '11:20-12:00', activity: '昼食' },
+                    { time: '12:00-15:00', activity: 'トータル通し練習（背面～前面～腹部～頭部の全工程、各90分）' },
+                    { time: '15:00-17:00', activity: '苦手部位の集中練習・追加通し練習（希望者）' },
+                    { time: '19:00〜', activity: '宴会' }
+                ],
+                theory: '脳脊髄液の循環理論、静脈洞の解放（V字解放）、チャクラと香りの相関',
+                practice: '手技60～70。胸郭のストレッチから頭蓋のリフトアップ、百会の呼吸まで',
+                point: '「90分のリズム感」。断片的な手技を一つの流れとして統合し、クライアントに淀みのない体験を提供すること'
+            },
+            {
+                day: 4,
+                theme: '成果確認と修了',
+                subtitle: '技術の定着と新たな門出',
+                schedule: [
+                    { time: '07:00-09:00', activity: '朝食・最終確認・復習' },
+                    { time: '10:00-13:00', activity: 'モデルテスト（受講生2ペアによる施術実施、講師による撮影・チェック）' },
+                    { time: '13:00-14:30', activity: '復習（苦手部分の再確認）' },
+                    { time: '14:30-15:00', activity: '片付け・解散準備' },
+                    { time: '15:00-16:00', activity: '総評・修了式（修了証授与）' }
+                ],
+                theory: '',
+                practice: '4日間の集大成として、外部モデルまたは受講生同士でのフルセッションを実施し、講師が技術の精度を確認',
+                point: '「自信の確立」。テストを通じて、自分自身の手で相手に変化を与えられる確信を持つこと'
+            }
+        ];
+
+        const protocolData = [
+            // 背面（1日目）
+            { step: 1, part: '脊柱全体', muscles: '全体', organs: '硬膜', line: 'SBL', pelvis: '全タイプ', voice: '全身の繋がりを感じていきます', notes: '仙骨から頭頂への膜の繋がりを意識' },
+            { step: 2, part: '仙骨調整', muscles: '仙骨', organs: '子宮・膀胱', line: 'SBL/DFL', pelvis: '前傾：前へ、後傾：後ろへ誘導', voice: '土台を整えていきます', notes: '硬膜の緊張緩和が目的' },
+            { step: 3, part: 'S1〜S5・腸骨キワ', muscles: '仙骨', organs: '子宮・膀胱・大腸', line: 'SBL', pelvis: '全タイプ', voice: 'ここは安心感に繋がる場所です', notes: 'S1:安定〜S5:安心の各意味を意識' },
+            { step: 4, part: '多裂筋（深部）', muscles: '多裂筋', organs: '', line: 'DFL', pelvis: '全タイプ', voice: '深い張りを緩めていきます', notes: 'T12〜L4棘突起横、腹圧に関連' },
+            { step: 5, part: '腰方形筋', muscles: '腰方形筋', organs: '', line: 'LL', pelvis: '全タイプ', voice: '左右のバランスを整えます', notes: '体重をかけている側の張りを重点的に' },
+            { step: 6, part: '腎（L1〜L3）', muscles: '下後鋸筋・広背筋', organs: '腎臓', line: 'SBL', pelvis: '全タイプ', voice: '生命力の源を整えます', notes: '胸郭を閉じるアプローチ' },
+            { step: 7, part: '肩甲骨判定', muscles: '肩甲骨周囲筋', organs: '', line: '', pelvis: '', voice: 'タイプを見極めていきます', notes: '6タイプ評価（挙上・下制・内外転・回旋）' },
+            { step: 8, part: '広背筋・僧帽筋下部', muscles: '広背筋・僧帽筋下部', organs: '', line: 'SBL', pelvis: '全タイプ', voice: '肩甲骨を引き上げます', notes: '肩甲骨の見立てに合わせ上方向へリリース' },
+            { step: 9, part: '菱形筋', muscles: '菱形筋', organs: '', line: 'SBL', pelvis: '全タイプ', voice: '肩甲骨を背骨に寄せます', notes: '片手を胸に入れ骨自体を動かす' },
+            { step: 10, part: '僧帽筋上部', muscles: '僧帽筋上部', organs: '', line: 'SBL', pelvis: '全タイプ', voice: '肩の力を抜いてください', notes: '停止部（肩甲棘・鎖骨）を動かす' },
+
+            // 前面・腹部（2日目）の一部
+            { step: 27, part: '足のセット', muscles: '', organs: '', line: '', pelvis: 'ニュートラル位置確認', voice: 'リラックスしてください', notes: '両足を肩幅に開く' },
+            { step: 28, part: 'ゆさゆさ', muscles: '', organs: '横隔膜', line: 'SFL', pelvis: '全タイプ', voice: '振動で横隔膜を揺らします', notes: '足首のゆらし、振動が横隔膜に伝わる' },
+            { step: 37, part: '手当て', muscles: '', organs: '腹部全体', line: '', pelvis: '全タイプ', voice: '安心してくださいね', notes: '腹部全体への掌の接触' },
+            { step: 38, part: '鼓音チェック', muscles: '', organs: '腹部', line: '', pelvis: '全タイプ', voice: 'お腹の状態を確認します', notes: 'ガスの溜まりを必ず確認' },
+            { step: 47, part: '横隔膜リリース', muscles: '横隔膜', organs: '肺・心', line: 'DFL', pelvis: '全タイプ', voice: '呼吸が深くなっていきます', notes: '肋骨下角へのアプローチ、指を滑り込ませて癒着を取る' },
+            { step: 48, part: '肝・胆', muscles: '', organs: '肝臓・胆嚢', line: 'LL', pelvis: '前傾/後傾により方向調整', voice: 'ここに溜まっているものを流します', notes: '右肋骨下' },
+            { step: 49, part: '脾', muscles: '', organs: '脾臓', line: 'LL', pelvis: '全タイプ', voice: '消化の力を高めます', notes: '左肋骨下、優しく捉える' },
+            { step: 51, part: '腸腰筋', muscles: '腸腰筋', organs: '', line: 'DFL', pelvis: '前傾：腰を反らさない。後傾：再活性', voice: '深層の緊張を解放します', notes: '膝を立てた姿勢で施術' },
+
+            // 胸部・頭部（3日目）の一部
+            { step: 60, part: '肋骨反射点', muscles: '肋間筋', organs: '肝・胆・胃・脾', line: 'SFL', pelvis: '全タイプ', voice: '胸の詰まりを解消します', notes: '各臓器の反射点を確認' },
+            { step: 61, part: '肺・心', muscles: '肋間筋', organs: '肺・心臓', line: 'SFL', pelvis: '全タイプ', voice: '呼吸と循環を整えます', notes: '第2〜4肋間、心臓付近は特に優しく' },
+            { step: 66, part: 'V字解放', muscles: '', organs: '脳', line: '', pelvis: '全タイプ', voice: '思考がクリアになり、目が軽くなります', notes: '矢状縫合、静脈洞循環促進' },
+            { step: 69, part: '百会 呼吸', muscles: '', organs: '', line: '', pelvis: '全タイプ', voice: '天との繋がりを感じます', notes: '頭頂部からの循環' },
+            { step: 70, part: '香', muscles: '', organs: '', line: '', pelvis: '全タイプ', voice: 'セッションを終わります', notes: '空間・手首への着香、終了の儀式' }
+        ];
+
+        // 現在の状態
+        let currentSection = 'schedule';
+        let currentProtocolStep = 1;
+
+        // 画面描画関数
+        function renderContent() {
+            const area = document.getElementById('contentArea');
+            
+            switch(currentSection) {
+                case 'schedule':
+                    renderSchedule(area);
+                    break;
+                case 'protocol':
+                    renderProtocol(area);
+                    break;
+                case 'theory':
+                    renderTheory(area);
+                    break;
+                case 'students':
+                    renderStudents(area);
+                    break;
+            }
+        }
+
+        function renderSchedule(area) {
+            let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px; font-size: 26px;">合宿コーススケジュール（3泊4日）</h2>';
+            
+            campSchedule.forEach(day => {
+                html += `
+                    <div class="day-schedule">
+                        <div class="day-header">
+                            <div class="day-number">${day.day}日目：${day.theme}</div>
+                            <div class="day-theme">${day.subtitle}</div>
+                        </div>
+                        
+                        <div class="subsection">
+                            <div class="subsection-title">📅 タイムスケジュール</div>
+                            ${day.schedule.map(item => `
+                                <div class="time-block">
+                                    <div class="time">${item.time}</div>
+                                    <div class="activity">${item.activity}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        ${day.theory ? `
+                        <div class="subsection">
+                            <div class="subsection-title">📚 理論講義内容</div>
+                            <div style="padding: 10px 0;">${day.theory}</div>
+                        </div>
+                        ` : ''}
+
+                        <div class="subsection">
+                            <div class="subsection-title">🫴 実技内容</div>
+                            <div style="padding: 10px 0;">${day.practice}</div>
+                        </div>
+
+                        <div class="voice-example">
+                            <div class="voice-label">💡 重点ポイント</div>
+                            ${day.point}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            area.innerHTML = html;
+        }
+
+        function renderProtocol(area) {
+            const protocol = protocolData.find(p => p.step === currentProtocolStep) || protocolData[0];
+            
+            const html = `
+                <div class="protocol-nav">
+                    <div class="protocol-progress">Step ${currentProtocolStep} / 70</div>
+                    <div class="protocol-buttons">
+                        <button class="btn btn-primary" onclick="previousStep()">← 前へ</button>
+                        <button class="btn btn-secondary" onclick="showProtocolList()">一覧</button>
+                        <button class="btn btn-primary" onclick="nextStep()">次へ →</button>
+                    </div>
+                </div>
+
+                <div class="protocol-card">
+                    <div class="protocol-header">
+                        <div class="protocol-part">${protocol.part}</div>
+                        <div>手技${protocol.step}/70</div>
+                    </div>
+
+                    <div class="protocol-detail">
+                        <div class="protocol-label">📍 部位</div>
+                        <div class="protocol-value">${protocol.part}</div>
+                    </div>
+
+                    <div class="protocol-detail">
+                        <div class="protocol-label">💪 関連筋肉</div>
+                        <div class="protocol-value">${protocol.muscles}</div>
+                    </div>
+
+                    ${protocol.organs ? `
+                    <div class="protocol-detail">
+                        <div class="protocol-label">🫀 対応臓器</div>
+                        <div class="protocol-value">${protocol.organs}</div>
+                    </div>
+                    ` : ''}
+
+                    ${protocol.line ? `
+                    <div class="protocol-detail">
+                        <div class="protocol-label">🔗 筋膜ライン</div>
+                        <div class="protocol-value">${protocol.line}</div>
+                    </div>
+                    ` : ''}
+
+                    ${protocol.pelvis ? `
+                    <div class="protocol-detail">
+                        <div class="protocol-label">🦴 骨盤タイプ別</div>
+                        <div class="protocol-value">${protocol.pelvis}</div>
+                    </div>
+                    ` : ''}
+
+                    ${protocol.voice ? `
+                    <div class="voice-example">
+                        <div class="voice-label">💬 声かけ例</div>
+                        「${protocol.voice}」
+                    </div>
+                    ` : ''}
+
+                    ${protocol.notes ? `
+                    <div class="warning-box">
+                        <div class="warning-label">⚠️ 注意点・ポイント</div>
+                        ${protocol.notes}
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+            
+            area.innerHTML = html;
+        }
+
+        function showProtocolList() {
+            const area = document.getElementById('contentArea');
+            let html = '<h2 style="color: var(--deep-green); margin-bottom: 20px;">施術プロトコル一覧</h2>';
+            html += '<p style="margin-bottom: 30px; color: var(--accent-brown);">手技をタップして詳細表示</p>';
+            
+            html += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">';
+            
+            protocolData.forEach(p => {
+                html += `
+                    <div class="student-card" onclick="jumpToStep(${p.step})">
+                        <div class="student-name">Step ${p.step}</div>
+                        <div class="student-info">${p.part}</div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            area.innerHTML = html;
+        }
+
+        function jumpToStep(step) {
+            currentProtocolStep = step;
+            renderProtocol(document.getElementById('contentArea'));
+        }
+
+        function previousStep() {
+            if (currentProtocolStep > 1) {
+                currentProtocolStep--;
+                renderProtocol(document.getElementById('contentArea'));
+            }
+        }
+
+        function nextStep() {
+            if (currentProtocolStep < 70) {
+                currentProtocolStep++;
+                renderProtocol(document.getElementById('contentArea'));
+            }
+        }
+
+        function renderTheory(area) {
+            area.innerHTML = `
+                <h2 style="color: var(--deep-green); margin-bottom: 30px;">理論講義ライブラリ</h2>
+                
+                <div class="section">
+                    <div class="section-title">🌳 五臓タイプ別詳細</div>
+                    <p>肝・心・脾・肺・腎の特性、澪診、適応ハーブ</p>
+                    <button class="btn btn-secondary" style="margin-top: 15px;" onclick="alert('五臓詳細は別システム（既存の五臓システム）参照')">五臓システムを開く</button>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">🔗 筋膜理論</div>
+                    <div class="subsection">
+                        <div class="subsection-title">主要ライン</div>
+                        <ul class="point-list">
+                            <li><strong>SFL（スーパーフィシャルフロントライン）</strong>: 足の甲〜頭部。胃・心・肺と関連。短縮すると骨盤前傾、胸が閉じて呼吸が浅くなる</li>
+                            <li><strong>SBL（スーパーフィシャルバックライン）</strong>: 足裏〜額。腎・膀胱と関連。緊張すると後頭部が前に突き出す（ストレートネック）</li>
+                            <li><strong>LL（ラテラルライン）</strong>: 胆の状態と関連。骨盤の傾きや体幹の側屈に関与</li>
+                            <li><strong>DFAL（ディープフロントアームライン）</strong>: 「心」と「呼吸」の延長線。感情の放出に関わり、巻き肩になると内向きの気持ちになりやすい</li>
+                            <li><strong>DFL（ディープフロントライン）</strong>: 最も深層を通り、内臓を支持。横隔膜、骨盤底筋、腸腰筋を含み、呼吸と姿勢軸の要</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">🫀 内臓調整理論</div>
+                    <div class="subsection">
+                        <ul class="point-list">
+                            <li><strong>器と中身の関係</strong>: 中身（内臓）の緊張や腫れが、器（胸郭や骨盤）を押し広げたり引っ張ったりして歪みを作る</li>
+                            <li><strong>腹圧</strong>: お腹の内側にかかる圧力。適切に保たれると呼吸が安定し、内臓が正しい位置に収まる</li>
+                            <li><strong>脳腸相関</strong>: 脳のストレスが腸の動きを乱し、腸の状態が脳の感情を左右する相互作用</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">🧘 ポリヴェーガル理論</div>
+                    <div class="subsection">
+                        <ul class="point-list">
+                            <li><strong>腹側迷走神経</strong>: 安心・安全・つながりのモード。お腹に温かさと弾力がある</li>
+                            <li><strong>交感神経</strong>: 戦う・逃げるモード。みぞおちがパンパンに張り、熱を持つ</li>
+                            <li><strong>背側迷走神経</strong>: 凍りつき・防御モード。エネルギー不足で、お腹がペコっと沈み込み、冷えている</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">📐 姿勢・骨格評価</div>
+                    <div class="subsection">
+                        <div class="subsection-title">胸郭評価</div>
+                        <p>肋骨下角の角度を測定。90度以上（開きすぎ＝肝・胃の過剰）、90度以下（閉じすぎ＝肺・心の負担）</p>
+                    </div>
+                    <div class="subsection">
+                        <div class="subsection-title">骨盤評価</div>
+                        <p>ASIS（上前腸骨棘）とPSIS（上後腸骨棘）の距離が2〜2.5指であればニュートラル。前傾は「力みすぎ」、後傾は「エネルギー不足」</p>
+                    </div>
+                    <div class="subsection">
+                        <div class="subsection-title">肩甲骨6タイプ</div>
+                        <p>①挙上、②下制、③内転、④外転、⑤上方回旋、⑥下方回旋</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderStudents(area) {
+            // localStorage から受講者データを取得
+            const students = JSON.parse(localStorage.getItem('mitohana_students') || '[]');
+            
+            if (students.length === 0) {
+                area.innerHTML = `
+                    <h2 style="color: var(--deep-green); margin-bottom: 30px;">受講者管理</h2>
+                    <div class="empty-state">
+                        <div class="empty-icon">👥</div>
+                        <p>受講者データがありません</p>
+                        <button class="btn btn-secondary" style="margin-top: 20px;" onclick="addStudent()">+ 新規受講者追加</button>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = `
+                <h2 style="color: var(--deep-green); margin-bottom: 20px;">受講者管理</h2>
+                <button class="btn btn-secondary" style="margin-bottom: 30px;" onclick="addStudent()">+ 新規受講者追加</button>
+                
+                <div class="student-list">
+            `;
+
+            students.forEach((student, index) => {
+                html += `
+                    <div class="student-card" onclick="viewStudent(${index})">
+                        <div class="student-name">${student.name}</div>
+                        <div class="student-info">📅 受講開始：${student.startDate || '未設定'}</div>
+                        <div class="student-info">🫀 体質：${student.type || '未評価'}</div>
+                        <div class="student-info">📊 進捗：Day ${student.progress || 1}</div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            area.innerHTML = html;
+        }
+
+        function addStudent() {
+            const name = prompt('受講者名を入力してください');
+            if (!name) return;
+
+            const students = JSON.parse(localStorage.getItem('mitohana_students') || '[]');
+            students.push({
+                name: name,
+                startDate: new Date().toLocaleDateString('ja-JP'),
+                type: '',
+                progress: 1,
+                notes: []
+            });
+            localStorage.setItem('mitohana_students', JSON.stringify(students));
+            renderStudents(document.getElementById('contentArea'));
+        }
+
+        function viewStudent(index) {
+            const students = JSON.parse(localStorage.getItem('mitohana_students') || '[]');
+            const student = students[index];
+            
+            const area = document.getElementById('contentArea');
+            area.innerHTML = `
+                <button class="btn btn-secondary" onclick="currentSection='students'; renderContent();" style="margin-bottom: 20px;">← 受講者一覧に戻る</button>
+                
+                <div class="section">
+                    <div class="section-title">${student.name} さん</div>
+                    
+                    <div class="subsection">
+                        <div class="subsection-title">基本情報</div>
+                        <div class="protocol-detail">
+                            <div class="protocol-label">受講開始日</div>
+                            <div class="protocol-value">${student.startDate}</div>
+                        </div>
+                        <div class="protocol-detail">
+                            <div class="protocol-label">体質タイプ</div>
+                            <div class="protocol-value">${student.type || '未評価'}</div>
+                        </div>
+                        <div class="protocol-detail">
+                            <div class="protocol-label">進捗</div>
+                            <div class="protocol-value">Day ${student.progress}</div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="subsection-title">メモ・記録</div>
+                        <textarea id="studentNotes" style="width: 100%; min-height: 200px; padding: 15px; border: 2px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 14px;">${student.notes.join('\n\n')}</textarea>
+                        <button class="btn btn-secondary" style="margin-top: 15px;" onclick="saveStudentNotes(${index})">メモを保存</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function saveStudentNotes(index) {
+            const students = JSON.parse(localStorage.getItem('mitohana_students') || '[]');
+            const notes = document.getElementById('studentNotes').value;
+            students[index].notes = notes.split('\n\n').filter(n => n.trim());
+            localStorage.setItem('mitohana_students', JSON.stringify(students));
+            alert('保存しました');
+        }
+
+        // ナビゲーション
+        document.querySelectorAll('.nav-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                currentSection = card.getAttribute('data-section');
+                renderContent();
+            });
+        });
+
+        // 検索機能
+        document.getElementById('globalSearch').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            if (!searchTerm) return;
+
+            // プロトコルから検索
+            const foundProtocol = protocolData.find(p => 
+                p.part.toLowerCase().includes(searchTerm) ||
+                p.muscles.toLowerCase().includes(searchTerm) ||
+                p.organs.toLowerCase().includes(searchTerm) ||
+                `step${p.step}`.includes(searchTerm) ||
+                `${p.step}`.includes(searchTerm)
+            );
+
+            if (foundProtocol) {
+                currentSection = 'protocol';
+                currentProtocolStep = foundProtocol.step;
+                document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
+                document.querySelector('[data-section="protocol"]').classList.add('active');
+                renderContent();
+            }
+        });
+
+        // 初期表示
+        renderContent();
+    </script>
+</body>
+</html>
