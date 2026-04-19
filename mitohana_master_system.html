@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -11,395 +12,398 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --cream: #FAF7F0;
-            --deep-green: #2C5530;
-            --light-green: #7FA87F;
-            --accent-brown: #8B6F47;
-            --text-dark: #333333;
-            --border-color: #D4C5B9;
-        }
+```
+    :root {
+        --cream: #FAF7F0;
+        --deep-green: #2C5530;
+        --light-green: #7FA87F;
+        --accent-brown: #8B6F47;
+        --text-dark: #333333;
+        --border-color: #D4C5B9;
+    }
 
-        body {
-            font-family: 'Noto Serif JP', serif;
-            background: var(--cream);
-            color: var(--text-dark);
-            line-height: 1.8;
-        }
+    body {
+        font-family: 'Noto Serif JP', serif;
+        background: var(--cream);
+        color: var(--text-dark);
+        line-height: 1.8;
+    }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        header {
-            background: white;
-            padding: 20px 30px;
-            border-bottom: 3px solid var(--deep-green);
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+    header {
+        background: white;
+        padding: 20px 30px;
+        border-bottom: 3px solid var(--deep-green);
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
-        .header-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 
-        .logo-container {
-            width: 80px;
-            height: 80px;
-            flex-shrink: 0;
-        }
+    .logo-container {
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
 
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+    .logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-        .header-text {
-            flex: 1;
-        }
+    .header-text {
+        flex: 1;
+    }
 
-        h1 {
-            color: var(--deep-green);
-            font-size: 28px;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
+    h1 {
+        color: var(--deep-green);
+        font-size: 28px;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
 
-        .subtitle {
-            color: var(--accent-brown);
-            font-size: 14px;
-        }
+    .subtitle {
+        color: var(--accent-brown);
+        font-size: 14px;
+    }
 
-        .search-container {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 2px solid var(--border-color);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
+    .search-container {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        border: 2px solid var(--border-color);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
 
-        .search-box {
-            width: 100%;
-            padding: 15px 20px;
-            font-size: 16px;
-            border: 2px solid var(--deep-green);
-            border-radius: 8px;
-            background: var(--cream);
-            color: var(--text-dark);
-            transition: all 0.3s;
-        }
+    .search-box {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 16px;
+        border: 2px solid var(--deep-green);
+        border-radius: 8px;
+        background: var(--cream);
+        color: var(--text-dark);
+        transition: all 0.3s;
+    }
 
-        .search-box:focus {
-            outline: none;
-            border-color: var(--light-green);
-            box-shadow: 0 0 15px rgba(127, 168, 127, 0.2);
-        }
+    .search-box:focus {
+        outline: none;
+        border-color: var(--light-green);
+        box-shadow: 0 0 15px rgba(127, 168, 127, 0.2);
+    }
 
-        .search-label {
-            display: block;
-            color: var(--deep-green);
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
+    .search-label {
+        display: block;
+        color: var(--deep-green);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
 
+    .main-nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .nav-card {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        border: 2px solid var(--border-color);
+        cursor: pointer;
+        transition: all 0.3s;
+        text-align: center;
+    }
+
+    .nav-card:hover {
+        border-color: var(--deep-green);
+        box-shadow: 0 4px 12px rgba(44, 85, 48, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .nav-card.active {
+        background: var(--deep-green);
+        color: white;
+        border-color: var(--deep-green);
+    }
+
+    .nav-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .nav-title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .nav-desc {
+        font-size: 12px;
+        color: var(--accent-brown);
+    }
+
+    .nav-card.active .nav-desc {
+        color: rgba(255,255,255,0.9);
+    }
+
+    .content-area {
+        background: white;
+        padding: 35px;
+        border-radius: 12px;
+        border: 2px solid var(--border-color);
+        min-height: 500px;
+    }
+
+    .protocol-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: var(--deep-green);
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .protocol-progress {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .protocol-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 600;
+    }
+
+    .btn-primary {
+        background: white;
+        color: var(--deep-green);
+    }
+
+    .btn-primary:hover {
+        background: var(--cream);
+    }
+
+    .btn-secondary {
+        background: var(--light-green);
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background: var(--deep-green);
+    }
+
+    .protocol-card {
+        background: linear-gradient(135deg, #FAF7F0 0%, #F5F0E8 100%);
+        padding: 30px;
+        border-radius: 12px;
+        border: 2px solid var(--deep-green);
+    }
+
+    .protocol-header {
+        background: var(--deep-green);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 25px;
+    }
+
+    .protocol-part {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .detail-grid {
+        display: grid;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .detail-item {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid var(--deep-green);
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: var(--deep-green);
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .detail-value {
+        color: var(--text-dark);
+        line-height: 1.7;
+    }
+
+    .voice-example {
+        background: #FFF9E6;
+        border-left: 4px solid var(--accent-brown);
+        padding: 15px 20px;
+        border-radius: 6px;
+        margin: 15px 0;
+    }
+
+    .voice-label {
+        color: var(--accent-brown);
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .warning-box {
+        background: #FFE5E5;
+        border-left: 4px solid #CC0000;
+        padding: 15px 20px;
+        border-radius: 6px;
+        margin: 15px 0;
+    }
+
+    .warning-label {
+        color: #CC0000;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .info-box {
+        background: #E3F2FD;
+        border-left: 4px solid #1976D2;
+        padding: 15px 20px;
+        border-radius: 6px;
+        margin: 15px 0;
+    }
+
+    .info-label {
+        color: #1976D2;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .section {
+        margin-bottom: 30px;
+        padding: 25px;
+        background: var(--cream);
+        border-radius: 10px;
+        border-left: 5px solid var(--deep-green);
+    }
+
+    .section-title {
+        color: var(--deep-green);
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .subsection {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid var(--border-color);
+    }
+
+    .subsection-title {
+        color: var(--accent-brown);
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    .point-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .point-list li {
+        padding: 10px 0 10px 30px;
+        position: relative;
+        line-height: 1.8;
+    }
+
+    .point-list li:before {
+        content: "◆";
+        position: absolute;
+        left: 5px;
+        color: var(--deep-green);
+        font-weight: bold;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background: white;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 14px;
+    }
+
+    th {
+        background: var(--deep-green);
+        color: white;
+        font-weight: 600;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        background: var(--light-green);
+        color: white;
+        border-radius: 15px;
+        font-size: 11px;
+        margin: 3px;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
         .main-nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
+            grid-template-columns: 1fr;
         }
-
-        .nav-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            cursor: pointer;
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .nav-card:hover {
-            border-color: var(--deep-green);
-            box-shadow: 0 4px 12px rgba(44, 85, 48, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .nav-card.active {
-            background: var(--deep-green);
-            color: white;
-            border-color: var(--deep-green);
-        }
-
-        .nav-icon {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        .nav-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .nav-desc {
-            font-size: 12px;
-            color: var(--accent-brown);
-        }
-
-        .nav-card.active .nav-desc {
-            color: rgba(255,255,255,0.9);
-        }
-
-        .content-area {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            min-height: 500px;
-        }
-
         .protocol-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: var(--deep-green);
-            color: white;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 15px;
+            flex-direction: column;
         }
+    }
+</style>
+```
 
-        .protocol-progress {
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        .protocol-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--deep-green);
-        }
-
-        .btn-primary:hover {
-            background: var(--cream);
-        }
-
-        .btn-secondary {
-            background: var(--light-green);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: var(--deep-green);
-        }
-
-        .protocol-card {
-            background: linear-gradient(135deg, #FAF7F0 0%, #F5F0E8 100%);
-            padding: 30px;
-            border-radius: 12px;
-            border: 2px solid var(--deep-green);
-        }
-
-        .protocol-header {
-            background: var(--deep-green);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
-        }
-
-        .protocol-part {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .detail-grid {
-            display: grid;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .detail-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid var(--deep-green);
-        }
-
-        .detail-label {
-            font-weight: 600;
-            color: var(--deep-green);
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        .detail-value {
-            color: var(--text-dark);
-            line-height: 1.7;
-        }
-
-        .voice-example {
-            background: #FFF9E6;
-            border-left: 4px solid var(--accent-brown);
-            padding: 15px 20px;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
-
-        .voice-label {
-            color: var(--accent-brown);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .warning-box {
-            background: #FFE5E5;
-            border-left: 4px solid #CC0000;
-            padding: 15px 20px;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
-
-        .warning-label {
-            color: #CC0000;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .info-box {
-            background: #E3F2FD;
-            border-left: 4px solid #1976D2;
-            padding: 15px 20px;
-            border-radius: 6px;
-            margin: 15px 0;
-        }
-
-        .info-label {
-            color: #1976D2;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .section {
-            margin-bottom: 30px;
-            padding: 25px;
-            background: var(--cream);
-            border-radius: 10px;
-            border-left: 5px solid var(--deep-green);
-        }
-
-        .section-title {
-            color: var(--deep-green);
-            font-size: 20px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .subsection {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-        }
-
-        .subsection-title {
-            color: var(--accent-brown);
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .point-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .point-list li {
-            padding: 10px 0 10px 30px;
-            position: relative;
-            line-height: 1.8;
-        }
-
-        .point-list li:before {
-            content: "◆";
-            position: absolute;
-            left: 5px;
-            color: var(--deep-green);
-            font-weight: bold;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: white;
-        }
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 14px;
-        }
-
-        th {
-            background: var(--deep-green);
-            color: white;
-            font-weight: 600;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            background: var(--light-green);
-            color: white;
-            border-radius: 15px;
-            font-size: 11px;
-            margin: 3px;
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .main-nav {
-                grid-template-columns: 1fr;
-            }
-            .protocol-nav {
-                flex-direction: column;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -432,2208 +436,441 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="search-container">
-            <label class="search-label">🔍 全体検索（手技・部位・筋肉・臓器・神経・血管など）</label>
-            <input type="text" class="search-box" id="globalSearch" placeholder="例：腸腰筋、骨盤内臓神経、横隔膜、肝臓、Step 15...">
-        </div>
+```
+<div class="container">
+    <div class="search-container">
+        <label class="search-label">🔍 全体検索（手技・部位・筋肉・臓器・神経・血管など）</label>
+        <input type="text" class="search-box" id="globalSearch" placeholder="例：腸腰筋、骨盤内臓神経、横隔膜、肝臓、Step 15...">
+    </div>
 
-        <div class="main-nav">
-            <div class="nav-card active" data-section="schedule">
-                <div class="nav-icon">📅</div>
-                <div class="nav-title">合宿スケジュール</div>
-                <div class="nav-desc">3泊4日の全工程</div>
-            </div>
-            <div class="nav-card" data-section="protocol">
-                <div class="nav-icon">🫴</div>
-                <div class="nav-title">施術プロトコル</div>
-                <div class="nav-desc">手技①〜70 完全版</div>
-            </div>
-            <div class="nav-card" data-section="pelvis">
-                <div class="nav-icon">🦴</div>
-                <div class="nav-title">骨盤・胸郭理論</div>
-                <div class="nav-desc">詳細な評価と理論</div>
-            </div>
-            <div class="nav-card" data-section="theory">
-                <div class="nav-icon">📚</div>
-                <div class="nav-title">理論講義</div>
-                <div class="nav-desc">筋膜・神経・臓器</div>
-            </div>
-            <div class="nav-card" data-section="reflex">
-                <div class="nav-icon">📍</div>
-                <div class="nav-title">反射点マップ</div>
-                <div class="nav-desc">臓器反射点一覧</div>
-            </div>
-            <div class="nav-card" data-section="students">
-                <div class="nav-icon">👥</div>
-                <div class="nav-title">受講者管理</div>
-                <div class="nav-desc">生徒別メモ・評価</div>
-            </div>
+    <div class="main-nav">
+        <div class="nav-card active" data-section="schedule">
+            <div class="nav-icon">📅</div>
+            <div class="nav-title">合宿スケジュール</div>
+            <div class="nav-desc">3泊4日の全工程</div>
         </div>
-
-        <div class="content-area" id="contentArea">
-            <!-- コンテンツが動的に表示される -->
+        <div class="nav-card" data-section="protocol">
+            <div class="nav-icon">🫴</div>
+            <div class="nav-title">施術プロトコル</div>
+            <div class="nav-desc">手技①〜70 完全版</div>
+        </div>
+        <div class="nav-card" data-section="pelvis">
+            <div class="nav-icon">🦴</div>
+            <div class="nav-title">骨盤・胸郭理論</div>
+            <div class="nav-desc">詳細な評価と理論</div>
+        </div>
+        <div class="nav-card" data-section="theory">
+            <div class="nav-icon">📚</div>
+            <div class="nav-title">理論講義</div>
+            <div class="nav-desc">筋膜・神経・臓器</div>
+        </div>
+        <div class="nav-card" data-section="reflex">
+            <div class="nav-icon">📍</div>
+            <div class="nav-title">反射点マップ</div>
+            <div class="nav-desc">臓器反射点一覧</div>
+        </div>
+        <div class="nav-card" data-section="students">
+            <div class="nav-icon">👥</div>
+            <div class="nav-title">受講者管理</div>
+            <div class="nav-desc">生徒別メモ・評価</div>
         </div>
     </div>
 
-    <script>
-        // 合宿スケジュールデータ
-        const campSchedule = [
-            {
-                day: 1,
-                theme: '評価の基礎と背面アプローチ',
-                subtitle: '身体の見立てと土台の構築',
-                schedule: [
-                    { time: '10:30-12:00', activity: '集合・準備（部屋案内、食事準備）' },
-                    { time: '12:00-12:10', activity: 'グラウンディング（呼吸を整える儀式）' },
-                    { time: '12:10-13:50', activity: '姿勢評価 理論・実演・実践（チェックシート記入、役割交代）' },
-                    { time: '14:00-15:40', activity: '実技：背面（背中）仙骨、腰部、脊柱起立筋、広背筋、僧帽筋' },
-                    { time: '15:40-16:50', activity: '実技：背面（肩甲骨周り）肩甲骨タイプ別アプローチ' },
-                    { time: '16:50-18:00', activity: '実技：背面（臀部・足）大殿筋、中殿筋、ハムストリングス、腓腹筋' },
-                    { time: '18:00〜', activity: '夕食準備・夕食・温泉・就寝' }
-                ],
-                theory: '姿勢評価法、チェックシートの使い方、肩甲骨6タイプ判定、骨盤アラインメント（前傾・後傾・ねじれ）の理論',
-                practice: '手技①～㉖。脊柱の流れ確認から足首の背屈ストレッチまで',
-                point: '「正確な評価」。ランドマークを正しく触診し、個々の身体の状態をチェックシートに視覚化すること'
-            },
-            {
-                day: 2,
-                theme: '腹部（内臓アプローチ）と巫女実技',
-                subtitle: '内臓の解放とエネルギーの調和',
-                schedule: [
-                    { time: '07:00-09:00', activity: '朝食・洗濯・ハーブボール作成・香作り' },
-                    { time: '09:00-10:20', activity: '実技：前面足部（足首モビライゼーション、前脛骨筋）' },
-                    { time: '10:40-12:00', activity: '実技：腹部（基本）腹直筋、腹斜筋、腹膜' },
-                    { time: '12:00-12:40', activity: '昼食（ハーブボール準備）' },
-                    { time: '12:40-15:30', activity: '実技：腹部（内臓・深部）肝、胆、脾、胃、腸、腸腰筋、子宮・膀胱反射区' },
-                    { time: '15:30-16:20', activity: '実技：巫女実技（骨盤底リリース）' },
-                    { time: '16:20-17:00', activity: '復習・苦手部位の集中練習' },
-                    { time: '17:00〜', activity: '夕食・温泉・就寝' }
-                ],
-                theory: '内臓反射点理論、腹部の鼓音チェック、骨盤底の機能とエネルギー的な意味',
-                practice: '手技㉗～59。オイル塗布から内臓の癒着剥がし、巫女の香による温めまで',
-                point: '「安心感と深部への浸透」。デリケートな腹部に対し、適切な圧とリズムで内臓の癒着を剥がす感覚を掴むこと'
-            },
-            {
-                day: 3,
-                theme: '胸郭・頭部の解放とトータル統合',
-                subtitle: '全身の統合と技術の完成',
-                schedule: [
-                    { time: '07:00-09:00', activity: '朝食・写真撮影（個人・集合）' },
-                    { time: '09:00-10:10', activity: '実技：胸部（肋骨反射点、肺・心、胸郭ポンプ）' },
-                    { time: '10:10-11:20', activity: '実技：頭部（後頭下筋群、側頭筋、V字解放、第六チャクラ）' },
-                    { time: '11:20-12:00', activity: '昼食' },
-                    { time: '12:00-15:00', activity: 'トータル通し練習（背面～前面～腹部～頭部の全工程、各90分）' },
-                    { time: '15:00-17:00', activity: '苦手部位の集中練習・追加通し練習（希望者）' },
-                    { time: '19:00〜', activity: '宴会' }
-                ],
-                theory: '脳脊髄液の循環理論、静脈洞の解放（V字解放）、チャクラと香りの相関',
-                practice: '手技60～70。胸郭のストレッチから頭蓋のリフトアップ、百会の呼吸まで',
-                point: '「90分のリズム感」。断片的な手技を一つの流れとして統合し、クライアントに淀みのない体験を提供すること'
-            },
-            {
-                day: 4,
-                theme: '成果確認と修了',
-                subtitle: '技術の定着と新たな門出',
-                schedule: [
-                    { time: '07:00-09:00', activity: '朝食・最終確認・復習' },
-                    { time: '10:00-13:00', activity: 'モデルテスト（受講生2ペアによる施術実施、講師による撮影・チェック）' },
-                    { time: '13:00-14:30', activity: '復習（苦手部分の再確認）' },
-                    { time: '14:30-15:00', activity: '片付け・解散準備' },
-                    { time: '15:00-16:00', activity: '総評・修了式（修了証授与）' }
-                ],
-                theory: '',
-                practice: '4日間の集大成として、外部モデルまたは受講生同士でのフルセッションを実施し、講師が技術の精度を確認',
-                point: '「自信の確立」。テストを通じて、自分自身の手で相手に変化を与えられる確信を持つこと'
-            }
-        ];
+    <div class="content-area" id="contentArea">
+    </div>
+</div>
 
-        // 施術プロトコル完全版データ（資料ベース）
-        const protocolData = [
-            {
-                step: 1,
-                part: '脊柱全体の流れ確認',
-                muscles: '全身の筋膜',
-                organs: '',
-                line: 'SBL（仙骨〜後頭骨）',
-                pelvis: '全タイプ',
-                position: '仙骨から頭頂まで',
-                nerve: '脊髄神経全体',
-                vessel: '脊柱動静脈',
-                origin: '',
-                insertion: '',
-                voice: '全身の繋がりを感じていきます',
-                notes: '硬膜の繋がり（仙骨〜頭頂）を意識。全体の流れとバランスを確認',
-                purpose: '硬膜の緊張状態を把握し、施術の方針を立てる'
-            },
-            {
-                step: 2,
-                part: '仙骨調整',
-                muscles: '仙骨',
-                organs: '子宮・膀胱',
-                line: 'SBL, DFL',
-                pelvis: '前傾：前へ誘導、後傾：後ろへ誘導',
-                position: '仙骨全体',
-                nerve: '骨盤内臓神経',
-                vessel: '仙骨動静脈',
-                origin: '',
-                insertion: '',
-                voice: '土台を整えていきます',
-                notes: '硬膜の緊張緩和が目的。仙骨周りに張りを感じる時は、手を足側に引き、手を頭側に押す。L5-S1は上半身の重みを受けやすく、骨の角度的にも前に滑りやすくストレスがかかりやすい',
-                purpose: '硬膜の緊張を緩め、頭蓋への影響を減らす'
-            },
-            {
-                step: 3,
-                part: 'S1〜S5・腸骨キワ',
-                muscles: '仙骨周囲筋',
-                organs: '子宮・膀胱・大腸',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: 'S5付近から上に向かって圧',
-                nerve: '骨盤内臓神経（S2-S4）',
-                vessel: '仙骨動静脈',
-                origin: '',
-                insertion: '',
-                voice: 'ここは安心感に繋がる場所です',
-                notes: 'S1:構造と安定、S2:排泄・子宮・膀胱、S3:骨盤底・性・臓器支持、S4:直腸・解放、S5:神経沈静・安心。腸骨キワ:腸間膜テンション（内臓を支える膜）。大腸ゾーン、子宮広間膜反射ゾーン。生理痛ある人は腰部にも出やすい',
-                purpose: '仙骨の各レベルの意味を意識し、内臓と骨盤底の安定を図る'
-            },
-            {
-                step: 4,
-                part: '多裂筋（深部）',
-                muscles: '多裂筋',
-                organs: '',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: 'T12〜L4棘突起横、指2-3本横',
-                nerve: '脊髄神経後枝',
-                vessel: '腰動静脈',
-                origin: '各椎骨の棘突起・横突起',
-                insertion: '2〜4椎骨上位の棘突起',
-                voice: '深い張りを緩めていきます',
-                notes: '深部の張り=腹圧に関連。姿勢保持筋として重要',
-                purpose: '深層筋の緊張を解き、腹圧を整える'
-            },
-            {
-                step: 5,
-                part: '腰方形筋',
-                muscles: '腰方形筋',
-                organs: '',
-                line: 'LL（ラテラルライン）',
-                pelvis: '全タイプ',
-                position: '腸骨稜〜第12肋骨',
-                nerve: '腰神経叢（T12-L4）',
-                vessel: '腰動静脈',
-                origin: '腸骨稜内唇',
-                insertion: '第12肋骨、L1-L4横突起',
-                voice: '左右のバランスを整えます',
-                notes: '左右重心バランス。体重をかけている側の腰方形筋の張りを重点的に確認。表層=広背筋、中層=脊柱起立筋',
-                purpose: '左右の重心バランスを調整し、骨盤の安定を図る'
-            },
-            {
-                step: 6,
-                part: '腎（L1〜L3）',
-                muscles: '下後鋸筋、広背筋',
-                organs: '腎臓',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: 'L1〜L3、肋骨下角付近',
-                nerve: '肋間神経（T9-T12）',
-                vessel: '腎動静脈',
-                origin: '下後鋸筋:T11-L2棘突起、広背筋:T6-仙骨棘突起',
-                insertion: '下後鋸筋:第9-12肋骨下縁、広背筋:上腕骨小結節稜',
-                voice: '生命力の源を整えます',
-                notes: '胸郭を閉じるアプローチ。腎臓反射エリア。前傾タイプは張っていることが多い',
-                purpose: '腎臓の機能をサポートし、胸郭の動きを整える'
-            },
-            {
-                step: 7,
-                part: '肩甲骨タイプ判定',
-                muscles: '肩甲骨周囲筋',
-                organs: '',
-                line: '',
-                pelvis: '',
-                position: 'T2（胸椎2番）を基準',
-                nerve: '副神経、肩甲背神経',
-                vessel: '肩甲上下動静脈',
-                origin: '',
-                insertion: '',
-                voice: 'タイプを見極めていきます',
-                notes: '6タイプ評価:①挙上（菱形筋・肩甲挙筋・僧帽筋上部）、②下制（僧帽筋下部・小胸筋）、③内転（菱形筋・僧帽筋中部）、④外転（前鋸筋・小胸筋）、⑤上方回旋（前鋸筋・僧帽筋）、⑥下方回旋（菱形筋・肩甲挙筋）。内転は指3本以下、外転は指4本以上',
-                purpose: '肩甲骨の位置とタイプを正確に評価し、施術方針を決定'
-            },
-            {
-                step: 8,
-                part: '広背筋・僧帽筋下部',
-                muscles: '広背筋、僧帽筋下部',
-                organs: '肝、胆、脾、胃',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: '肩甲骨下角から腰部',
-                nerve: '胸背神経（広背筋）、副神経（僧帽筋）',
-                vessel: '胸背動静脈',
-                origin: '広背筋:T6-仙骨、僧帽筋下部:T6-T12棘突起',
-                insertion: '広背筋:上腕骨小結節稜、僧帽筋下部:肩甲棘内側1/3',
-                voice: '肩甲骨を引き上げます',
-                notes: '肩甲骨の見立てに合わせ上方向へリリース。硬結部分では手を止める',
-                purpose: '肩甲骨の可動域を広げ、上肢の動きを改善'
-            },
-            {
-                step: 9,
-                part: '菱形筋',
-                muscles: '大菱形筋、小菱形筋',
-                organs: '肺、心',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: '背骨横から肩甲骨内側縁',
-                nerve: '肩甲背神経（C5）',
-                vessel: '肩甲背動静脈',
-                origin: '小菱形筋:C7-T1棘突起、大菱形筋:T2-T5棘突起',
-                insertion: '肩甲骨内側縁',
-                voice: '背骨から肩甲骨を引き寄せます',
-                notes: '①背骨横から菱形筋を指でリリース。②片手を胸の方に入れ肩甲骨を動かすように',
-                purpose: '肩甲骨の内転を促し、姿勢を改善'
-            },
-            {
-                step: 10,
-                part: '僧帽筋上部を動かす',
-                muscles: '僧帽筋上部',
-                organs: '肺',
-                line: 'SFL',
-                pelvis: '全タイプ',
-                position: '後頭骨〜肩甲棘',
-                nerve: '副神経',
-                vessel: '後頭動静脈',
-                origin: '後頭骨外後頭隆起、項靭帯、C7-T12棘突起',
-                insertion: '鎖骨外側1/3、肩峰、肩甲棘',
-                voice: '肩の力を抜いていきます',
-                notes: '僧帽筋停止部（肩甲棘・鎖骨）を意識。呼吸と連動させて動かす',
-                purpose: '肩甲骨の挙上を緩め、首肩の緊張を解く'
-            },
-            {
-                step: 11,
-                part: '肩甲挙筋',
-                muscles: '肩甲挙筋',
-                organs: '',
-                line: 'LL',
-                pelvis: '全タイプ',
-                position: '肩甲骨上角',
-                nerve: '肩甲背神経、C3-C4',
-                vessel: '頸横動静脈',
-                origin: 'C1-C4横突起',
-                insertion: '肩甲骨上角内側縁',
-                voice: '上角に指をセットします',
-                notes: '上角に指をセットし圧。肩甲骨上に挙げたり動かす',
-                purpose: '肩甲骨の挙上を制限する筋肉を緩める'
-            },
-            {
-                step: 12,
-                part: '大円筋・小円筋',
-                muscles: '大円筋、小円筋',
-                organs: '',
-                line: 'SFL（大円筋）',
-                pelvis: '全タイプ',
-                position: '肩甲骨下角外側',
-                nerve: '肩甲下神経（大円筋）、腋窩神経（小円筋）',
-                vessel: '肩甲下動静脈',
-                origin: '大円筋:肩甲骨下角外側縁、小円筋:肩甲骨外側縁',
-                insertion: '大円筋:上腕骨小結節稜、小円筋:上腕骨大結節',
-                voice: '肩の回旋を整えます',
-                notes: '大円筋は肩を内旋（巻き肩）させる。その上小円筋は肩を外旋させる。拮抗筋のバランスを意識',
-                purpose: '肩関節の回旋機能を回復し、巻き肩を改善'
-            },
-            {
-                step: 13,
-                part: '僧帽筋上部・僧帽筋起始部',
-                muscles: '僧帽筋上部',
-                organs: '心',
-                line: 'SFL',
-                pelvis: '全タイプ',
-                position: '後頭骨〜C7',
-                nerve: '副神経',
-                vessel: '後頭動静脈',
-                origin: '後頭骨外後頭隆起、項靭帯',
-                insertion: '鎖骨外側1/3',
-                voice: '首の付け根を緩めます',
-                notes: '心の反射エリア。ストレス・緊張の蓄積ポイント',
-                purpose: '心臓の反射点を緩め、精神的な緊張を解放'
-            },
-            {
-                step: 14,
-                part: '板状筋',
-                muscles: '頭板状筋、頸板状筋',
-                organs: '',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: '後頭骨〜C7',
-                nerve: 'C2-C6脊髄神経後枝',
-                vessel: '後頭動静脈',
-                origin: '頭板状筋:C7-T3棘突起、頸板状筋:T3-T6棘突起',
-                insertion: '頭板状筋:側頭骨乳様突起、頸板状筋:C1-C3横突起',
-                voice: '頭を支える筋肉を緩めます',
-                notes: '頭部伸展・回旋に関与。デスクワークで固まりやすい',
-                purpose: '頭部の動きを改善し、首の負担を軽減'
-            },
-            {
-                step: 15,
-                part: 'ストレッチ（気を下げる）',
-                muscles: '僧帽筋上部',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '肩を下方へ',
-                nerve: '副神経',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: 'ゆっくり伸ばしていきます',
-                notes: '気が上がっているタイプは下げるイメージで',
-                purpose: '上昇した気を下げ、グラウンディングを促す'
-            },
-            {
-                step: 16,
-                part: '仙骨呼吸・動きの確認',
-                muscles: '',
-                organs: '',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: '仙骨',
-                nerve: '骨盤内臓神経',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '呼吸のリズムを感じます',
-                notes: '仙骨の微細な動きを確認。硬膜の緊張状態を再評価',
-                purpose: '仙骨の一次呼吸機構を確認し、全身の統合を図る'
-            },
-            {
-                step: 17,
-                part: '大殿筋',
-                muscles: '大殿筋',
-                organs: '',
-                line: 'SBL',
-                pelvis: '全タイプ（前傾で短縮、後傾で弱化）',
-                position: '仙骨〜大腿骨',
-                nerve: '下殿神経（L5-S2）',
-                vessel: '上下殿動静脈',
-                origin: '腸骨外面、仙骨、尾骨外側',
-                insertion: '腸脛靭帯、大腿骨殿筋粗面',
-                voice: '臀部を緩めていきます',
-                notes: '挟んで動かしたり、起始・停止を圧迫',
-                purpose: '股関節の伸展を促し、骨盤の安定を図る'
-            },
-            {
-                step: 18,
-                part: '中殿筋',
-                muscles: '中殿筋',
-                organs: '',
-                line: 'LL',
-                pelvis: '全タイプ',
-                position: '腸骨外面',
-                nerve: '上殿神経（L4-S1）',
-                vessel: '上殿動静脈',
-                origin: '腸骨外面',
-                insertion: '大腿骨大転子外側面',
-                voice: '股関節を安定させます',
-                notes: '圧迫、ゆらし。股関節外転の主力筋',
-                purpose: '骨盤の安定性を高め、歩行時のバランスを改善'
-            },
-            {
-                step: 19,
-                part: '小殿筋',
-                muscles: '小殿筋',
-                organs: '',
-                line: 'LL',
-                pelvis: '全タイプ',
-                position: '中殿筋の深層',
-                nerve: '上殿神経（L4-S1）',
-                vessel: '上殿動静脈',
-                origin: '腸骨外面（中殿筋の深層）',
-                insertion: '大腿骨大転子前面',
-                voice: '深い層にアプローチします',
-                notes: '肘で圧迫。深層の外転筋',
-                purpose: '股関節の深層安定性を向上させる'
-            },
-            {
-                step: 20,
-                part: '大腿筋膜張筋',
-                muscles: '大腿筋膜張筋',
-                organs: '',
-                line: 'LL',
-                pelvis: '前傾で過緊張',
-                position: '腸骨〜腸脛靭帯',
-                nerve: '上殿神経（L4-S1）',
-                vessel: '外側大腿回旋動静脈',
-                origin: '腸骨稜前部、上前腸骨棘',
-                insertion: '腸脛靭帯',
-                voice: 'カエル足にします',
-                notes: '外旋位（カエル足）でアプローチ',
-                purpose: '腸脛靭帯の緊張を緩め、膝の負担を軽減'
-            },
-            {
-                step: 21,
-                part: '外旋筋',
-                muscles: '梨状筋、上双子筋、下双子筋、内閉鎖筋、外閉鎖筋、大腿方形筋',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '坐骨周辺',
-                nerve: '仙骨神経叢',
-                vessel: '内陰部動静脈',
-                origin: '仙骨前面、坐骨',
-                insertion: '大腿骨大転子',
-                voice: '股関節の奥を緩めます',
-                notes: '坐骨から仙骨の靭帯。前傾なら靭帯走行に向かって上にリリース、後傾なら坐骨に向かう',
-                purpose: '股関節の深層回旋筋を緩め、可動域を広げる'
-            },
-            {
-                step: 22,
-                part: '仙結節靭帯',
-                muscles: '',
-                organs: '',
-                line: 'SBL',
-                pelvis: '前傾なら靭帯走行に向かって上にリリース、後傾なら坐骨に向かう',
-                position: '坐骨〜仙骨',
-                nerve: '',
-                vessel: '',
-                origin: '仙骨外側縁、尾骨',
-                insertion: '坐骨結節',
-                voice: '骨盤の靭帯を整えます',
-                notes: '骨盤の安定に関わる重要靭帯。SBLの一部',
-                purpose: '骨盤の後面安定性を高める'
-            },
-            {
-                step: 23,
-                part: 'ハムストリングス',
-                muscles: '大腿二頭筋、半腱様筋、半膜様筋',
-                organs: '',
-                line: 'SBL',
-                pelvis: '後傾で短縮',
-                position: '坐骨〜膝',
-                nerve: '坐骨神経（L5-S2）',
-                vessel: '深大腿動静脈',
-                origin: '坐骨結節（大腿二頭筋長頭・半腱様筋・半膜様筋）、大腿骨（大腿二頭筋短頭）',
-                insertion: '腓骨頭（大腿二頭筋）、脛骨内側（半腱様筋・半膜様筋）',
-                voice: '太もも裏を緩めます',
-                notes: '後傾タイプは短縮。①坐骨下の起始部圧迫、②掌で圧迫',
-                purpose: '骨盤後傾を改善し、膝への負担を軽減'
-            },
-            {
-                step: 24,
-                part: '腓腹筋',
-                muscles: '腓腹筋',
-                organs: '',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: '膝裏〜アキレス腱',
-                nerve: '脛骨神経（S1-S2）',
-                vessel: '膝窩動静脈',
-                origin: '大腿骨内側顆・外側顆',
-                insertion: 'アキレス腱〜踵骨',
-                voice: 'ふくらはぎを緩めます',
-                notes: 'SBLの下肢部分。足首の底屈に関与',
-                purpose: '下肢の血流を促進し、足首の可動域を改善'
-            },
-            {
-                step: 25,
-                part: 'アキレス腱',
-                muscles: '',
-                organs: '',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: '踵骨',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '踵骨隆起',
-                voice: '踵の腱を調整します',
-                notes: 'SBLの末端。全身のテンションが集約',
-                purpose: '全身の筋膜ラインのテンションを調整'
-            },
-            {
-                step: 26,
-                part: '足首背屈ストレッチ',
-                muscles: '',
-                organs: '',
-                line: 'SBL',
-                pelvis: '全タイプ',
-                position: '足首',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '足首を伸ばします',
-                notes: 'SBL全体のストレッチ。背屈で腓腹筋・ヒラメ筋を伸ばす',
-                purpose: 'SBL全体の緊張を解放し、姿勢を整える'
-            },
-            {
-                step: 27,
-                part: '両足を肩幅に開く',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '足部',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '準備を整えます',
-                notes: '前面施術の開始準備',
-                purpose: '施術ポジションの設定'
-            },
-            {
-                step: 28,
-                part: '両足をゆさゆさして緊張をほぐす',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '足部〜骨盤',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '力を抜いてください',
-                notes: '底屈・背屈ストレッチ。膜の繋がりで横隔膜が上下に揺さぶられる。腹腔内圧を陰圧・陽圧交互に起こすことでリンパや静脈瘤が戻りやすくなる。足の筋肉が動くことで足のリンパ、静脈血が戻りやすくなる',
-                purpose: 'リンパ・静脈還流を促進し、全身の緊張を緩める'
-            },
-            {
-                step: 29,
-                part: '足首モビライゼーション',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '足関節',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '足首を動かします',
-                notes: '関節の可動域を確認',
-                purpose: '足関節の可動性を評価・改善'
-            },
-            {
-                step: 30,
-                part: '前脛骨筋',
-                muscles: '前脛骨筋',
-                organs: '',
-                line: 'SFL',
-                pelvis: '全タイプ',
-                position: '脛骨前面',
-                nerve: '深腓骨神経（L4-S1）',
-                vessel: '前脛骨動静脈',
-                origin: '脛骨外側面、骨間膜',
-                insertion: '第1中足骨底、内側楔状骨',
-                voice: 'すねの筋肉を緩めます',
-                notes: 'SFLの一部。足関節の背屈',
-                purpose: '前面の筋膜ラインを整え、足首の動きを改善'
-            },
-            {
-                step: 31,
-                part: '長趾伸筋・長腓骨筋',
-                muscles: '長趾伸筋、長腓骨筋',
-                organs: '',
-                line: 'LL',
-                pelvis: '全タイプ',
-                position: '下腿外側',
-                nerve: '深腓骨神経（長趾伸筋）、浅腓骨神経（長腓骨筋）',
-                vessel: '前脛骨動静脈',
-                origin: '長趾伸筋:脛骨外側・腓骨前面、長腓骨筋:腓骨頭・腓骨外側',
-                insertion: '長趾伸筋:第2-5趾、長腓骨筋:第1中足骨底・内側楔状骨',
-                voice: '足の外側を整えます',
-                notes: 'LLの下肢部分。足の外反・趾の伸展',
-                purpose: '足部の安定性を高め、バランスを改善'
-            },
-            {
-                step: 32,
-                part: 'モビライゼーション',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '足関節',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '関節を整えます',
-                notes: '関節の遊びを確認',
-                purpose: '関節の可動性を最終確認'
-            },
-            {
-                step: 33,
-                part: '大腿直筋',
-                muscles: '大腿直筋',
-                organs: '',
-                line: 'SFL',
-                pelvis: '前傾で短縮',
-                position: '下前腸骨棘〜膝蓋骨',
-                nerve: '大腿神経（L2-L4）',
-                vessel: '大腿動静脈',
-                origin: '下前腸骨棘',
-                insertion: '膝蓋骨上縁〜脛骨粗面（膝蓋腱経由）',
-                voice: '太ももの前を緩めます',
-                notes: 'SFLの大腿部。前傾タイプで短縮。膝の伸展と股関節の屈曲',
-                purpose: '骨盤前傾を改善し、膝への負担を軽減'
-            },
-            {
-                step: 34,
-                part: '外側広筋・内側広筋',
-                muscles: '外側広筋、内側広筋',
-                organs: '',
-                line: 'SFL',
-                pelvis: '全タイプ',
-                position: '大腿骨外側・内側',
-                nerve: '大腿神経（L2-L4）',
-                vessel: '大腿動静脈',
-                origin: '外側広筋:大腿骨外側唇、内側広筋:大腿骨内側唇',
-                insertion: '膝蓋骨〜脛骨粗面（膝蓋腱経由）',
-                voice: '股の間に入ります',
-                notes: '膝関節の安定に重要',
-                purpose: '膝の安定性を高め、膝痛を予防'
-            },
-            {
-                step: 35,
-                part: '縫工筋・内転筋',
-                muscles: '縫工筋、内転筋群（恥骨筋・短内転筋・長内転筋・大内転筋・薄筋）',
-                organs: '',
-                line: 'DFL（内転筋）',
-                pelvis: '全タイプ',
-                position: '上前腸骨棘〜脛骨内側（縫工筋）、恥骨〜大腿骨内側（内転筋）',
-                nerve: '大腿神経（縫工筋）、閉鎖神経（内転筋）',
-                vessel: '大腿動静脈',
-                origin: '縫工筋:上前腸骨棘、内転筋:恥骨',
-                insertion: '縫工筋:脛骨粗面内側、内転筋:大腿骨内側唇',
-                voice: '内ももを整えます',
-                notes: '股の間に入り、縫工筋・内転筋にアプローチ。内転筋はDFLの一部',
-                purpose: '骨盤底との連動を促し、体幹の安定性を高める'
-            },
-            {
-                step: 36,
-                part: '大腿筋膜張筋・腸脛靭帯（前面から）',
-                muscles: '大腿筋膜張筋',
-                organs: '大腸',
-                line: 'LL',
-                pelvis: '前傾・後傾で対応を変える',
-                position: '腸骨〜腸脛靭帯',
-                nerve: '上殿神経（L4-S1）',
-                vessel: '外側大腿回旋動静脈',
-                origin: '腸骨稜前部、上前腸骨棘',
-                insertion: '腸脛靭帯',
-                voice: '内側に締めてから圧をかけます',
-                notes: '前傾:内側に締めてから後方に圧、後傾:内側に締めてから斜め角度に押す。腸脛靭帯の下部は大腸の反射',
-                purpose: 'LLの緊張を調整し、骨盤タイプに応じたアプローチ'
-            },
-            {
-                step: 37,
-                part: '撫でる（安心）',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '腹部全体',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: 'これから大切なところに触れていきます',
-                notes: '腹部への許可と安心感の提供',
-                purpose: '心理的安全性を確保し、腹部施術への移行を円滑にする'
-            },
-            {
-                step: 38,
-                part: '触診・鼓音チェック',
-                muscles: '',
-                organs: '全内臓',
-                line: '',
-                pelvis: '全タイプ',
-                position: '腹部全体',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: 'お腹の状態を確認します',
-                notes: '腹部の硬さ、冷え、鼓音（ガスの有無）をチェック',
-                purpose: '内臓の状態を評価し、施術方針を決定'
-            },
-            {
-                step: 39,
-                part: 'OIL塗布',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '腹部全体',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '温めていきます',
-                notes: 'オイルで腹部を温め、施術の滑りを良くする',
-                purpose: '皮膚と筋膜の滑走性を高め、深部へのアプローチを容易にする'
-            },
-            {
-                step: 40,
-                part: '臍周り①〜⑧',
-                muscles: '',
-                organs: '小腸',
-                line: '',
-                pelvis: '全タイプ',
-                position: '臍周囲8ポイント',
-                nerve: '腸間膜神経叢',
-                vessel: '上腸間膜動静脈',
-                origin: '',
-                insertion: '',
-                voice: 'お臍の周りを整えます',
-                notes: '臍を中心に8方向から圧をかける。小腸の蠕動を促す',
-                purpose: '小腸の機能を活性化し、消化吸収を改善'
-            },
-            {
-                step: 41,
-                part: '腹直筋挟むようにリリース',
-                muscles: '腹直筋',
-                organs: '',
-                line: 'SFL',
-                pelvis: '後傾で短縮',
-                position: '恥骨〜胸骨',
-                nerve: '肋間神経（T7-T12）',
-                vessel: '上下腹壁動静脈',
-                origin: '恥骨結合、恥骨稜',
-                insertion: '第5-7肋軟骨、剣状突起',
-                voice: 'お腹の中心を緩めます',
-                notes: '後傾タイプで短縮。腹圧の調整に重要。大腿筋膜張筋・腸脛靭帯の反射も関連',
-                purpose: '骨盤後傾を改善し、腹圧を適正化'
-            },
-            {
-                step: 42,
-                part: '腹直筋の上から外腹斜筋リリース',
-                muscles: '外腹斜筋',
-                organs: '',
-                line: 'LL',
-                pelvis: '前傾・後傾で対応を変える',
-                position: '第5-12肋骨外側',
-                nerve: '肋間神経（T7-T12）',
-                vessel: '肋間動静脈',
-                origin: '第5-12肋骨外側面',
-                insertion: '腸骨稜、鼠径靭帯、腹直筋鞘',
-                voice: '横の筋肉を緩めます',
-                notes: '前傾:内側に締めてから後方に圧、後傾:内側に締めてから真下に押す',
-                purpose: '体幹の回旋機能を改善し、骨盤の安定を図る'
-            },
-            {
-                step: 43,
-                part: '恥骨キワから腹直筋',
-                muscles: '腹直筋',
-                organs: '膀胱',
-                line: 'SFL',
-                pelvis: '全タイプ',
-                position: '恥骨上縁',
-                nerve: '腸骨下腹神経',
-                vessel: '下腹壁動静脈',
-                origin: '恥骨結合',
-                insertion: '',
-                voice: '下腹部を整えます',
-                notes: '膀胱の反射エリア。デリケートな部位',
-                purpose: '骨盤底との連動を促し、膀胱機能をサポート'
-            },
-            {
-                step: 44,
-                part: '外腹斜筋',
-                muscles: '外腹斜筋',
-                organs: '',
-                line: 'LL',
-                pelvis: '全タイプ',
-                position: '肋骨下縁〜腸骨稜',
-                nerve: '肋間神経（T7-T12）',
-                vessel: '肋間動静脈',
-                origin: '第5-12肋骨外側面',
-                insertion: '腸骨稜、腹直筋鞘',
-                voice: '体幹を整えます',
-                notes: '大腿筋膜張筋・腸脛靭帯との連動。LLの腹部部分',
-                purpose: '体幹の安定性を高め、側屈・回旋を改善'
-            },
-            {
-                step: 45,
-                part: '内腹斜筋',
-                muscles: '内腹斜筋',
-                organs: '',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: '腸骨稜〜下位肋骨',
-                nerve: '肋間神経（T7-T12）、腸骨下腹神経',
-                vessel: '肋間動静脈',
-                origin: '腸骨稜、鼠径靭帯、胸腰筋膜',
-                insertion: '第10-12肋骨下縁、腹直筋鞘',
-                voice: '深い層を緩めます',
-                notes: '外腹斜筋と逆方向の繊維。呼吸と連動',
-                purpose: '深層の体幹安定性を高め、呼吸機能を改善'
-            },
-            {
-                step: 46,
-                part: '腹横筋',
-                muscles: '腹横筋',
-                organs: '',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: '最深層',
-                nerve: '肋間神経（T7-T12）、腸骨下腹神経',
-                vessel: '肋間動静脈',
-                origin: '第7-12肋軟骨、腸骨稜、胸腰筋膜、鼠径靭帯',
-                insertion: '剣状突起、白線、恥骨',
-                voice: '一番深い筋肉です',
-                notes: '腹圧のコルセット。DFLの重要な構成要素',
-                purpose: '腹圧を最適化し、体幹の深層安定性を確立'
-            },
-            {
-                step: 47,
-                part: '横隔膜リリース',
-                muscles: '横隔膜',
-                organs: '肺、心',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: '肋骨下角',
-                nerve: '横隔神経（C3-C5）',
-                vessel: '横隔動静脈',
-                origin: '剣状突起、第7-12肋骨内面、L1-L3椎体',
-                insertion: '中央腱（腱中心）',
-                voice: '呼吸を深めます',
-                notes: 'DFLの中核。腸腰筋・骨盤底筋と連動。大腿筋膜張筋・腸脛靭帯の反射も関連',
-                purpose: '呼吸機能を最大化し、DFL全体の緊張を調整'
-            },
-            {
-                step: 48,
-                part: '肝・胆',
-                muscles: '',
-                organs: '肝臓、胆嚢',
-                line: '',
-                pelvis: '前傾・後傾で対応を変える',
-                position: '右肋骨下',
-                nerve: '肝神経叢',
-                vessel: '肝動静脈、門脈',
-                origin: '',
-                insertion: '',
-                voice: '肝臓を整えます',
-                notes: '前傾:内側に締めてから後方に圧、後傾:内側に締めてから斜め角度に押す。胸郭の開きと連動',
-                purpose: '肝臓・胆嚢の機能をサポートし、解毒を促進'
-            },
-            {
-                step: 49,
-                part: '脾',
-                muscles: '',
-                organs: '脾臓',
-                line: '',
-                pelvis: '全タイプ',
-                position: '左肋骨下',
-                nerve: '脾神経叢',
-                vessel: '脾動静脈',
-                origin: '',
-                insertion: '',
-                voice: '脾臓を整えます',
-                notes: '免疫機能に関与。胃との癒着に注意',
-                purpose: '脾臓の機能をサポートし、免疫力を高める'
-            },
-            {
-                step: 50,
-                part: '胃の小弯・大弯、胃と脾の癒着',
-                muscles: '',
-                organs: '胃、脾臓',
-                line: '',
-                pelvis: '全タイプ',
-                position: '左上腹部',
-                nerve: '胃神経叢、迷走神経',
-                vessel: '胃動静脈',
-                origin: '',
-                insertion: '',
-                voice: '胃を緩めます',
-                notes: '小弯:胃の内側カーブ、大弯:外側カーブ。脾臓との癒着を剥がす。心の反射エリア',
-                purpose: '胃の蠕動を促し、消化機能を改善'
-            },
-            {
-                step: 51,
-                part: '腸腰筋リリース',
-                muscles: '腸腰筋（腸骨筋・大腰筋）',
-                organs: '大腸（回盲部）',
-                line: 'DFL',
-                pelvis: '骨盤前傾で短縮、後傾で弱化',
-                position: '腸骨窩、L1-L5椎体前面',
-                nerve: '大腿神経、腰神経叢（L1-L4）',
-                vessel: '腸腰動静脈',
-                origin: '大腰筋:T12-L5椎体・横突起、腸骨筋:腸骨窩',
-                insertion: '小転子',
-                voice: '深い筋肉にアプローチします',
-                notes: '骨盤前傾:腰を反らさないように膝を立てる。後傾:腰が少し浮くように太もも裏の高さを出す（後傾タイプは膝の高さを低い位置で弱化した腸腰筋を再活性、もしくは不要）。腸骨筋の上、回腸（小腸）の内側に指をセット。骨盤側・臍側に動かす。DFLの核心部',
-                purpose: '骨盤の傾きを調整し、体幹と下肢の連動を改善'
-            },
-            {
-                step: 52,
-                part: '虫垂・盲腸',
-                muscles: '',
-                organs: '虫垂、盲腸',
-                line: '',
-                pelvis: '全タイプ',
-                position: '右下腹部（臍と上前腸骨棘を結ぶ線の外側1/3）',
-                nerve: '腸間膜神経叢',
-                vessel: '回結腸動静脈',
-                origin: '',
-                insertion: '',
-                voice: '盲腸の周りを整えます',
-                notes: '腸骨筋の上、回腸（小腸）の内側に指をセット。骨盤側・臍側に動かす',
-                purpose: '盲腸周辺の循環を改善し、停滞を解消'
-            },
-            {
-                step: 53,
-                part: 'S状結腸間膜リリース',
-                muscles: '',
-                organs: 'S状結腸',
-                line: '',
-                pelvis: '全タイプ',
-                position: '左下腹部',
-                nerve: '下腸間膜神経叢',
-                vessel: 'S状結腸動静脈',
-                origin: '',
-                insertion: '',
-                voice: 'S状結腸を整えます',
-                notes: '腸骨に指を置き、片手は臍にむかって2-3センチ上に置いて互いに逆方向に引く。S状結腸は腸骨キワに指を立ててリリース',
-                purpose: 'S状結腸の癒着を剥がし、便通を改善'
-            },
-            {
-                step: 54,
-                part: '卵巣（男性は前立腺の反射）',
-                muscles: '',
-                organs: '卵巣、前立腺',
-                line: '',
-                pelvis: '全タイプ',
-                position: '恥骨結合〜ASIS（上前腸骨棘）の線上、腸腰筋のやや内側',
-                nerve: '卵巣神経叢、骨盤神経叢',
-                vessel: '卵巣動静脈',
-                origin: '',
-                insertion: '',
-                voice: '生殖器の反射点です',
-                notes: '深層に指を滑り込ませる。子宮周りの張りが強い場合、大転子下の反射アプローチも有効。子宮広間膜反射（男性は前立腺の反射）',
-                purpose: '生殖器の機能をサポートし、ホルモンバランスを整える'
-            },
-            {
-                step: 55,
-                part: '大腸揺らし',
-                muscles: '',
-                organs: '大腸',
-                line: '',
-                pelvis: '全タイプ',
-                position: '大腸の走行に沿って',
-                nerve: '腸間膜神経叢',
-                vessel: '上下腸間膜動静脈',
-                origin: '',
-                insertion: '',
-                voice: '腸を動かします',
-                notes: '上行結腸→横行結腸→下行結腸→S状結腸の順に揺らす',
-                purpose: '大腸の蠕動を促し、便通を改善'
-            },
-            {
-                step: 56,
-                part: '臍下から膀胱アプローチ、恥骨から癒着リリース（手はクロス）',
-                muscles: '',
-                organs: '膀胱、子宮',
-                line: '',
-                pelvis: '全タイプ',
-                position: '恥骨上縁',
-                nerve: '骨盤神経叢',
-                vessel: '膀胱動静脈',
-                origin: '',
-                insertion: '',
-                voice: '膀胱を整えます',
-                notes: '手をクロスして恥骨から癒着をリリース。膀胱・子宮の反射エリア',
-                purpose: '膀胱・子宮の癒着を剥がし、機能を改善'
-            },
-            {
-                step: 57,
-                part: '邪気抜き',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '腹部全体',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '余分なエネルギーを抜きます',
-                notes: '腹部に溜まった邪気（停滞したエネルギー）を抜く',
-                purpose: 'エネルギーの循環を促し、心身の軽さを取り戻す'
-            },
-            {
-                step: 58,
-                part: '深会陰横筋・骨盤底リリース',
-                muscles: '深会陰横筋、骨盤底筋群',
-                organs: '尿道、膣、直腸',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: '坐骨ライン',
-                nerve: '陰部神経（S2-S4）',
-                vessel: '内陰部動静脈',
-                origin: '坐骨枝',
-                insertion: '会陰腱中心',
-                voice: '骨盤底を整えます',
-                notes: '坐骨ラインから上は尿道・膣を閉める、生殖器活性に関わる。坐骨下は体幹安定の主役、腹圧を高める、内臓支持。上下とも体幹に関与するが、坐骨下の方が主役。硬くない場合（緩い）のでリリースしない。恥骨結合付近は膀胱・尿道の反射',
-                purpose: '骨盤底の機能を最適化し、体幹安定性と生殖器機能を両立'
-            },
-            {
-                step: 59,
-                part: '巫女の香（温める）',
-                muscles: '',
-                organs: '子宮、卵巣',
-                line: '',
-                pelvis: '全タイプ',
-                position: '下腹部',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '温めます',
-                notes: '恥骨結合付近は膀胱・尿道の反射。ハーブボールで下腹部を温める',
-                purpose: '子宮・卵巣を温め、生殖器の機能を活性化'
-            },
-            {
-                step: 60,
-                part: '肋骨の反射点をリリース',
-                muscles: '',
-                organs: '肺、心、肝、胆、脾、胃',
-                line: '',
-                pelvis: '全タイプ',
-                position: '肋骨間',
-                nerve: '肋間神経',
-                vessel: '肋間動静脈',
-                origin: '',
-                insertion: '',
-                voice: '肋骨の間を緩めます',
-                notes: '肺は第3-4肋骨の間、心は第2肋骨の間（気管支、食道も）。肋骨の反射点をリリース',
-                purpose: '内臓の反射点を刺激し、各臓器の機能を活性化'
-            },
-            {
-                step: 61,
-                part: '肺・心',
-                muscles: '',
-                organs: '肺、心',
-                line: '',
-                pelvis: '全タイプ',
-                position: '第2-4肋間',
-                nerve: '肺神経叢、心臓神経叢',
-                vessel: '肺動静脈、冠動脈',
-                origin: '',
-                insertion: '',
-                voice: '胸を開いていきます',
-                notes: '肺は第3-4肋骨の間、心は第2肋骨の間。呼吸と循環の中心',
-                purpose: '呼吸機能と循環を改善し、胸郭を開く'
-            },
-            {
-                step: 62,
-                part: '腕を上げて肋骨ストレッチ',
-                muscles: '前鋸筋、大胸筋、肋間筋、横隔膜',
-                organs: '肺',
-                line: 'SFL',
-                pelvis: '全タイプ',
-                position: '腋窩〜肋骨',
-                nerve: '長胸神経（前鋸筋）、肋間神経',
-                vessel: '胸背動静脈',
-                origin: '',
-                insertion: '',
-                voice: '腕を上げます',
-                notes: '前鋸筋、大胸筋、肋間筋、横隔膜のストレッチと胸郭のリンパ促進にも繋がる',
-                purpose: '胸郭の可動域を広げ、リンパの流れを促進'
-            },
-            {
-                step: 63,
-                part: '小指を親指・小指の間にかけて掌のマッサージ',
-                muscles: '',
-                organs: '心',
-                line: '',
-                pelvis: '全タイプ',
-                position: '手掌',
-                nerve: '正中神経、尺骨神経',
-                vessel: '尺骨動静脈、橈骨動静脈',
-                origin: '',
-                insertion: '',
-                voice: '手を整えます',
-                notes: '手の反射区。心の反射エリア',
-                purpose: '手の反射区を刺激し、心臓の機能をサポート'
-            },
-            {
-                step: 64,
-                part: '腕・上腕・三角筋',
-                muscles: '上腕二頭筋、上腕三頭筋、三角筋',
-                organs: '',
-                line: 'SFL（上腕二頭筋）',
-                pelvis: '全タイプ',
-                position: '肩〜肘',
-                nerve: '筋皮神経（上腕二頭筋）、橈骨神経（上腕三頭筋）、腋窩神経（三角筋）',
-                vessel: '上腕動静脈',
-                origin: '上腕二頭筋:肩甲骨、上腕三頭筋:肩甲骨・上腕骨、三角筋:鎖骨・肩峰・肩甲棘',
-                insertion: '上腕二頭筋:橈骨粗面、上腕三頭筋:肘頭、三角筋:上腕骨三角筋粗面',
-                voice: '腕を緩めます',
-                notes: '上肢の主要筋。肩関節の安定と動き',
-                purpose: '上肢の循環を促進し、肩の可動域を改善'
-            },
-            {
-                step: 65,
-                part: 'ポンプ（リンパの流れを促し働き、呼吸数回）',
-                muscles: '',
-                organs: '胸腺、リンパ系',
-                line: '',
-                pelvis: '全タイプ',
-                position: '胸骨',
-                nerve: '',
-                vessel: 'リンパ管',
-                origin: '',
-                insertion: '',
-                voice: 'リンパを流します',
-                notes: '胸骨上でポンプ動作。リンパの流れを促進',
-                purpose: '免疫機能を活性化し、体液循環を改善'
-            },
-            {
-                step: 66,
-                part: '後頭部を両手で包む（減圧）',
-                muscles: '',
-                organs: '',
-                line: '',
-                pelvis: '全タイプ',
-                position: '後頭骨',
-                nerve: '',
-                vessel: '',
-                origin: '',
-                insertion: '',
-                voice: '頭の重さを支えます',
-                notes: '舌下神経周辺、頭蓋の硬膜バランス（脳脊髄液の外側の硬膜のテンションを緩める）。舌・嚥下の緊張、喉・頸部の緊張を落ち着かせる、自律神経',
-                purpose: '頭蓋の圧を減圧し、脳脊髄液の循環を促進'
-            },
-            {
-                step: 67,
-                part: '減圧（縦ラインに指をセット、指を立てて気持ち顎を胸に近づけるように、数呼吸）',
-                muscles: '',
-                organs: '',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: '後頭骨〜C1',
-                nerve: '舌下神経、迷走神経、副神経',
-                vessel: '椎骨動静脈',
-                origin: '',
-                insertion: '',
-                voice: '首の付け根を緩めます',
-                notes: '縦ラインに指をセット。①指を置き呼吸（頭のうなずき動作、脳脊髄液の流れ、迷走神経周囲に関係）。舌下神経、迷走神経、副神経に作用（自律神経、嚥下、声、僧帽筋、胸鎖乳突筋）。②頸部横突起ラインに指を置く。張りのあるところに数呼吸。C2-3は顎の反射なので、食いしばりある方も張ってる可能性あり。T1辺りまでやる。T1辺りは心の領域。②食いしばり、首肩緊張、頭の重さ、呼吸の浅さ、交感神経優位。後頭骨・C1の圧が抜ける。後頭下筋が緩む。自律神経が落ち着く',
-                purpose: '後頭下筋群を緩め、自律神経を調整'
-            },
-            {
-                step: 68,
-                part: '斜角筋・頸部横突起ライン',
-                muscles: '前斜角筋、中斜角筋、後斜角筋',
-                organs: '',
-                line: 'DFL',
-                pelvis: '全タイプ',
-                position: 'C2-C7横突起',
-                nerve: '頸神経叢（C3-C8）',
-                vessel: '頸横動静脈',
-                origin: 'C2-C7横突起',
-                insertion: '第1-2肋骨',
-                voice: '首の横を緩めます',
-                notes: 'ラインに指をセット。①指を置き呼吸（頭のうなずき動作、脳脊髄液の流れ、迷走神経周囲に関係）。舌下神経、迷走神経、副神経に作用（自律神経、嚥下、声、僧帽筋、胸鎖乳突筋）。②頸部横突起ラインに指を置く。張りのあるところに数呼吸。C2-3は顎の反射なので、食いしばりある方も張ってる可能性あり。T1辺りまでやる。T1辺りは心の領域',
-                purpose: '頸部の深層筋を緩め、呼吸と自律神経を改善'
-            },
-            {
-                step: 69,
-                part: '乳様突起から優しく胸鎖乳突筋を',
-                muscles: '胸鎖乳突筋',
-                organs: '',
-                line: 'SFL',
-                pelvis: '全タイプ',
-                position: '乳様突起〜胸骨・鎖骨',
-                nerve: '副神経',
-                vessel: '後頭動静脈',
-                origin: '胸骨柄、鎖骨内側1/3',
-                insertion: '側頭骨乳様突起',
-                voice: 'とても優しく触れます',
-                notes: '乳様突起下から優しく。もみ返し起こしやすいので優しく。統合もここでやる。前庭系（ぜんていけい）は身体のバランスを主る。ここは今までの手あてのバランスが神経レベルで統合される反射ポイント',
-                purpose: '頸部の表層筋を緩め、全身のバランスを統合'
-            },
-            {
-                step: 70,
-                part: 'V字解放、側頭部、第六チャクラ、頭蓋リフトアップ、百会・呼吸、香',
-                muscles: '',
-                organs: '脳',
-                line: '',
-                pelvis: '全タイプ',
-                position: '頭蓋全体',
-                nerve: '三叉神経、顔面神経',
-                vessel: '大脳静脈洞',
-                origin: '',
-                insertion: '',
-                voice: '統合していきます',
-                notes: 'V字解放:前頭部の正中線には2歳くらいまでは前頭縫合があった。大人になって9割の人は消滅、頭頂部から矢状縫合になるが、この縦ラインには太い静脈洞がある。脳の静脈洞の循環を促す手技。頭の重さ、ぼーっと感、目の奥が軽くなる、思考クリア。側頭部:指を置き左右の違いを感じます。交感神経優位なタイプは右が張りが強い傾向。第六チャクラ:感じる回転方向を意識。頭蓋リフトアップ:おでこの硬さをゆるめて頭の前を解放する手技。思考過多、交感神経過緊張の軽減、眼精疲労にも良い。百会:呼吸。香:空間、自分の手首にもつける',
-                purpose: '頭蓋の循環を最大化し、脳機能と精神状態を統合'
-            }
-        ];
+<script>
+    // ===== 受講者データ（メモリ内管理・localStorage不使用） =====
+    var studentData = [];
 
-        // 骨盤・胸郭理論データ
-        const pelvisTheory = {
-            pelvisAnterior: {
-                targetMuscles: {
-                    shortened: ['腸腰筋', '大腿直筋', '脊柱起立筋', '腰方形筋'],
-                    weakened: ['腹直筋', '大殿筋', 'ハムストリングス', '腹横筋']
-                },
-                characteristics: [
-                    '反り腰（腰椎前弯増強）',
-                    '股関節屈曲位',
-                    '腰痛（腰椎への負担増加）',
-                    '腹圧が抜けやすい',
-                    '内臓下垂しやすい（子宮脱、膀胱脱のリスク）',
-                    '下腹部ぽっこり',
-                    '大腿前面の張り',
-                    '膝への負担増加'
-                ],
-                approach: [
-                    '腸腰筋リリース：腰を反らさないように膝を立てる',
-                    '大腿直筋のストレッチ',
-                    '脊柱起立筋の緊張緩和',
-                    '腹直筋・大殿筋の再活性化',
-                    '骨盤底筋のトレーニング',
-                    '仙骨調整：前へ誘導'
-                ]
-            },
-            pelvisPosterior: {
-                targetMuscles: {
-                    shortened: ['ハムストリングス', '腹直筋', '大殿筋'],
-                    weakened: ['腸腰筋', '脊柱起立筋', '腰方形筋']
-                },
-                characteristics: [
-                    '猫背（腰椎前弯減少）',
-                    '股関節伸展制限',
-                    '腸腰筋の弱化',
-                    'エネルギー不足・疲労感',
-                    '内臓が圧迫される（消化不良）',
-                    '呼吸が浅くなる',
-                    '膝の過伸展',
-                    '下肢の循環不良'
-                ],
-                approach: [
-                    'ハムストリングスのリリース',
-                    '腹直筋の緊張緩和',
-                    '腸腰筋の再活性化：腰が少し浮くように太もも裏の高さを出す（もしくは不要）',
-                    '脊柱起立筋の活性化',
-                    '横隔膜のリリース',
-                    '仙骨調整：後ろへ誘導'
-                ]
-            },
-            ribcage: {
-                open: {
-                    angle: '肋骨下角90度以上',
-                    organs: '肝臓・胃の過剰、腫れ、緊張',
-                    state: '交感神経優位、力みタイプ',
-                    mechanism: '肝臓や胃が腫れると臓器が胸郭を内側から押し広げる',
-                    characteristics: ['呼吸が浅い（横隔膜が下がりにくい）', '肩で息をする', '首肩の緊張', '消化器系の過剰（食べ過ぎ、飲み過ぎ）']
-                },
-                closed: {
-                    angle: '肋骨下角90度以下',
-                    organs: '肺・心の負担、機能低下',
-                    state: '呼吸が浅い、循環不良',
-                    mechanism: '肺や心の機能が低下すると胸郭が十分に広がらない',
-                    characteristics: ['息苦しさ', '動悸', '不安感', '猫背', '巻き肩']
-                },
-                approach: [
-                    '開きすぎ：肝胆のリリース、胃の癒着剥がし、横隔膜リリース、肋骨ストレッチ（閉じる方向）',
-                    '閉じすぎ：肺・心の反射点刺激、肋骨ストレッチ（開く方向）、前鋸筋・大胸筋のリリース、胸郭ポンプ'
-                ]
-            },
-            pelvisRibcageRelation: {
-                dflConnection: '横隔膜〜腸腰筋〜骨盤底筋はDFL（深層フロントライン）で連動。骨盤の傾きが横隔膜の動きに直結',
-                patterns: [
-                    {
-                        type: '前傾＋開いた胸郭',
-                        organs: '肝・胃実証',
-                        state: '交感神経優位、力みタイプ、消化器過剰',
-                        approach: '肝胆リリース、胃の癒着剥がし、腸腰筋リリース、横隔膜リリース'
-                    },
-                    {
-                        type: '後傾＋閉じた胸郭',
-                        organs: '肺・心虚証',
-                        state: 'エネルギー不足、防御タイプ、呼吸・循環不良',
-                        approach: '肺・心の反射点刺激、腸腰筋の再活性化、胸郭のストレッチ、横隔膜リリース'
-                    },
-                    {
-                        type: '前傾＋閉じた胸郭',
-                        organs: 'ミックスパターン',
-                        state: '下半身の緊張＋上半身の虚証',
-                        approach: '個別対応（骨盤と胸郭を別々にアプローチ）'
-                    },
-                    {
-                        type: '後傾＋開いた胸郭',
-                        organs: 'ミックスパターン',
-                        state: '下半身の虚証＋上半身の過剰',
-                        approach: '個別対応（骨盤と胸郭を別々にアプローチ）'
-                    }
-                ]
-            }
-        };
-
-        // 理論講義データ（大幅拡充）
-        const theoryData = {
-            fascialLines: {
-                title: '筋膜ライン詳細',
-                content: [
-                    {
-                        name: 'SFL（スーパーフィシャル・フロント・ライン）',
-                        path: '趾伸筋群〜前脛骨筋〜膝蓋腱〜大腿直筋〜腹直筋〜胸骨〜胸鎖乳突筋〜頭蓋筋膜',
-                        organs: '',
-                        function: '体幹の屈曲、姿勢の前面サポート',
-                        imbalance: '前傾、巻き肩、頭部前方位'
-                    },
-                    {
-                        name: 'SBL（スーパーフィシャル・バック・ライン）',
-                        path: '足底筋膜〜アキレス腱〜腓腹筋〜ハムストリングス〜仙結節靭帯〜脊柱起立筋〜後頭下筋群〜頭蓋筋膜',
-                        organs: '腎、膀胱（背面）',
-                        function: '体幹の伸展、姿勢の後面サポート、硬膜の連続性',
-                        imbalance: '後傾、猫背、頭部後方位'
-                    },
-                    {
-                        name: 'LL（ラテラル・ライン）',
-                        path: '腓骨筋群〜腸脛靭帯〜大腿筋膜張筋〜腹斜筋〜肋間筋〜胸鎖乳突筋',
-                        organs: '肝、胆（側面）',
-                        function: '左右のバランス、側屈の調整',
-                        imbalance: '側弯、骨盤の左右傾斜'
-                    },
-                    {
-                        name: 'DFL（ディープ・フロント・ライン）',
-                        path: '足底深層〜後脛骨筋〜膝窩筋〜内転筋群〜骨盤底筋〜腸腰筋〜横隔膜〜心膜〜斜角筋〜舌骨下筋群',
-                        organs: '全内臓（深層で支持）',
-                        function: '体幹の深層安定性、内臓の支持、呼吸の調整',
-                        imbalance: '内臓下垂、呼吸障害、体幹不安定'
-                    },
-                    {
-                        name: 'DFAL（ディープ・フロント・アーム・ライン）',
-                        path: '小胸筋〜肋間筋〜横隔膜（上肢と体幹の連動）',
-                        organs: '肺、心',
-                        function: '上肢と体幹の連動、呼吸の補助',
-                        imbalance: '肩の不安定、呼吸の浅さ'
-                    }
-                ]
-            },
-            nerves: {
-                title: '主要神経系',
-                content: [
-                    {
-                        name: '迷走神経（第10脳神経）',
-                        path: '延髄〜頸部〜胸部〜腹部',
-                        function: '副交感神経の主軸。心拍数低下、消化促進、リラックス',
-                        organs: '心、肺、肝、胃、小腸、大腸上部',
-                        technique: '後頭下筋群のリリース、横隔膜リリース、内臓の癒着剥がし'
-                    },
-                    {
-                        name: '骨盤内臓神経（S2-S4）',
-                        path: '仙骨〜骨盤内臓',
-                        function: '副交感神経。排尿、排便、性機能、骨盤内臓の蠕動',
-                        organs: '膀胱、子宮、卵巣、直腸、S状結腸',
-                        technique: '仙骨調整、S2-S4の各レベルへのアプローチ'
-                    },
-                    {
-                        name: '横隔神経（C3-C5）',
-                        path: '頸髄〜横隔膜',
-                        function: '横隔膜の運動支配、呼吸の主役',
-                        organs: '横隔膜',
-                        technique: '頸部C3-C5へのアプローチ、横隔膜リリース'
-                    },
-                    {
-                        name: '舌下神経（第12脳神経）',
-                        path: '延髄〜舌',
-                        function: '舌の運動、嚥下、発声',
-                        organs: '舌、咽頭',
-                        technique: '後頭下のリリース、舌骨周囲のアプローチ'
-                    },
-                    {
-                        name: '副神経（第11脳神経）',
-                        path: '延髄〜僧帽筋・胸鎖乳突筋',
-                        function: '肩の挙上、頭部の回旋',
-                        organs: '',
-                        technique: '僧帽筋・胸鎖乳突筋のリリース、後頭下のアプローチ'
-                    }
-                ]
-            },
-            polyvagal: {
-                title: 'ポリヴェーガル理論（多重迷走神経理論）',
-                content: [
-                    {
-                        level: '腹側迷走神経複合体',
-                        state: '社会的関与、安全、落ち着き',
-                        physiology: '心拍数安定、呼吸深い、消化良好、表情豊か',
-                        technique: '後頭下筋群のリリース、横隔膜リリース、胸鎖乳突筋の優しいタッチ、乳様突起の統合'
-                    },
-                    {
-                        level: '交感神経系',
-                        state: '闘争・逃走、活動、緊張',
-                        physiology: '心拍数上昇、呼吸浅い、筋緊張、消化抑制',
-                        technique: '仙骨呼吸、内臓リリース、骨盤底リリース、ゆっくりとした施術リズム'
-                    },
-                    {
-                        level: '背側迷走神経複合体',
-                        state: 'シャットダウン、凍りつき、解離',
-                        physiology: '心拍数低下、呼吸抑制、筋弛緩、意識遠のく',
-                        technique: '安全な環境の提供、声かけ、グラウンディング、仙骨の安定化'
-                    }
-                ]
-            },
-            csf: {
-                title: '脳脊髄液の循環',
-                content: [
-                    '脳脊髄液（CSF）は脳室で産生され、中枢神経系を保護・栄養する',
-                    '硬膜：脳脊髄液を包む膜。仙骨〜後頭骨まで連続',
-                    '一次呼吸機構：頭蓋骨の微細な動き（1分間に6-12回）',
-                    '静脈洞：脳の静脈血が集まる大きな血管。矢状縫合沿いに走行',
-                    'V字解放：前頭部〜頭頂部の静脈洞を解放し、脳の循環を促進',
-                    '後頭下のリリース：硬膜の緊張を緩め、CSFの循環を改善',
-                    '仙骨呼吸：仙骨の微細な動きを確認し、硬膜の緊張状態を評価'
-                ]
-            },
-            chakra: {
-                title: 'チャクラと施術',
-                content: [
-                    {
-                        chakra: '第1チャクラ（ムーラダーラ）',
-                        location: '会陰、仙骨',
-                        theme: '安定、生存、グラウンディング',
-                        organs: '副腎、骨、大腸',
-                        technique: '仙骨調整、骨盤底リリース、S5の安心感'
-                    },
-                    {
-                        chakra: '第2チャクラ（スヴァディシュターナ）',
-                        location: '仙骨、下腹部',
-                        theme: '感情、創造性、性',
-                        organs: '生殖器、膀胱、腎',
-                        technique: 'S2-S3のアプローチ、卵巣・子宮の反射点、骨盤底の生殖器活性部位'
-                    },
-                    {
-                        chakra: '第3チャクラ（マニプーラ）',
-                        location: 'みぞおち',
-                        theme: '自己、意志、力',
-                        organs: '肝、胆、脾、胃、膵、小腸',
-                        technique: '横隔膜リリース、肝胆脾胃のアプローチ、腹腔神経叢の解放'
-                    },
-                    {
-                        chakra: '第4チャクラ（アナハタ）',
-                        location: '胸',
-                        theme: '愛、癒し、調和',
-                        organs: '心、肺、胸腺',
-                        technique: '肺・心の反射点、胸郭ストレッチ、胸腺ポンプ、心の反射（僧帽筋上部、胃脾の癒着）'
-                    },
-                    {
-                        chakra: '第5チャクラ（ヴィシュッダ）',
-                        location: '喉',
-                        theme: '表現、コミュニケーション、真実',
-                        organs: '甲状腺、咽喉',
-                        technique: '胸鎖乳突筋のリリース、舌下神経周辺、斜角筋'
-                    },
-                    {
-                        chakra: '第6チャクラ（アジュナ）',
-                        location: '眉間',
-                        theme: '直感、洞察、ビジョン',
-                        organs: '脳下垂体、松果体',
-                        technique: '側頭部のリリース、回転方向の意識、眼精疲労へのアプローチ'
-                    },
-                    {
-                        chakra: '第7チャクラ（サハスラーラ）',
-                        location: '頭頂',
-                        theme: '霊性、統合、悟り',
-                        organs: '脳',
-                        technique: '百会の呼吸、頭蓋リフトアップ、V字解放'
-                    }
-                ]
-            }
-        };
-
-        // 反射点マップデータ
-        const reflexMap = {
-            back: [
-                { point: 'T2-T4', organ: '肺', location: '肩甲骨内側縁' },
-                { point: 'T5-T9', organ: '心', location: '肩甲骨下角' },
-                { point: 'T9-T10', organ: '肝', location: '右肩甲骨下' },
-                { point: 'T11-L1', organ: '脾', location: '左肩甲骨下' },
-                { point: 'L1-L3', organ: '腎', location: '腰部、肋骨下角' },
-                { point: 'L3-L5', organ: '大腸', location: '腰仙部' },
-                { point: 'S2-S4', organ: '子宮・膀胱', location: '仙骨' }
+    // 合宿スケジュールデータ
+    const campSchedule = [
+        {
+            day: 1,
+            theme: '評価の基礎と背面アプローチ',
+            subtitle: '身体の見立てと土台の構築',
+            schedule: [
+                { time: '10:30-12:00', activity: '集合・準備（部屋案内、食事準備）' },
+                { time: '12:00-12:10', activity: 'グラウンディング（呼吸を整える儀式）' },
+                { time: '12:10-13:50', activity: '姿勢評価 理論・実演・実践（チェックシート記入、役割交代）' },
+                { time: '14:00-15:40', activity: '実技：背面（背中）仙骨、腰部、脊柱起立筋、広背筋、僧帽筋' },
+                { time: '15:40-16:50', activity: '実技：背面（肩甲骨周り）肩甲骨タイプ別アプローチ' },
+                { time: '16:50-18:00', activity: '実技：背面（臀部・足）大殿筋、中殿筋、ハムストリングス、腓腹筋' },
+                { time: '18:00〜', activity: '夕食準備・夕食・温泉・就寝' }
             ],
-            front: [
-                { point: '右肋骨下', organ: '肝・胆', location: '右肋骨下角' },
-                { point: '左肋骨下', organ: '脾・胃', location: '左肋骨下角' },
-                { point: '臍周囲', organ: '小腸', location: '臍周り8ポイント' },
-                { point: '下腹部', organ: '大腸・子宮・膀胱', location: '恥骨上縁' },
-                { point: '第2肋間', organ: '心', location: '胸骨左側' },
-                { point: '第3-4肋間', organ: '肺', location: '胸骨両側' }
+            theory: '姿勢評価法、チェックシートの使い方、肩甲骨6タイプ判定、骨盤アラインメント（前傾・後傾・ねじれ）の理論',
+            practice: '手技①～㉖。脊柱の流れ確認から足首の背屈ストレッチまで',
+            point: '「正確な評価」。ランドマークを正しく触診し、個々の身体の状態をチェックシートに視覚化すること'
+        },
+        {
+            day: 2,
+            theme: '腹部（内臓アプローチ）と巫女実技',
+            subtitle: '内臓の解放とエネルギーの調和',
+            schedule: [
+                { time: '07:00-09:00', activity: '朝食・洗濯・ハーブボール作成・香作り' },
+                { time: '09:00-10:20', activity: '実技：前面足部（足首モビライゼーション、前脛骨筋）' },
+                { time: '10:40-12:00', activity: '実技：腹部（基本）腹直筋、腹斜筋、腹膜' },
+                { time: '12:00-12:40', activity: '昼食（ハーブボール準備）' },
+                { time: '12:40-15:30', activity: '実技：腹部（内臓・深部）肝、胆、脾、胃、腸、腸腰筋、子宮・膀胱反射区' },
+                { time: '15:30-16:20', activity: '実技：巫女実技（骨盤底リリース）' },
+                { time: '16:20-17:00', activity: '復習・苦手部位の集中練習' },
+                { time: '17:00〜', activity: '夕食・温泉・就寝' }
             ],
-            limbs: [
-                { point: '腸脛靭帯下部', organ: '大腸', location: '膝上外側' },
-                { point: '大転子下', organ: '子宮広間膜', location: '股関節外側' },
-                { point: '坐骨ライン', organ: '骨盤底・生殖器', location: '会陰部' },
-                { point: '掌', organ: '心', location: '親指・小指の間' }
+            theory: '内臓反射点理論、腹部の鼓音チェック、骨盤底の機能とエネルギー的な意味',
+            practice: '手技㉗～59。オイル塗布から内臓の癒着剥がし、巫女の香による温めまで',
+            point: '「安心感と深部への浸透」。デリケートな腹部に対し、適切な圧とリズムで内臓の癒着を剥がす感覚を掴むこと'
+        },
+        {
+            day: 3,
+            theme: '胸郭・頭部の解放とトータル統合',
+            subtitle: '全身の統合と技術の完成',
+            schedule: [
+                { time: '07:00-09:00', activity: '朝食・写真撮影（個人・集合）' },
+                { time: '09:00-10:10', activity: '実技：胸部（肋骨反射点、肺・心、胸郭ポンプ）' },
+                { time: '10:10-11:20', activity: '実技：頭部（後頭下筋群、側頭筋、V字解放、第六チャクラ）' },
+                { time: '11:20-12:00', activity: '昼食' },
+                { time: '12:00-15:00', activity: 'トータル通し練習（背面～前面～腹部～頭部の全工程、各90分）' },
+                { time: '15:00-17:00', activity: '苦手部位の集中練習・追加通し練習（希望者）' },
+                { time: '19:00〜', activity: '宴会' }
+            ],
+            theory: '脳脊髄液の循環理論、静脈洞の解放（V字解放）、チャクラと香りの相関',
+            practice: '手技60～70。胸郭のストレッチから頭蓋のリフトアップ、百会の呼吸まで',
+            point: '「90分のリズム感」。断片的な手技を一つの流れとして統合し、クライアントに淀みのない体験を提供すること'
+        },
+        {
+            day: 4,
+            theme: '成果確認と修了',
+            subtitle: '技術の定着と新たな門出',
+            schedule: [
+                { time: '07:00-09:00', activity: '朝食・最終確認・復習' },
+                { time: '10:00-13:00', activity: 'モデルテスト（受講生2ペアによる施術実施、講師による撮影・チェック）' },
+                { time: '13:00-14:30', activity: '復習（苦手部分の再確認）' },
+                { time: '14:30-15:00', activity: '片付け・解散準備' },
+                { time: '15:00-16:00', activity: '総評・修了式（修了証授与）' }
+            ],
+            theory: '',
+            practice: '4日間の集大成として、外部モデルまたは受講生同士でのフルセッションを実施し、講師が技術の精度を確認',
+            point: '「自信の確立」。テストを通じて、自分自身の手で相手に変化を与えられる確信を持つこと'
+        }
+    ];
+
+    // 施術プロトコル完全版データ
+    const protocolData = [
+        { step: 1, part: '脊柱全体の流れ確認', muscles: '全身の筋膜', organs: '', line: 'SBL（仙骨〜後頭骨）', pelvis: '全タイプ', position: '仙骨から頭頂まで', nerve: '脊髄神経全体', vessel: '脊柱動静脈', origin: '', insertion: '', voice: '全身の繋がりを感じていきます', notes: '硬膜の繋がり（仙骨〜頭頂）を意識。全体の流れとバランスを確認', purpose: '硬膜の緊張状態を把握し、施術の方針を立てる' },
+        { step: 2, part: '仙骨調整', muscles: '仙骨', organs: '子宮・膀胱', line: 'SBL, DFL', pelvis: '前傾：前へ誘導、後傾：後ろへ誘導', position: '仙骨全体', nerve: '骨盤内臓神経', vessel: '仙骨動静脈', origin: '', insertion: '', voice: '土台を整えていきます', notes: '硬膜の緊張緩和が目的。仙骨周りに張りを感じる時は、手を足側に引き、手を頭側に押す。L5-S1は上半身の重みを受けやすく、骨の角度的にも前に滑りやすくストレスがかかりやすい', purpose: '硬膜の緊張を緩め、頭蓋への影響を減らす' },
+        { step: 3, part: 'S1〜S5・腸骨キワ', muscles: '仙骨周囲筋', organs: '子宮・膀胱・大腸', line: 'SBL', pelvis: '全タイプ', position: 'S5付近から上に向かって圧', nerve: '骨盤内臓神経（S2-S4）', vessel: '仙骨動静脈', origin: '', insertion: '', voice: 'ここは安心感に繋がる場所です', notes: 'S1:構造と安定、S2:排泄・子宮・膀胱、S3:骨盤底・性・臓器支持、S4:直腸・解放、S5:神経沈静・安心。腸骨キワ:腸間膜テンション（内臓を支える膜）。大腸ゾーン、子宮広間膜反射ゾーン。生理痛ある人は腰部にも出やすい', purpose: '仙骨の各レベルの意味を意識し、内臓と骨盤底の安定を図る' },
+        { step: 4, part: '多裂筋（深部）', muscles: '多裂筋', organs: '', line: 'DFL', pelvis: '全タイプ', position: 'T12〜L4棘突起横、指2-3本横', nerve: '脊髄神経後枝', vessel: '腰動静脈', origin: '各椎骨の棘突起・横突起', insertion: '2〜4椎骨上位の棘突起', voice: '深い張りを緩めていきます', notes: '深部の張り=腹圧に関連。姿勢保持筋として重要', purpose: '深層筋の緊張を解き、腹圧を整える' },
+        { step: 5, part: '腰方形筋', muscles: '腰方形筋', organs: '', line: 'LL（ラテラルライン）', pelvis: '全タイプ', position: '腸骨稜〜第12肋骨', nerve: '腰神経叢（T12-L4）', vessel: '腰動静脈', origin: '腸骨稜内唇', insertion: '第12肋骨、L1-L4横突起', voice: '左右のバランスを整えます', notes: '左右重心バランス。体重をかけている側の腰方形筋の張りを重点的に確認。表層=広背筋、中層=脊柱起立筋', purpose: '左右の重心バランスを調整し、骨盤の安定を図る' },
+        { step: 6, part: '腎（L1〜L3）', muscles: '下後鋸筋、広背筋', organs: '腎臓', line: 'SBL', pelvis: '全タイプ', position: 'L1〜L3、肋骨下角付近', nerve: '肋間神経（T9-T12）', vessel: '腎動静脈', origin: '下後鋸筋:T11-L2棘突起、広背筋:T6-仙骨棘突起', insertion: '下後鋸筋:第9-12肋骨下縁、広背筋:上腕骨小結節稜', voice: '生命力の源を整えます', notes: '胸郭を閉じるアプローチ。腎臓反射エリア。前傾タイプは張っていることが多い', purpose: '腎臓の機能をサポートし、胸郭の動きを整える' },
+        { step: 7, part: '肩甲骨タイプ判定', muscles: '肩甲骨周囲筋', organs: '', line: '', pelvis: '', position: 'T2（胸椎2番）を基準', nerve: '副神経、肩甲背神経', vessel: '肩甲上下動静脈', origin: '', insertion: '', voice: 'タイプを見極めていきます', notes: '6タイプ評価:①挙上（菱形筋・肩甲挙筋・僧帽筋上部）、②下制（僧帽筋下部・小胸筋）、③内転（菱形筋・僧帽筋中部）、④外転（前鋸筋・小胸筋）、⑤上方回旋（前鋸筋・僧帽筋）、⑥下方回旋（菱形筋・肩甲挙筋）。内転は指3本以下、外転は指4本以上', purpose: '肩甲骨の位置とタイプを正確に評価し、施術方針を決定' },
+        { step: 8, part: '広背筋・僧帽筋下部', muscles: '広背筋、僧帽筋下部', organs: '肝、胆、脾、胃', line: 'SBL', pelvis: '全タイプ', position: '肩甲骨下角から腰部', nerve: '胸背神経（広背筋）、副神経（僧帽筋）', vessel: '胸背動静脈', origin: '広背筋:T6-仙骨、僧帽筋下部:T6-T12棘突起', insertion: '広背筋:上腕骨小結節稜、僧帽筋下部:肩甲棘内側1/3', voice: '肩甲骨を引き上げます', notes: '肩甲骨の見立てに合わせ上方向へリリース。硬結部分では手を止める', purpose: '肩甲骨の可動域を広げ、上肢の動きを改善' },
+        { step: 9, part: '菱形筋', muscles: '大菱形筋、小菱形筋', organs: '肺、心', line: 'SBL', pelvis: '全タイプ', position: '背骨横から肩甲骨内側縁', nerve: '肩甲背神経（C5）', vessel: '肩甲背動静脈', origin: '小菱形筋:C7-T1棘突起、大菱形筋:T2-T5棘突起', insertion: '肩甲骨内側縁', voice: '背骨から肩甲骨を引き寄せます', notes: '①背骨横から菱形筋を指でリリース。②片手を胸の方に入れ肩甲骨を動かすように', purpose: '肩甲骨の内転を促し、姿勢を改善' },
+        { step: 10, part: '僧帽筋上部を動かす', muscles: '僧帽筋上部', organs: '肺', line: 'SFL', pelvis: '全タイプ', position: '後頭骨〜肩甲棘', nerve: '副神経', vessel: '後頭動静脈', origin: '後頭骨外後頭隆起、項靭帯、C7-T12棘突起', insertion: '鎖骨外側1/3、肩峰、肩甲棘', voice: '肩の力を抜いていきます', notes: '僧帽筋停止部（肩甲棘・鎖骨）を意識。呼吸と連動させて動かす', purpose: '肩甲骨の挙上を緩め、首肩の緊張を解く' },
+        { step: 11, part: '肩甲挙筋', muscles: '肩甲挙筋', organs: '', line: 'LL', pelvis: '全タイプ', position: '肩甲骨上角', nerve: '肩甲背神経、C3-C4', vessel: '頸横動静脈', origin: 'C1-C4横突起', insertion: '肩甲骨上角内側縁', voice: '上角に指をセットします', notes: '上角に指をセットし圧。肩甲骨上に挙げたり動かす', purpose: '肩甲骨の挙上を制限する筋肉を緩める' },
+        { step: 12, part: '大円筋・小円筋', muscles: '大円筋、小円筋', organs: '', line: 'SFL（大円筋）', pelvis: '全タイプ', position: '肩甲骨下角外側', nerve: '肩甲下神経（大円筋）、腋窩神経（小円筋）', vessel: '肩甲下動静脈', origin: '大円筋:肩甲骨下角外側縁、小円筋:肩甲骨外側縁', insertion: '大円筋:上腕骨小結節稜、小円筋:上腕骨大結節', voice: '肩の回旋を整えます', notes: '大円筋は肩を内旋（巻き肩）させる。その上小円筋は肩を外旋させる。拮抗筋のバランスを意識', purpose: '肩関節の回旋機能を回復し、巻き肩を改善' },
+        { step: 13, part: '僧帽筋上部・僧帽筋起始部', muscles: '僧帽筋上部', organs: '心', line: 'SFL', pelvis: '全タイプ', position: '後頭骨〜C7', nerve: '副神経', vessel: '後頭動静脈', origin: '後頭骨外後頭隆起、項靭帯', insertion: '鎖骨外側1/3', voice: '首の付け根を緩めます', notes: '心の反射エリア。ストレス・緊張の蓄積ポイント', purpose: '心臓の反射点を緩め、精神的な緊張を解放' },
+        { step: 14, part: '板状筋', muscles: '頭板状筋、頸板状筋', organs: '', line: 'SBL', pelvis: '全タイプ', position: '後頭骨〜C7', nerve: 'C2-C6脊髄神経後枝', vessel: '後頭動静脈', origin: '頭板状筋:C7-T3棘突起、頸板状筋:T3-T6棘突起', insertion: '頭板状筋:側頭骨乳様突起、頸板状筋:C1-C3横突起', voice: '頭を支える筋肉を緩めます', notes: '頭部伸展・回旋に関与。デスクワークで固まりやすい', purpose: '頭部の動きを改善し、首の負担を軽減' },
+        { step: 15, part: 'ストレッチ（気を下げる）', muscles: '僧帽筋上部', organs: '', line: '', pelvis: '全タイプ', position: '肩を下方へ', nerve: '副神経', vessel: '', origin: '', insertion: '', voice: 'ゆっくり伸ばしていきます', notes: '気が上がっているタイプは下げるイメージで', purpose: '上昇した気を下げ、グラウンディングを促す' },
+        { step: 16, part: '仙骨呼吸・動きの確認', muscles: '', organs: '', line: 'DFL', pelvis: '全タイプ', position: '仙骨', nerve: '骨盤内臓神経', vessel: '', origin: '', insertion: '', voice: '呼吸のリズムを感じます', notes: '仙骨の微細な動きを確認。硬膜の緊張状態を再評価', purpose: '仙骨の一次呼吸機構を確認し、全身の統合を図る' },
+        { step: 17, part: '大殿筋', muscles: '大殿筋', organs: '', line: 'SBL', pelvis: '全タイプ（前傾で短縮、後傾で弱化）', position: '仙骨〜大腿骨', nerve: '下殿神経（L5-S2）', vessel: '上下殿動静脈', origin: '腸骨外面、仙骨、尾骨外側', insertion: '腸脛靭帯、大腿骨殿筋粗面', voice: '臀部を緩めていきます', notes: '挟んで動かしたり、起始・停止を圧迫', purpose: '股関節の伸展を促し、骨盤の安定を図る' },
+        { step: 18, part: '中殿筋', muscles: '中殿筋', organs: '', line: 'LL', pelvis: '全タイプ', position: '腸骨外面', nerve: '上殿神経（L4-S1）', vessel: '上殿動静脈', origin: '腸骨外面', insertion: '大腿骨大転子外側面', voice: '股関節を安定させます', notes: '圧迫、ゆらし。股関節外転の主力筋', purpose: '骨盤の安定性を高め、歩行時のバランスを改善' },
+        { step: 19, part: '小殿筋', muscles: '小殿筋', organs: '', line: 'LL', pelvis: '全タイプ', position: '中殿筋の深層', nerve: '上殿神経（L4-S1）', vessel: '上殿動静脈', origin: '腸骨外面（中殿筋の深層）', insertion: '大腿骨大転子前面', voice: '深い層にアプローチします', notes: '肘で圧迫。深層の外転筋', purpose: '股関節の深層安定性を向上させる' },
+        { step: 20, part: '大腿筋膜張筋', muscles: '大腿筋膜張筋', organs: '', line: 'LL', pelvis: '前傾で過緊張', position: '腸骨〜腸脛靭帯', nerve: '上殿神経（L4-S1）', vessel: '外側大腿回旋動静脈', origin: '腸骨稜前部、上前腸骨棘', insertion: '腸脛靭帯', voice: 'カエル足にします', notes: '外旋位（カエル足）でアプローチ', purpose: '腸脛靭帯の緊張を緩め、膝の負担を軽減' },
+        { step: 21, part: '外旋筋', muscles: '梨状筋、上双子筋、下双子筋、内閉鎖筋、外閉鎖筋、大腿方形筋', organs: '', line: '', pelvis: '全タイプ', position: '坐骨周辺', nerve: '仙骨神経叢', vessel: '内陰部動静脈', origin: '仙骨前面、坐骨', insertion: '大腿骨大転子', voice: '股関節の奥を緩めます', notes: '坐骨から仙骨の靭帯。前傾なら靭帯走行に向かって上にリリース、後傾なら坐骨に向かう', purpose: '股関節の深層回旋筋を緩め、可動域を広げる' },
+        { step: 22, part: '仙結節靭帯', muscles: '', organs: '', line: 'SBL', pelvis: '前傾なら靭帯走行に向かって上にリリース、後傾なら坐骨に向かう', position: '坐骨〜仙骨', nerve: '', vessel: '', origin: '仙骨外側縁、尾骨', insertion: '坐骨結節', voice: '骨盤の靭帯を整えます', notes: '骨盤の安定に関わる重要靭帯。SBLの一部', purpose: '骨盤の後面安定性を高める' },
+        { step: 23, part: 'ハムストリングス', muscles: '大腿二頭筋、半腱様筋、半膜様筋', organs: '', line: 'SBL', pelvis: '後傾で短縮', position: '坐骨〜膝', nerve: '坐骨神経（L5-S2）', vessel: '深大腿動静脈', origin: '坐骨結節（大腿二頭筋長頭・半腱様筋・半膜様筋）、大腿骨（大腿二頭筋短頭）', insertion: '腓骨頭（大腿二頭筋）、脛骨内側（半腱様筋・半膜様筋）', voice: '太もも裏を緩めます', notes: '後傾タイプは短縮。①坐骨下の起始部圧迫、②掌で圧迫', purpose: '骨盤後傾を改善し、膝への負担を軽減' },
+        { step: 24, part: '腓腹筋', muscles: '腓腹筋', organs: '', line: 'SBL', pelvis: '全タイプ', position: '膝裏〜アキレス腱', nerve: '脛骨神経（S1-S2）', vessel: '膝窩動静脈', origin: '大腿骨内側顆・外側顆', insertion: 'アキレス腱〜踵骨', voice: 'ふくらはぎを緩めます', notes: 'SBLの下肢部分。足首の底屈に関与', purpose: '下肢の血流を促進し、足首の可動域を改善' },
+        { step: 25, part: 'アキレス腱', muscles: '', organs: '', line: 'SBL', pelvis: '全タイプ', position: '踵骨', nerve: '', vessel: '', origin: '', insertion: '踵骨隆起', voice: '踵の腱を調整します', notes: 'SBLの末端。全身のテンションが集約', purpose: '全身の筋膜ラインのテンションを調整' },
+        { step: 26, part: '足首背屈ストレッチ', muscles: '', organs: '', line: 'SBL', pelvis: '全タイプ', position: '足首', nerve: '', vessel: '', origin: '', insertion: '', voice: '足首を伸ばします', notes: 'SBL全体のストレッチ。背屈で腓腹筋・ヒラメ筋を伸ばす', purpose: 'SBL全体の緊張を解放し、姿勢を整える' },
+        { step: 27, part: '両足を肩幅に開く', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '足部', nerve: '', vessel: '', origin: '', insertion: '', voice: '準備を整えます', notes: '前面施術の開始準備', purpose: '施術ポジションの設定' },
+        { step: 28, part: '両足をゆさゆさして緊張をほぐす', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '足部〜骨盤', nerve: '', vessel: '', origin: '', insertion: '', voice: '力を抜いてください', notes: '底屈・背屈ストレッチ。膜の繋がりで横隔膜が上下に揺さぶられる。腹腔内圧を陰圧・陽圧交互に起こすことでリンパや静脈瘤が戻りやすくなる。足の筋肉が動くことで足のリンパ、静脈血が戻りやすくなる', purpose: 'リンパ・静脈還流を促進し、全身の緊張を緩める' },
+        { step: 29, part: '足首モビライゼーション', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '足関節', nerve: '', vessel: '', origin: '', insertion: '', voice: '足首を動かします', notes: '関節の可動域を確認', purpose: '足関節の可動性を評価・改善' },
+        { step: 30, part: '前脛骨筋', muscles: '前脛骨筋', organs: '', line: 'SFL', pelvis: '全タイプ', position: '脛骨前面', nerve: '深腓骨神経（L4-S1）', vessel: '前脛骨動静脈', origin: '脛骨外側面、骨間膜', insertion: '第1中足骨底、内側楔状骨', voice: 'すねの筋肉を緩めます', notes: 'SFLの一部。足関節の背屈', purpose: '前面の筋膜ラインを整え、足首の動きを改善' },
+        { step: 31, part: '長趾伸筋・長腓骨筋', muscles: '長趾伸筋、長腓骨筋', organs: '', line: 'LL', pelvis: '全タイプ', position: '下腿外側', nerve: '深腓骨神経（長趾伸筋）、浅腓骨神経（長腓骨筋）', vessel: '前脛骨動静脈', origin: '長趾伸筋:脛骨外側・腓骨前面、長腓骨筋:腓骨頭・腓骨外側', insertion: '長趾伸筋:第2-5趾、長腓骨筋:第1中足骨底・内側楔状骨', voice: '足の外側を整えます', notes: 'LLの下肢部分。足の外反・趾の伸展', purpose: '足部の安定性を高め、バランスを改善' },
+        { step: 32, part: 'モビライゼーション', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '足関節', nerve: '', vessel: '', origin: '', insertion: '', voice: '関節を整えます', notes: '関節の遊びを確認', purpose: '関節の可動性を最終確認' },
+        { step: 33, part: '大腿直筋', muscles: '大腿直筋', organs: '', line: 'SFL', pelvis: '前傾で短縮', position: '下前腸骨棘〜膝蓋骨', nerve: '大腿神経（L2-L4）', vessel: '大腿動静脈', origin: '下前腸骨棘', insertion: '膝蓋骨上縁〜脛骨粗面（膝蓋腱経由）', voice: '太ももの前を緩めます', notes: 'SFLの大腿部。前傾タイプで短縮。膝の伸展と股関節の屈曲', purpose: '骨盤前傾を改善し、膝への負担を軽減' },
+        { step: 34, part: '外側広筋・内側広筋', muscles: '外側広筋、内側広筋', organs: '', line: 'SFL', pelvis: '全タイプ', position: '大腿骨外側・内側', nerve: '大腿神経（L2-L4）', vessel: '大腿動静脈', origin: '外側広筋:大腿骨外側唇、内側広筋:大腿骨内側唇', insertion: '膝蓋骨〜脛骨粗面（膝蓋腱経由）', voice: '股の間に入ります', notes: '膝関節の安定に重要', purpose: '膝の安定性を高め、膝痛を予防' },
+        { step: 35, part: '縫工筋・内転筋', muscles: '縫工筋、内転筋群（恥骨筋・短内転筋・長内転筋・大内転筋・薄筋）', organs: '', line: 'DFL（内転筋）', pelvis: '全タイプ', position: '上前腸骨棘〜脛骨内側（縫工筋）、恥骨〜大腿骨内側（内転筋）', nerve: '大腿神経（縫工筋）、閉鎖神経（内転筋）', vessel: '大腿動静脈', origin: '縫工筋:上前腸骨棘、内転筋:恥骨', insertion: '縫工筋:脛骨粗面内側、内転筋:大腿骨内側唇', voice: '内ももを整えます', notes: '股の間に入り、縫工筋・内転筋にアプローチ。内転筋はDFLの一部', purpose: '骨盤底との連動を促し、体幹の安定性を高める' },
+        { step: 36, part: '大腿筋膜張筋・腸脛靭帯（前面から）', muscles: '大腿筋膜張筋', organs: '大腸', line: 'LL', pelvis: '前傾・後傾で対応を変える', position: '腸骨〜腸脛靭帯', nerve: '上殿神経（L4-S1）', vessel: '外側大腿回旋動静脈', origin: '腸骨稜前部、上前腸骨棘', insertion: '腸脛靭帯', voice: '内側に締めてから圧をかけます', notes: '前傾:内側に締めてから後方に圧、後傾:内側に締めてから斜め角度に押す。腸脛靭帯の下部は大腸の反射', purpose: 'LLの緊張を調整し、骨盤タイプに応じたアプローチ' },
+        { step: 37, part: '撫でる（安心）', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '腹部全体', nerve: '', vessel: '', origin: '', insertion: '', voice: 'これから大切なところに触れていきます', notes: '腹部への許可と安心感の提供', purpose: '心理的安全性を確保し、腹部施術への移行を円滑にする' },
+        { step: 38, part: '触診・鼓音チェック', muscles: '', organs: '全内臓', line: '', pelvis: '全タイプ', position: '腹部全体', nerve: '', vessel: '', origin: '', insertion: '', voice: 'お腹の状態を確認します', notes: '腹部の硬さ、冷え、鼓音（ガスの有無）をチェック', purpose: '内臓の状態を評価し、施術方針を決定' },
+        { step: 39, part: 'OIL塗布', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '腹部全体', nerve: '', vessel: '', origin: '', insertion: '', voice: '温めていきます', notes: 'オイルで腹部を温め、施術の滑りを良くする', purpose: '皮膚と筋膜の滑走性を高め、深部へのアプローチを容易にする' },
+        { step: 40, part: '臍周り①〜⑧', muscles: '', organs: '小腸', line: '', pelvis: '全タイプ', position: '臍周囲8ポイント', nerve: '腸間膜神経叢', vessel: '上腸間膜動静脈', origin: '', insertion: '', voice: 'お臍の周りを整えます', notes: '臍を中心に8方向から圧をかける。小腸の蠕動を促す', purpose: '小腸の機能を活性化し、消化吸収を改善' },
+        { step: 41, part: '腹直筋挟むようにリリース', muscles: '腹直筋', organs: '', line: 'SFL', pelvis: '後傾で短縮', position: '恥骨〜胸骨', nerve: '肋間神経（T7-T12）', vessel: '上下腹壁動静脈', origin: '恥骨結合、恥骨稜', insertion: '第5-7肋軟骨、剣状突起', voice: 'お腹の中心を緩めます', notes: '後傾タイプで短縮。腹圧の調整に重要。大腿筋膜張筋・腸脛靭帯の反射も関連', purpose: '骨盤後傾を改善し、腹圧を適正化' },
+        { step: 42, part: '腹直筋の上から外腹斜筋リリース', muscles: '外腹斜筋', organs: '', line: 'LL', pelvis: '前傾・後傾で対応を変える', position: '第5-12肋骨外側', nerve: '肋間神経（T7-T12）', vessel: '肋間動静脈', origin: '第5-12肋骨外側面', insertion: '腸骨稜、鼠径靭帯、腹直筋鞘', voice: '横の筋肉を緩めます', notes: '前傾:内側に締めてから後方に圧、後傾:内側に締めてから真下に押す', purpose: '体幹の回旋機能を改善し、骨盤の安定を図る' },
+        { step: 43, part: '恥骨キワから腹直筋', muscles: '腹直筋', organs: '膀胱', line: 'SFL', pelvis: '全タイプ', position: '恥骨上縁', nerve: '腸骨下腹神経', vessel: '下腹壁動静脈', origin: '恥骨結合', insertion: '', voice: '下腹部を整えます', notes: '膀胱の反射エリア。デリケートな部位', purpose: '骨盤底との連動を促し、膀胱機能をサポート' },
+        { step: 44, part: '外腹斜筋', muscles: '外腹斜筋', organs: '', line: 'LL', pelvis: '全タイプ', position: '肋骨下縁〜腸骨稜', nerve: '肋間神経（T7-T12）', vessel: '肋間動静脈', origin: '第5-12肋骨外側面', insertion: '腸骨稜、腹直筋鞘', voice: '体幹を整えます', notes: '大腿筋膜張筋・腸脛靭帯との連動。LLの腹部部分', purpose: '体幹の安定性を高め、側屈・回旋を改善' },
+        { step: 45, part: '内腹斜筋', muscles: '内腹斜筋', organs: '', line: 'DFL', pelvis: '全タイプ', position: '腸骨稜〜下位肋骨', nerve: '肋間神経（T7-T12）、腸骨下腹神経', vessel: '肋間動静脈', origin: '腸骨稜、鼠径靭帯、胸腰筋膜', insertion: '第10-12肋骨下縁、腹直筋鞘', voice: '深い層を緩めます', notes: '外腹斜筋と逆方向の繊維。呼吸と連動', purpose: '深層の体幹安定性を高め、呼吸機能を改善' },
+        { step: 46, part: '腹横筋', muscles: '腹横筋', organs: '', line: 'DFL', pelvis: '全タイプ', position: '最深層', nerve: '肋間神経（T7-T12）、腸骨下腹神経', vessel: '肋間動静脈', origin: '第7-12肋軟骨、腸骨稜、胸腰筋膜、鼠径靭帯', insertion: '剣状突起、白線、恥骨', voice: '一番深い筋肉です', notes: '腹圧のコルセット。DFLの重要な構成要素', purpose: '腹圧を最適化し、体幹の深層安定性を確立' },
+        { step: 47, part: '横隔膜リリース', muscles: '横隔膜', organs: '肺、心', line: 'DFL', pelvis: '全タイプ', position: '肋骨下角', nerve: '横隔神経（C3-C5）', vessel: '横隔動静脈', origin: '剣状突起、第7-12肋骨内面、L1-L3椎体', insertion: '中央腱（腱中心）', voice: '呼吸を深めます', notes: 'DFLの中核。腸腰筋・骨盤底筋と連動。大腿筋膜張筋・腸脛靭帯の反射も関連', purpose: '呼吸機能を最大化し、DFL全体の緊張を調整' },
+        { step: 48, part: '肝・胆', muscles: '', organs: '肝臓、胆嚢', line: '', pelvis: '前傾・後傾で対応を変える', position: '右肋骨下', nerve: '肝神経叢', vessel: '肝動静脈、門脈', origin: '', insertion: '', voice: '肝臓を整えます', notes: '前傾:内側に締めてから後方に圧、後傾:内側に締めてから斜め角度に押す。胸郭の開きと連動', purpose: '肝臓・胆嚢の機能をサポートし、解毒を促進' },
+        { step: 49, part: '脾', muscles: '', organs: '脾臓', line: '', pelvis: '全タイプ', position: '左肋骨下', nerve: '脾神経叢', vessel: '脾動静脈', origin: '', insertion: '', voice: '脾臓を整えます', notes: '免疫機能に関与。胃との癒着に注意', purpose: '脾臓の機能をサポートし、免疫力を高める' },
+        { step: 50, part: '胃の小弯・大弯、胃と脾の癒着', muscles: '', organs: '胃、脾臓', line: '', pelvis: '全タイプ', position: '左上腹部', nerve: '胃神経叢、迷走神経', vessel: '胃動静脈', origin: '', insertion: '', voice: '胃を緩めます', notes: '小弯:胃の内側カーブ、大弯:外側カーブ。脾臓との癒着を剥がす。心の反射エリア', purpose: '胃の蠕動を促し、消化機能を改善' },
+        { step: 51, part: '腸腰筋リリース', muscles: '腸腰筋（腸骨筋・大腰筋）', organs: '大腸（回盲部）', line: 'DFL', pelvis: '骨盤前傾で短縮、後傾で弱化', position: '腸骨窩、L1-L5椎体前面', nerve: '大腿神経、腰神経叢（L1-L4）', vessel: '腸腰動静脈', origin: '大腰筋:T12-L5椎体・横突起、腸骨筋:腸骨窩', insertion: '小転子', voice: '深い筋肉にアプローチします', notes: '骨盤前傾:腰を反らさないように膝を立てる。後傾:腰が少し浮くように太もも裏の高さを出す（後傾タイプは膝の高さを低い位置で弱化した腸腰筋を再活性、もしくは不要）。腸骨筋の上、回腸（小腸）の内側に指をセット。骨盤側・臍側に動かす。DFLの核心部', purpose: '骨盤の傾きを調整し、体幹と下肢の連動を改善' },
+        { step: 52, part: '虫垂・盲腸', muscles: '', organs: '虫垂、盲腸', line: '', pelvis: '全タイプ', position: '右下腹部（臍と上前腸骨棘を結ぶ線の外側1/3）', nerve: '腸間膜神経叢', vessel: '回結腸動静脈', origin: '', insertion: '', voice: '盲腸の周りを整えます', notes: '腸骨筋の上、回腸（小腸）の内側に指をセット。骨盤側・臍側に動かす', purpose: '盲腸周辺の循環を改善し、停滞を解消' },
+        { step: 53, part: 'S状結腸間膜リリース', muscles: '', organs: 'S状結腸', line: '', pelvis: '全タイプ', position: '左下腹部', nerve: '下腸間膜神経叢', vessel: 'S状結腸動静脈', origin: '', insertion: '', voice: 'S状結腸を整えます', notes: '腸骨に指を置き、片手は臍にむかって2-3センチ上に置いて互いに逆方向に引く。S状結腸は腸骨キワに指を立ててリリース', purpose: 'S状結腸の癒着を剥がし、便通を改善' },
+        { step: 54, part: '卵巣（男性は前立腺の反射）', muscles: '', organs: '卵巣、前立腺', line: '', pelvis: '全タイプ', position: '恥骨結合〜ASIS（上前腸骨棘）の線上、腸腰筋のやや内側', nerve: '卵巣神経叢、骨盤神経叢', vessel: '卵巣動静脈', origin: '', insertion: '', voice: '生殖器の反射点です', notes: '深層に指を滑り込ませる。子宮周りの張りが強い場合、大転子下の反射アプローチも有効。子宮広間膜反射（男性は前立腺の反射）', purpose: '生殖器の機能をサポートし、ホルモンバランスを整える' },
+        { step: 55, part: '大腸揺らし', muscles: '', organs: '大腸', line: '', pelvis: '全タイプ', position: '大腸の走行に沿って', nerve: '腸間膜神経叢', vessel: '上下腸間膜動静脈', origin: '', insertion: '', voice: '腸を動かします', notes: '上行結腸→横行結腸→下行結腸→S状結腸の順に揺らす', purpose: '大腸の蠕動を促し、便通を改善' },
+        { step: 56, part: '臍下から膀胱アプローチ、恥骨から癒着リリース（手はクロス）', muscles: '', organs: '膀胱、子宮', line: '', pelvis: '全タイプ', position: '恥骨上縁', nerve: '骨盤神経叢', vessel: '膀胱動静脈', origin: '', insertion: '', voice: '膀胱を整えます', notes: '手をクロスして恥骨から癒着をリリース。膀胱・子宮の反射エリア', purpose: '膀胱・子宮の癒着を剥がし、機能を改善' },
+        { step: 57, part: '邪気抜き', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '腹部全体', nerve: '', vessel: '', origin: '', insertion: '', voice: '余分なエネルギーを抜きます', notes: '腹部に溜まった邪気（停滞したエネルギー）を抜く', purpose: 'エネルギーの循環を促し、心身の軽さを取り戻す' },
+        { step: 58, part: '深会陰横筋・骨盤底リリース', muscles: '深会陰横筋、骨盤底筋群', organs: '尿道、膣、直腸', line: 'DFL', pelvis: '全タイプ', position: '坐骨ライン', nerve: '陰部神経（S2-S4）', vessel: '内陰部動静脈', origin: '坐骨枝', insertion: '会陰腱中心', voice: '骨盤底を整えます', notes: '坐骨ラインから上は尿道・膣を閉める、生殖器活性に関わる。坐骨下は体幹安定の主役、腹圧を高める、内臓支持。上下とも体幹に関与するが、坐骨下の方が主役。硬くない場合（緩い）のでリリースしない。恥骨結合付近は膀胱・尿道の反射', purpose: '骨盤底の機能を最適化し、体幹安定性と生殖器機能を両立' },
+        { step: 59, part: '巫女の香（温める）', muscles: '', organs: '子宮、卵巣', line: '', pelvis: '全タイプ', position: '下腹部', nerve: '', vessel: '', origin: '', insertion: '', voice: '温めます', notes: '恥骨結合付近は膀胱・尿道の反射。ハーブボールで下腹部を温める', purpose: '子宮・卵巣を温め、生殖器の機能を活性化' },
+        { step: 60, part: '肋骨の反射点をリリース', muscles: '', organs: '肺、心、肝、胆、脾、胃', line: '', pelvis: '全タイプ', position: '肋骨間', nerve: '肋間神経', vessel: '肋間動静脈', origin: '', insertion: '', voice: '肋骨の間を緩めます', notes: '肺は第3-4肋骨の間、心は第2肋骨の間（気管支、食道も）。肋骨の反射点をリリース', purpose: '内臓の反射点を刺激し、各臓器の機能を活性化' },
+        { step: 61, part: '肺・心', muscles: '', organs: '肺、心', line: '', pelvis: '全タイプ', position: '第2-4肋間', nerve: '肺神経叢、心臓神経叢', vessel: '肺動静脈、冠動脈', origin: '', insertion: '', voice: '胸を開いていきます', notes: '肺は第3-4肋骨の間、心は第2肋骨の間。呼吸と循環の中心', purpose: '呼吸機能と循環を改善し、胸郭を開く' },
+        { step: 62, part: '腕を上げて肋骨ストレッチ', muscles: '前鋸筋、大胸筋、肋間筋、横隔膜', organs: '肺', line: 'SFL', pelvis: '全タイプ', position: '腋窩〜肋骨', nerve: '長胸神経（前鋸筋）、肋間神経', vessel: '胸背動静脈', origin: '', insertion: '', voice: '腕を上げます', notes: '前鋸筋、大胸筋、肋間筋、横隔膜のストレッチと胸郭のリンパ促進にも繋がる', purpose: '胸郭の可動域を広げ、リンパの流れを促進' },
+        { step: 63, part: '小指を親指・小指の間にかけて掌のマッサージ', muscles: '', organs: '心', line: '', pelvis: '全タイプ', position: '手掌', nerve: '正中神経、尺骨神経', vessel: '尺骨動静脈、橈骨動静脈', origin: '', insertion: '', voice: '手を整えます', notes: '手の反射区。心の反射エリア', purpose: '手の反射区を刺激し、心臓の機能をサポート' },
+        { step: 64, part: '腕・上腕・三角筋', muscles: '上腕二頭筋、上腕三頭筋、三角筋', organs: '', line: 'SFL（上腕二頭筋）', pelvis: '全タイプ', position: '肩〜肘', nerve: '筋皮神経（上腕二頭筋）、橈骨神経（上腕三頭筋）、腋窩神経（三角筋）', vessel: '上腕動静脈', origin: '上腕二頭筋:肩甲骨、上腕三頭筋:肩甲骨・上腕骨、三角筋:鎖骨・肩峰・肩甲棘', insertion: '上腕二頭筋:橈骨粗面、上腕三頭筋:肘頭、三角筋:上腕骨三角筋粗面', voice: '腕を緩めます', notes: '上肢の主要筋。肩関節の安定と動き', purpose: '上肢の循環を促進し、肩の可動域を改善' },
+        { step: 65, part: 'ポンプ（リンパの流れを促し働き、呼吸数回）', muscles: '', organs: '胸腺、リンパ系', line: '', pelvis: '全タイプ', position: '胸骨', nerve: '', vessel: 'リンパ管', origin: '', insertion: '', voice: 'リンパを流します', notes: '胸骨上でポンプ動作。リンパの流れを促進', purpose: '免疫機能を活性化し、体液循環を改善' },
+        { step: 66, part: '後頭部を両手で包む（減圧）', muscles: '', organs: '', line: '', pelvis: '全タイプ', position: '後頭骨', nerve: '', vessel: '', origin: '', insertion: '', voice: '頭の重さを支えます', notes: '舌下神経周辺、頭蓋の硬膜バランス（脳脊髄液の外側の硬膜のテンションを緩める）。舌・嚥下の緊張、喉・頸部の緊張を落ち着かせる、自律神経', purpose: '頭蓋の圧を減圧し、脳脊髄液の循環を促進' },
+        { step: 67, part: '減圧（縦ラインに指をセット、指を立てて気持ち顎を胸に近づけるように、数呼吸）', muscles: '', organs: '', line: 'DFL', pelvis: '全タイプ', position: '後頭骨〜C1', nerve: '舌下神経、迷走神経、副神経', vessel: '椎骨動静脈', origin: '', insertion: '', voice: '首の付け根を緩めます', notes: '縦ラインに指をセット。①指を置き呼吸（頭のうなずき動作、脳脊髄液の流れ、迷走神経周囲に関係）。舌下神経、迷走神経、副神経に作用（自律神経、嚥下、声、僧帽筋、胸鎖乳突筋）。②頸部横突起ラインに指を置く。張りのあるところに数呼吸。C2-3は顎の反射なので、食いしばりある方も張ってる可能性あり。T1辺りまでやる。T1辺りは心の領域。②食いしばり、首肩緊張、頭の重さ、呼吸の浅さ、交感神経優位。後頭骨・C1の圧が抜ける。後頭下筋が緩む。自律神経が落ち着く', purpose: '後頭下筋群を緩め、自律神経を調整' },
+        { step: 68, part: '斜角筋・頸部横突起ライン', muscles: '前斜角筋、中斜角筋、後斜角筋', organs: '', line: 'DFL', pelvis: '全タイプ', position: 'C2-C7横突起', nerve: '頸神経叢（C3-C8）', vessel: '頸横動静脈', origin: 'C2-C7横突起', insertion: '第1-2肋骨', voice: '首の横を緩めます', notes: 'ラインに指をセット。①指を置き呼吸（頭のうなずき動作、脳脊髄液の流れ、迷走神経周囲に関係）。舌下神経、迷走神経、副神経に作用（自律神経、嚥下、声、僧帽筋、胸鎖乳突筋）。②頸部横突起ラインに指を置く。張りのあるところに数呼吸。C2-3は顎の反射なので、食いしばりある方も張ってる可能性あり。T1辺りまでやる。T1辺りは心の領域', purpose: '頸部の深層筋を緩め、呼吸と自律神経を改善' },
+        { step: 69, part: '乳様突起から優しく胸鎖乳突筋を', muscles: '胸鎖乳突筋', organs: '', line: 'SFL', pelvis: '全タイプ', position: '乳様突起〜胸骨・鎖骨', nerve: '副神経', vessel: '後頭動静脈', origin: '胸骨柄、鎖骨内側1/3', insertion: '側頭骨乳様突起', voice: 'とても優しく触れます', notes: '乳様突起下から優しく。もみ返し起こしやすいので優しく。統合もここでやる。前庭系（ぜんていけい）は身体のバランスを主る。ここは今までの手あてのバランスが神経レベルで統合される反射ポイント', purpose: '頸部の表層筋を緩め、全身のバランスを統合' },
+        { step: 70, part: 'V字解放、側頭部、第六チャクラ、頭蓋リフトアップ、百会・呼吸、香', muscles: '', organs: '脳', line: '', pelvis: '全タイプ', position: '頭蓋全体', nerve: '三叉神経、顔面神経', vessel: '大脳静脈洞', origin: '', insertion: '', voice: '統合していきます', notes: 'V字解放:前頭部の正中線には2歳くらいまでは前頭縫合があった。大人になって9割の人は消滅、頭頂部から矢状縫合になるが、この縦ラインには太い静脈洞がある。脳の静脈洞の循環を促す手技。頭の重さ、ぼーっと感、目の奥が軽くなる、思考クリア。側頭部:指を置き左右の違いを感じます。交感神経優位なタイプは右が張りが強い傾向。第六チャクラ:感じる回転方向を意識。頭蓋リフトアップ:おでこの硬さをゆるめて頭の前を解放する手技。思考過多、交感神経過緊張の軽減、眼精疲労にも良い。百会:呼吸。香:空間、自分の手首にもつける', purpose: '頭蓋の循環を最大化し、脳機能と精神状態を統合' }
+    ];
+
+    // 骨盤・胸郭理論データ
+    const pelvisTheory = {
+        pelvisAnterior: {
+            targetMuscles: {
+                shortened: ['腸腰筋', '大腿直筋', '脊柱起立筋', '腰方形筋'],
+                weakened: ['腹直筋', '大殿筋', 'ハムストリングス', '腹横筋']
+            },
+            characteristics: ['反り腰（腰椎前弯増強）','股関節屈曲位','腰痛（腰椎への負担増加）','腹圧が抜けやすい','内臓下垂しやすい（子宮脱、膀胱脱のリスク）','下腹部ぽっこり','大腿前面の張り','膝への負担増加'],
+            approach: ['腸腰筋リリース：腰を反らさないように膝を立てる','大腿直筋のストレッチ','脊柱起立筋の緊張緩和','腹直筋・大殿筋の再活性化','骨盤底筋のトレーニング','仙骨調整：前へ誘導']
+        },
+        pelvisPosterior: {
+            targetMuscles: {
+                shortened: ['ハムストリングス', '腹直筋', '大殿筋'],
+                weakened: ['腸腰筋', '脊柱起立筋', '腰方形筋']
+            },
+            characteristics: ['猫背（腰椎前弯減少）','股関節伸展制限','腸腰筋の弱化','エネルギー不足・疲労感','内臓が圧迫される（消化不良）','呼吸が浅くなる','膝の過伸展','下肢の循環不良'],
+            approach: ['ハムストリングスのリリース','腹直筋の緊張緩和','腸腰筋の再活性化：腰が少し浮くように太もも裏の高さを出す（もしくは不要）','脊柱起立筋の活性化','横隔膜のリリース','仙骨調整：後ろへ誘導']
+        },
+        ribcage: {
+            open: { angle: '肋骨下角90度以上', organs: '肝臓・胃の過剰、腫れ、緊張', state: '交感神経優位、力みタイプ', mechanism: '肝臓や胃が腫れると臓器が胸郭を内側から押し広げる', characteristics: ['呼吸が浅い（横隔膜が下がりにくい）','肩で息をする','首肩の緊張','消化器系の過剰（食べ過ぎ、飲み過ぎ）'] },
+            closed: { angle: '肋骨下角90度以下', organs: '肺・心の負担、機能低下', state: '呼吸が浅い、循環不良', mechanism: '肺や心の機能が低下すると胸郭が十分に広がらない', characteristics: ['息苦しさ','動悸','不安感','猫背','巻き肩'] },
+            approach: ['開きすぎ：肝胆のリリース、胃の癒着剥がし、横隔膜リリース、肋骨ストレッチ（閉じる方向）','閉じすぎ：肺・心の反射点刺激、肋骨ストレッチ（開く方向）、前鋸筋・大胸筋のリリース、胸郭ポンプ']
+        },
+        pelvisRibcageRelation: {
+            dflConnection: '横隔膜〜腸腰筋〜骨盤底筋はDFL（深層フロントライン）で連動。骨盤の傾きが横隔膜の動きに直結',
+            patterns: [
+                { type: '前傾＋開いた胸郭', organs: '肝・胃実証', state: '交感神経優位、力みタイプ、消化器過剰', approach: '肝胆リリース、胃の癒着剥がし、腸腰筋リリース、横隔膜リリース' },
+                { type: '後傾＋閉じた胸郭', organs: '肺・心虚証', state: 'エネルギー不足、防御タイプ、呼吸・循環不良', approach: '肺・心の反射点刺激、腸腰筋の再活性化、胸郭のストレッチ、横隔膜リリース' },
+                { type: '前傾＋閉じた胸郭', organs: 'ミックスパターン', state: '下半身の緊張＋上半身の虚証', approach: '個別対応（骨盤と胸郭を別々にアプローチ）' },
+                { type: '後傾＋開いた胸郭', organs: 'ミックスパターン', state: '下半身の虚証＋上半身の過剰', approach: '個別対応（骨盤と胸郭を別々にアプローチ）' }
             ]
-        };
+        }
+    };
 
-        // 現在の状態
-        let currentSection = 'schedule';
-        let currentProtocolStep = 1;
+    // 理論講義データ
+    const theoryData = {
+        fascialLines: {
+            title: '筋膜ライン詳細',
+            content: [
+                { name: 'SFL（スーパーフィシャル・フロント・ライン）', path: '趾伸筋群〜前脛骨筋〜膝蓋腱〜大腿直筋〜腹直筋〜胸骨〜胸鎖乳突筋〜頭蓋筋膜', organs: '', function: '体幹の屈曲、姿勢の前面サポート', imbalance: '前傾、巻き肩、頭部前方位' },
+                { name: 'SBL（スーパーフィシャル・バック・ライン）', path: '足底筋膜〜アキレス腱〜腓腹筋〜ハムストリングス〜仙結節靭帯〜脊柱起立筋〜後頭下筋群〜頭蓋筋膜', organs: '腎、膀胱（背面）', function: '体幹の伸展、姿勢の後面サポート、硬膜の連続性', imbalance: '後傾、猫背、頭部後方位' },
+                { name: 'LL（ラテラル・ライン）', path: '腓骨筋群〜腸脛靭帯〜大腿筋膜張筋〜腹斜筋〜肋間筋〜胸鎖乳突筋', organs: '肝、胆（側面）', function: '左右のバランス、側屈の調整', imbalance: '側弯、骨盤の左右傾斜' },
+                { name: 'DFL（ディープ・フロント・ライン）', path: '足底深層〜後脛骨筋〜膝窩筋〜内転筋群〜骨盤底筋〜腸腰筋〜横隔膜〜心膜〜斜角筋〜舌骨下筋群', organs: '全内臓（深層で支持）', function: '体幹の深層安定性、内臓の支持、呼吸の調整', imbalance: '内臓下垂、呼吸障害、体幹不安定' },
+                { name: 'DFAL（ディープ・フロント・アーム・ライン）', path: '小胸筋〜肋間筋〜横隔膜（上肢と体幹の連動）', organs: '肺、心', function: '上肢と体幹の連動、呼吸の補助', imbalance: '肩の不安定、呼吸の浅さ' }
+            ]
+        },
+        nerves: {
+            title: '主要神経系',
+            content: [
+                { name: '迷走神経（第10脳神経）', path: '延髄〜頸部〜胸部〜腹部', function: '副交感神経の主軸。心拍数低下、消化促進、リラックス', organs: '心、肺、肝、胃、小腸、大腸上部', technique: '後頭下筋群のリリース、横隔膜リリース、内臓の癒着剥がし' },
+                { name: '骨盤内臓神経（S2-S4）', path: '仙骨〜骨盤内臓', function: '副交感神経。排尿、排便、性機能、骨盤内臓の蠕動', organs: '膀胱、子宮、卵巣、直腸、S状結腸', technique: '仙骨調整、S2-S4の各レベルへのアプローチ' },
+                { name: '横隔神経（C3-C5）', path: '頸髄〜横隔膜', function: '横隔膜の運動支配、呼吸の主役', organs: '横隔膜', technique: '頸部C3-C5へのアプローチ、横隔膜リリース' },
+                { name: '舌下神経（第12脳神経）', path: '延髄〜舌', function: '舌の運動、嚥下、発声', organs: '舌、咽頭', technique: '後頭下のリリース、舌骨周囲のアプローチ' },
+                { name: '副神経（第11脳神経）', path: '延髄〜僧帽筋・胸鎖乳突筋', function: '肩の挙上、頭部の回旋', organs: '', technique: '僧帽筋・胸鎖乳突筋のリリース、後頭下のアプローチ' }
+            ]
+        },
+        polyvagal: {
+            title: 'ポリヴェーガル理論（多重迷走神経理論）',
+            content: [
+                { level: '腹側迷走神経複合体', state: '社会的関与、安全、落ち着き', physiology: '心拍数安定、呼吸深い、消化良好、表情豊か', technique: '後頭下筋群のリリース、横隔膜リリース、胸鎖乳突筋の優しいタッチ、乳様突起の統合' },
+                { level: '交感神経系', state: '闘争・逃走、活動、緊張', physiology: '心拍数上昇、呼吸浅い、筋緊張、消化抑制', technique: '仙骨呼吸、内臓リリース、骨盤底リリース、ゆっくりとした施術リズム' },
+                { level: '背側迷走神経複合体', state: 'シャットダウン、凍りつき、解離', physiology: '心拍数低下、呼吸抑制、筋弛緩、意識遠のく', technique: '安全な環境の提供、声かけ、グラウンディング、仙骨の安定化' }
+            ]
+        },
+        csf: {
+            title: '脳脊髄液の循環',
+            content: ['脳脊髄液（CSF）は脳室で産生され、中枢神経系を保護・栄養する','硬膜：脳脊髄液を包む膜。仙骨〜後頭骨まで連続','一次呼吸機構：頭蓋骨の微細な動き（1分間に6-12回）','静脈洞：脳の静脈血が集まる大きな血管。矢状縫合沿いに走行','V字解放：前頭部〜頭頂部の静脈洞を解放し、脳の循環を促進','後頭下のリリース：硬膜の緊張を緩め、CSFの循環を改善','仙骨呼吸：仙骨の微細な動きを確認し、硬膜の緊張状態を評価']
+        },
+        chakra: {
+            title: 'チャクラと施術',
+            content: [
+                { chakra: '第1チャクラ（ムーラダーラ）', location: '会陰、仙骨', theme: '安定、生存、グラウンディング', organs: '副腎、骨、大腸', technique: '仙骨調整、骨盤底リリース、S5の安心感' },
+                { chakra: '第2チャクラ（スヴァディシュターナ）', location: '仙骨、下腹部', theme: '感情、創造性、性', organs: '生殖器、膀胱、腎', technique: 'S2-S3のアプローチ、卵巣・子宮の反射点、骨盤底の生殖器活性部位' },
+                { chakra: '第3チャクラ（マニプーラ）', location: 'みぞおち', theme: '自己、意志、力', organs: '肝、胆、脾、胃、膵、小腸', technique: '横隔膜リリース、肝胆脾胃のアプローチ、腹腔神経叢の解放' },
+                { chakra: '第4チャクラ（アナハタ）', location: '胸', theme: '愛、癒し、調和', organs: '心、肺、胸腺', technique: '肺・心の反射点、胸郭ストレッチ、胸腺ポンプ、心の反射（僧帽筋上部、胃脾の癒着）' },
+                { chakra: '第5チャクラ（ヴィシュッダ）', location: '喉', theme: '表現、コミュニケーション、真実', organs: '甲状腺、咽喉', technique: '胸鎖乳突筋のリリース、舌下神経周辺、斜角筋' },
+                { chakra: '第6チャクラ（アジュナ）', location: '眉間', theme: '直感、洞察、ビジョン', organs: '脳下垂体、松果体', technique: '側頭部のリリース、回転方向の意識、眼精疲労へのアプローチ' },
+                { chakra: '第7チャクラ（サハスラーラ）', location: '頭頂', theme: '霊性、統合、悟り', organs: '脳', technique: '百会の呼吸、頭蓋リフトアップ、V字解放' }
+            ]
+        }
+    };
 
-        // ナビゲーション
-        document.querySelectorAll('.nav-card').forEach(card => {
-            card.addEventListener('click', function() {
-                document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                currentSection = this.dataset.section;
-                renderContent();
-            });
+    // 反射点マップデータ
+    const reflexMap = {
+        back: [
+            { point: 'T2-T4', organ: '肺', location: '肩甲骨内側縁' },
+            { point: 'T5-T9', organ: '心', location: '肩甲骨下角' },
+            { point: 'T9-T10', organ: '肝', location: '右肩甲骨下' },
+            { point: 'T11-L1', organ: '脾', location: '左肩甲骨下' },
+            { point: 'L1-L3', organ: '腎', location: '腰部、肋骨下角' },
+            { point: 'L3-L5', organ: '大腸', location: '腰仙部' },
+            { point: 'S2-S4', organ: '子宮・膀胱', location: '仙骨' }
+        ],
+        front: [
+            { point: '右肋骨下', organ: '肝・胆', location: '右肋骨下角' },
+            { point: '左肋骨下', organ: '脾・胃', location: '左肋骨下角' },
+            { point: '臍周囲', organ: '小腸', location: '臍周り8ポイント' },
+            { point: '下腹部', organ: '大腸・子宮・膀胱', location: '恥骨上縁' },
+            { point: '第2肋間', organ: '心', location: '胸骨左側' },
+            { point: '第3-4肋間', organ: '肺', location: '胸骨両側' }
+        ],
+        limbs: [
+            { point: '腸脛靭帯下部', organ: '大腸', location: '膝上外側' },
+            { point: '大転子下', organ: '子宮広間膜', location: '股関節外側' },
+            { point: '坐骨ライン', organ: '骨盤底・生殖器', location: '会陰部' },
+            { point: '掌', organ: '心', location: '親指・小指の間' }
+        ]
+    };
+
+    // 現在の状態
+    let currentSection = 'schedule';
+    let currentProtocolStep = 1;
+
+    // ナビゲーション
+    document.querySelectorAll('.nav-card').forEach(card => {
+        card.addEventListener('click', function() {
+            document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+            currentSection = this.dataset.section;
+            renderContent();
         });
+    });
 
-        // グローバル検索
-        document.getElementById('globalSearch').addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase();
-            if (query.length < 2) return;
-            
-            // 施術プロトコルを検索
-            const results = protocolData.filter(step => 
-                step.part.toLowerCase().includes(query) ||
-                step.muscles.toLowerCase().includes(query) ||
-                step.organs.toLowerCase().includes(query) ||
-                step.nerve.toLowerCase().includes(query) ||
-                step.line.toLowerCase().includes(query) ||
-                `step ${step.step}`.includes(query) ||
-                `手技${step.step}`.includes(query)
-            );
-            
-            if (results.length > 0) {
-                currentSection = 'protocol';
-                currentProtocolStep = results[0].step;
-                document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
-                document.querySelector('[data-section="protocol"]').classList.add('active');
-                renderContent();
-            }
-        });
-
-        // コンテンツレンダリング
-        function renderContent() {
-            const area = document.getElementById('contentArea');
-            
-            switch(currentSection) {
-                case 'schedule':
-                    renderSchedule(area);
-                    break;
-                case 'protocol':
-                    renderProtocol(area);
-                    break;
-                case 'pelvis':
-                    renderPelvisTheory(area);
-                    break;
-                case 'theory':
-                    renderTheory(area);
-                    break;
-                case 'reflex':
-                    renderReflex(area);
-                    break;
-                case 'students':
-                    renderStudents(area);
-                    break;
-            }
-        }
-
-        // スケジュール表示
-        function renderSchedule(area) {
-            let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">澪花合宿コース - 3泊4日スケジュール</h2>';
-            
-            campSchedule.forEach(day => {
-                html += `
-                    <div class="section">
-                        <div class="section-title">
-                            <span style="font-size: 24px;">Day ${day.day}</span> - ${day.theme}
-                            <div style="font-size: 14px; color: var(--accent-brown); margin-top: 5px;">${day.subtitle}</div>
-                        </div>
-                        
-                        <div class="subsection">
-                            <div class="subsection-title">📅 タイムテーブル</div>
-                            <table>
-                                <tr>
-                                    <th style="width: 150px;">時間</th>
-                                    <th>内容</th>
-                                </tr>
-                                ${day.schedule.map(s => `
-                                    <tr>
-                                        <td style="font-weight: 600;">${s.time}</td>
-                                        <td>${s.activity}</td>
-                                    </tr>
-                                `).join('')}
-                            </table>
-                        </div>
-                        
-                        ${day.theory ? `
-                            <div class="info-box">
-                                <div class="info-label">📚 理論講義</div>
-                                ${day.theory}
-                            </div>
-                        ` : ''}
-                        
-                        <div class="subsection">
-                            <div class="subsection-title">🫴 実技内容</div>
-                            ${day.practice}
-                        </div>
-                        
-                        <div class="voice-example">
-                            <div class="voice-label">🎯 本日のポイント</div>
-                            ${day.point}
-                        </div>
-                    </div>
-                `;
-            });
-            
-            area.innerHTML = html;
-        }
-
-        // 施術プロトコル表示
-        function renderProtocol(area) {
-            const step = protocolData.find(s => s.step === currentProtocolStep);
-            if (!step) return;
-            
-            let html = `
-                <div class="protocol-nav">
-                    <div class="protocol-progress">Step ${step.step} / 70</div>
-                    <div class="protocol-buttons">
-                        <button class="btn btn-primary" onclick="prevStep()">⬅ 前の手技</button>
-                        <button class="btn btn-secondary" onclick="nextStep()">次の手技 ➡</button>
-                    </div>
-                </div>
-                
-                <div class="protocol-card">
-                    <div class="protocol-header">
-                        <div class="protocol-part">${step.part}</div>
-                        ${step.muscles ? `<div style="font-size: 14px; margin-top: 5px;">筋肉：${step.muscles}</div>` : ''}
-                    </div>
-                    
-                    <div class="detail-grid">
-                        ${step.position ? `
-                            <div class="detail-item">
-                                <div class="detail-label">📍 位置指標</div>
-                                <div class="detail-value">${step.position}</div>
-                            </div>
-                        ` : ''}
-                        
-                        ${step.origin && step.insertion ? `
-                            <div class="detail-item">
-                                <div class="detail-label">🔗 起始・停止</div>
-                                <div class="detail-value">
-                                    <strong>起始：</strong>${step.origin}<br>
-                                    <strong>停止：</strong>${step.insertion}
-                                </div>
-                            </div>
-                        ` : ''}
-                        
-                        ${step.nerve ? `
-                            <div class="detail-item">
-                                <div class="detail-label">⚡ 神経</div>
-                                <div class="detail-value">${step.nerve}</div>
-                            </div>
-                        ` : ''}
-                        
-                        ${step.vessel ? `
-                            <div class="detail-item">
-                                <div class="detail-label">🩸 血管</div>
-                                <div class="detail-value">${step.vessel}</div>
-                            </div>
-                        ` : ''}
-                        
-                        ${step.organs ? `
-                            <div class="detail-item">
-                                <div class="detail-label">🫀 対応臓器</div>
-                                <div class="detail-value">${step.organs}</div>
-                            </div>
-                        ` : ''}
-                        
-                        ${step.line ? `
-                            <div class="detail-item">
-                                <div class="detail-label">🧵 筋膜ライン</div>
-                                <div class="detail-value">${step.line}</div>
-                            </div>
-                        ` : ''}
-                        
-                        ${step.pelvis ? `
-                            <div class="detail-item">
-                                <div class="detail-label">🦴 骨盤タイプ別アプローチ</div>
-                                <div class="detail-value">${step.pelvis}</div>
-                            </div>
-                        ` : ''}
-                    </div>
-                    
-                    ${step.notes ? `
-                        <div class="info-box">
-                            <div class="info-label">📝 施術のポイント・解剖学的意味</div>
-                            ${step.notes}
-                        </div>
-                    ` : ''}
-                    
-                    ${step.purpose ? `
-                        <div class="info-box" style="background: #F0F9FF; border-left-color: #0EA5E9;">
-                            <div class="info-label" style="color: #0EA5E9;">🎯 施術の目的</div>
-                            ${step.purpose}
-                        </div>
-                    ` : ''}
-                    
-                    ${step.voice ? `
-                        <div class="voice-example">
-                            <div class="voice-label">💬 声かけ例</div>
-                            「${step.voice}」
-                        </div>
-                    ` : ''}
-                </div>
-            `;
-            
-            area.innerHTML = html;
-        }
-
-        // 骨盤・胸郭理論表示
-        function renderPelvisTheory(area) {
-            let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">骨盤・胸郭理論 - 詳細評価と施術方針</h2>';
-            
-            // 骨盤前傾
-            html += `
-                <div class="section">
-                    <div class="section-title">骨盤前傾（Anterior Pelvic Tilt）</div>
-                    
-                    <div class="subsection">
-                        <div class="subsection-title">🎯 ターゲットマッスル</div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                            <div>
-                                <div style="font-weight: 600; color: var(--deep-green); margin-bottom: 10px;">短縮している筋肉（リリース必要）</div>
-                                <ul class="point-list">
-                                    ${pelvisTheory.pelvisAnterior.targetMuscles.shortened.map(m => `<li>${m}</li>`).join('')}
-                                </ul>
-                            </div>
-                            <div>
-                                <div style="font-weight: 600; color: var(--accent-brown); margin-bottom: 10px;">弱化している筋肉（再活性化必要）</div>
-                                <ul class="point-list">
-                                    ${pelvisTheory.pelvisAnterior.targetMuscles.weakened.map(m => `<li>${m}</li>`).join('')}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="subsection">
-                        <div class="subsection-title">🔍 前傾タイプの特徴</div>
-                        <ul class="point-list">
-                            ${pelvisTheory.pelvisAnterior.characteristics.map(c => `<li>${c}</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="info-label">✋ 施術アプローチ</div>
-                        <ul class="point-list">
-                            ${pelvisTheory.pelvisAnterior.approach.map(a => `<li>${a}</li>`).join('')}
-                        </ul>
-                    </div>
-                </div>
-            `;
-            
-            // 骨盤後傾
-            html += `
-                <div class="section">
-                    <div class="section-title">骨盤後傾（Posterior Pelvic Tilt）</div>
-                    
-                    <div class="subsection">
-                        <div class="subsection-title">🎯 ターゲットマッスル</div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                            <div>
-                                <div style="font-weight: 600; color: var(--deep-green); margin-bottom: 10px;">短縮している筋肉（リリース必要）</div>
-                                <ul class="point-list">
-                                    ${pelvisTheory.pelvisPosterior.targetMuscles.shortened.map(m => `<li>${m}</li>`).join('')}
-                                </ul>
-                            </div>
-                            <div>
-                                <div style="font-weight: 600; color: var(--accent-brown); margin-bottom: 10px;">弱化している筋肉（再活性化必要）</div>
-                                <ul class="point-list">
-                                    ${pelvisTheory.pelvisPosterior.targetMuscles.weakened.map(m => `<li>${m}</li>`).join('')}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="subsection">
-                        <div class="subsection-title">🔍 後傾タイプの特徴</div>
-                        <ul class="point-list">
-                            ${pelvisTheory.pelvisPosterior.characteristics.map(c => `<li>${c}</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="info-label">✋ 施術アプローチ</div>
-                        <ul class="point-list">
-                            ${pelvisTheory.pelvisPosterior.approach.map(a => `<li>${a}</li>`).join('')}
-                        </ul>
-                    </div>
-                </div>
-            `;
-            
-            // 胸郭理論
-            html += `
-                <div class="section">
-                    <div class="section-title">胸郭の評価と臓器の関係</div>
-                    
-                    <div class="subsection">
-                        <div class="subsection-title">📐 肋骨下角による評価</div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                            <div class="info-box" style="background: #FFF4E6;">
-                                <div class="info-label" style="color: #D97706;">胸郭が開いている（肋骨下角90度以上）</div>
-                                <div style="margin-top: 10px;">
-                                    <div style="font-weight: 600; margin-bottom: 5px;">関連臓器：</div>
-                                    <div>${pelvisTheory.ribcage.open.organs}</div>
-                                    <div style="font-weight: 600; margin: 10px 0 5px 0;">状態：</div>
-                                    <div>${pelvisTheory.ribcage.open.state}</div>
-                                    <div style="font-weight: 600; margin: 10px 0 5px 0;">メカニズム：</div>
-                                    <div>${pelvisTheory.ribcage.open.mechanism}</div>
-                                    <div style="font-weight: 600; margin: 10px 0 5px 0;">特徴：</div>
-                                    <ul class="point-list">
-                                        ${pelvisTheory.ribcage.open.characteristics.map(c => `<li>${c}</li>`).join('')}
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="info-box" style="background: #EFF6FF;">
-                                <div class="info-label" style="color: #2563EB;">胸郭が閉じている（肋骨下角90度以下）</div>
-                                <div style="margin-top: 10px;">
-                                    <div style="font-weight: 600; margin-bottom: 5px;">関連臓器：</div>
-                                    <div>${pelvisTheory.ribcage.closed.organs}</div>
-                                    <div style="font-weight: 600; margin: 10px 0 5px 0;">状態：</div>
-                                    <div>${pelvisTheory.ribcage.closed.state}</div>
-                                    <div style="font-weight: 600; margin: 10px 0 5px 0;">メカニズム：</div>
-                                    <div>${pelvisTheory.ribcage.closed.mechanism}</div>
-                                    <div style="font-weight: 600; margin: 10px 0 5px 0;">特徴：</div>
-                                    <ul class="point-list">
-                                        ${pelvisTheory.ribcage.closed.characteristics.map(c => `<li>${c}</li>`).join('')}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <div class="info-label">✋ 胸郭へのアプローチ</div>
-                        <ul class="point-list">
-                            ${pelvisTheory.ribcage.approach.map(a => `<li>${a}</li>`).join('')}
-                        </ul>
-                    </div>
-                </div>
-            `;
-            
-            // 骨盤と胸郭の関係
-            html += `
-                <div class="section">
-                    <div class="section-title">骨盤と胸郭の相互関係</div>
-                    
-                    <div class="info-box" style="background: #FDF4FF; border-left-color: #A855F7;">
-                        <div class="info-label" style="color: #A855F7;">🧵 DFL（深層フロントライン）の連動</div>
-                        ${pelvisTheory.pelvisRibcageRelation.dflConnection}
-                    </div>
-                    
-                    <div class="subsection">
-                        <div class="subsection-title">🔄 典型的なパターン</div>
-                        ${pelvisTheory.pelvisRibcageRelation.patterns.map(p => `
-                            <div class="voice-example" style="margin: 15px 0;">
-                                <div class="voice-label">${p.type}</div>
-                                <div style="margin-top: 10px;">
-                                    <div><strong>関連臓器：</strong>${p.organs}</div>
-                                    <div style="margin-top: 5px;"><strong>状態：</strong>${p.state}</div>
-                                    <div style="margin-top: 5px;"><strong>アプローチ：</strong>${p.approach}</div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-            
-            area.innerHTML = html;
-        }
-
-        // 理論講義表示
-        function renderTheory(area) {
-            let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">理論講義ライブラリ</h2>';
-            
-            // 筋膜ライン
-            html += `
-                <div class="section">
-                    <div class="section-title">${theoryData.fascialLines.title}</div>
-                    ${theoryData.fascialLines.content.map(line => `
-                        <div class="subsection">
-                            <div class="subsection-title">${line.name}</div>
-                            <div class="detail-grid">
-                                <div class="detail-item">
-                                    <div class="detail-label">🧵 走行</div>
-                                    <div class="detail-value">${line.path}</div>
-                                </div>
-                                ${line.organs ? `
-                                    <div class="detail-item">
-                                        <div class="detail-label">🫀 関連臓器</div>
-                                        <div class="detail-value">${line.organs}</div>
-                                    </div>
-                                ` : ''}
-                                <div class="detail-item">
-                                    <div class="detail-label">⚙️ 機能</div>
-                                    <div class="detail-value">${line.function}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">⚠️ 不均衡時</div>
-                                    <div class="detail-value">${line.imbalance}</div>
-                                </div>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            
-            // 神経系
-            html += `
-                <div class="section">
-                    <div class="section-title">${theoryData.nerves.title}</div>
-                    ${theoryData.nerves.content.map(nerve => `
-                        <div class="subsection">
-                            <div class="subsection-title">${nerve.name}</div>
-                            <div class="detail-grid">
-                                <div class="detail-item">
-                                    <div class="detail-label">📍 走行</div>
-                                    <div class="detail-value">${nerve.path}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">⚙️ 機能</div>
-                                    <div class="detail-value">${nerve.function}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">🫀 支配臓器</div>
-                                    <div class="detail-value">${nerve.organs}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">✋ 施術技法</div>
-                                    <div class="detail-value">${nerve.technique}</div>
-                                </div>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            
-            // ポリヴェーガル理論
-            html += `
-                <div class="section">
-                    <div class="section-title">${theoryData.polyvagal.title}</div>
-                    ${theoryData.polyvagal.content.map((level, index) => `
-                        <div class="subsection">
-                            <div class="subsection-title">${index + 1}. ${level.level}</div>
-                            <div class="detail-grid">
-                                <div class="detail-item">
-                                    <div class="detail-label">🧠 心理状態</div>
-                                    <div class="detail-value">${level.state}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">🫀 生理状態</div>
-                                    <div class="detail-value">${level.physiology}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">✋ 施術技法</div>
-                                    <div class="detail-value">${level.technique}</div>
-                                </div>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            
-            // 脳脊髄液
-            html += `
-                <div class="section">
-                    <div class="section-title">${theoryData.csf.title}</div>
-                    <ul class="point-list">
-                        ${theoryData.csf.content.map(c => `<li>${c}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-            
-            // チャクラ
-            html += `
-                <div class="section">
-                    <div class="section-title">${theoryData.chakra.title}</div>
-                    ${theoryData.chakra.content.map(ch => `
-                        <div class="subsection">
-                            <div class="subsection-title">${ch.chakra}</div>
-                            <div class="detail-grid">
-                                <div class="detail-item">
-                                    <div class="detail-label">📍 位置</div>
-                                    <div class="detail-value">${ch.location}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">🎯 テーマ</div>
-                                    <div class="detail-value">${ch.theme}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">🫀 関連臓器</div>
-                                    <div class="detail-value">${ch.organs}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">✋ 施術技法</div>
-                                    <div class="detail-value">${ch.technique}</div>
-                                </div>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            
-            area.innerHTML = html;
-        }
-
-        // 反射点マップ表示
-        function renderReflex(area) {
-            let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">反射点マップ</h2>';
-            
-            html += `
-                <div class="section">
-                    <div class="section-title">背面の反射点</div>
-                    <table>
-                        <tr>
-                            <th>反射点位置</th>
-                            <th>対応臓器</th>
-                            <th>詳細な位置</th>
-                        </tr>
-                        ${reflexMap.back.map(r => `
-                            <tr>
-                                <td style="font-weight: 600;">${r.point}</td>
-                                <td><span class="badge">${r.organ}</span></td>
-                                <td>${r.location}</td>
-                            </tr>
-                        `).join('')}
-                    </table>
-                </div>
-                
-                <div class="section">
-                    <div class="section-title">前面の反射点</div>
-                    <table>
-                        <tr>
-                            <th>反射点位置</th>
-                            <th>対応臓器</th>
-                            <th>詳細な位置</th>
-                        </tr>
-                        ${reflexMap.front.map(r => `
-                            <tr>
-                                <td style="font-weight: 600;">${r.point}</td>
-                                <td><span class="badge">${r.organ}</span></td>
-                                <td>${r.location}</td>
-                            </tr>
-                        `).join('')}
-                    </table>
-                </div>
-                
-                <div class="section">
-                    <div class="section-title">四肢の反射点</div>
-                    <table>
-                        <tr>
-                            <th>反射点位置</th>
-                            <th>対応臓器</th>
-                            <th>詳細な位置</th>
-                        </tr>
-                        ${reflexMap.limbs.map(r => `
-                            <tr>
-                                <td style="font-weight: 600;">${r.point}</td>
-                                <td><span class="badge">${r.organ}</span></td>
-                                <td>${r.location}</td>
-                            </tr>
-                        `).join('')}
-                    </table>
-                </div>
-            `;
-            
-            area.innerHTML = html;
-        }
-
-        // 受講者管理表示
-        function renderStudents(area) {
-            const students = JSON.parse(localStorage.getItem('mitohana_students') || '[]');
-            
-            let html = `
-                <h2 style="color: var(--deep-green); margin-bottom: 30px;">受講者管理</h2>
-                <div style="margin-bottom: 20px;">
-                    <button class="btn btn-primary" onclick="addStudent()">➕ 新規受講者追加</button>
-                </div>
-            `;
-            
-            if (students.length === 0) {
-                html += `<div style="text-align: center; padding: 50px; color: var(--accent-brown);">まだ受講者が登録されていません</div>`;
-            } else {
-                students.forEach((student, index) => {
-                    html += `
-                        <div class="section">
-                            <div class="section-title">
-                                ${student.name}
-                                <button class="btn btn-secondary" style="float: right;" onclick="editStudent(${index})">編集</button>
-                            </div>
-                            <div class="subsection">
-                                <div class="subsection-title">基本情報</div>
-                                <div><strong>合宿日程：</strong>${student.date || '未設定'}</div>
-                                <div style="margin-top: 10px;"><strong>特記事項：</strong>${student.notes || 'なし'}</div>
-                            </div>
-                            ${student.memo ? `
-                                <div class="info-box">
-                                    <div class="info-label">📝 指導メモ</div>
-                                    ${student.memo}
-                                </div>
-                            ` : ''}
-                        </div>
-                    `;
-                });
-            }
-            
-            area.innerHTML = html;
-        }
-
-        // 受講者追加
-        function addStudent() {
-            const name = prompt('受講者の名前を入力してください：');
-            if (!name) return;
-            
-            const date = prompt('合宿日程（例：2026年4月1日〜4日）：');
-            const notes = prompt('特記事項（アレルギー、体調など）：');
-            
-            const students = JSON.parse(localStorage.getItem('mitohana_students') || '[]');
-            students.push({ name, date, notes, memo: '' });
-            localStorage.setItem('mitohana_students', JSON.stringify(students));
-            
+    // グローバル検索
+    document.getElementById('globalSearch').addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        if (query.length < 2) return;
+        const results = protocolData.filter(step =>
+            step.part.toLowerCase().includes(query) ||
+            step.muscles.toLowerCase().includes(query) ||
+            step.organs.toLowerCase().includes(query) ||
+            step.nerve.toLowerCase().includes(query) ||
+            step.line.toLowerCase().includes(query) ||
+            ('step ' + step.step).includes(query) ||
+            ('手技' + step.step).includes(query)
+        );
+        if (results.length > 0) {
+            currentSection = 'protocol';
+            currentProtocolStep = results[0].step;
+            document.querySelectorAll('.nav-card').forEach(c => c.classList.remove('active'));
+            document.querySelector('[data-section="protocol"]').classList.add('active');
             renderContent();
         }
+    });
 
-        // 受講者編集
-        function editStudent(index) {
-            const students = JSON.parse(localStorage.getItem('mitohana_students') || '[]');
-            const student = students[index];
-            
-            const memo = prompt(`${student.name}さんの指導メモを入力：`, student.memo || '');
-            if (memo !== null) {
-                student.memo = memo;
-                localStorage.setItem('mitohana_students', JSON.stringify(students));
-                renderContent();
-            }
+    function renderContent() {
+        const area = document.getElementById('contentArea');
+        switch(currentSection) {
+            case 'schedule': renderSchedule(area); break;
+            case 'protocol': renderProtocol(area); break;
+            case 'pelvis': renderPelvisTheory(area); break;
+            case 'theory': renderTheory(area); break;
+            case 'reflex': renderReflex(area); break;
+            case 'students': renderStudents(area); break;
         }
+    }
 
-        // 前のステップ
-        function prevStep() {
-            if (currentProtocolStep > 1) {
-                currentProtocolStep--;
-                renderContent();
-            }
+    function renderSchedule(area) {
+        let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">澪花合宿コース - 3泊4日スケジュール</h2>';
+        campSchedule.forEach(day => {
+            html += `<div class="section"><div class="section-title"><span style="font-size:24px;">Day ${day.day}</span> - ${day.theme}<div style="font-size:14px;color:var(--accent-brown);margin-top:5px;">${day.subtitle}</div></div><div class="subsection"><div class="subsection-title">📅 タイムテーブル</div><table><tr><th style="width:150px;">時間</th><th>内容</th></tr>${day.schedule.map(s => `<tr><td style="font-weight:600;">${s.time}</td><td>${s.activity}</td></tr>`).join('')}</table></div>${day.theory ? `<div class="info-box"><div class="info-label">📚 理論講義</div>${day.theory}</div>` : ''}<div class="subsection"><div class="subsection-title">🫴 実技内容</div>${day.practice}</div><div class="voice-example"><div class="voice-label">🎯 本日のポイント</div>${day.point}</div></div>`;
+        });
+        area.innerHTML = html;
+    }
+
+    function renderProtocol(area) {
+        const step = protocolData.find(s => s.step === currentProtocolStep);
+        if (!step) return;
+        let html = `<div class="protocol-nav"><div class="protocol-progress">Step ${step.step} / 70</div><div class="protocol-buttons"><button class="btn btn-primary" onclick="prevStep()">⬅ 前の手技</button><button class="btn btn-secondary" onclick="nextStep()">次の手技 ➡</button></div></div><div class="protocol-card"><div class="protocol-header"><div class="protocol-part">${step.part}</div>${step.muscles ? `<div style="font-size:14px;margin-top:5px;">筋肉：${step.muscles}</div>` : ''}</div><div class="detail-grid">${step.position ? `<div class="detail-item"><div class="detail-label">📍 位置指標</div><div class="detail-value">${step.position}</div></div>` : ''}${step.origin && step.insertion ? `<div class="detail-item"><div class="detail-label">🔗 起始・停止</div><div class="detail-value"><strong>起始：</strong>${step.origin}<br><strong>停止：</strong>${step.insertion}</div></div>` : ''}${step.nerve ? `<div class="detail-item"><div class="detail-label">⚡ 神経</div><div class="detail-value">${step.nerve}</div></div>` : ''}${step.vessel ? `<div class="detail-item"><div class="detail-label">🩸 血管</div><div class="detail-value">${step.vessel}</div></div>` : ''}${step.organs ? `<div class="detail-item"><div class="detail-label">🫀 対応臓器</div><div class="detail-value">${step.organs}</div></div>` : ''}${step.line ? `<div class="detail-item"><div class="detail-label">🧵 筋膜ライン</div><div class="detail-value">${step.line}</div></div>` : ''}${step.pelvis ? `<div class="detail-item"><div class="detail-label">🦴 骨盤タイプ別アプローチ</div><div class="detail-value">${step.pelvis}</div></div>` : ''}</div>${step.notes ? `<div class="info-box"><div class="info-label">📝 施術のポイント・解剖学的意味</div>${step.notes}</div>` : ''}${step.purpose ? `<div class="info-box" style="background:#F0F9FF;border-left-color:#0EA5E9;"><div class="info-label" style="color:#0EA5E9;">🎯 施術の目的</div>${step.purpose}</div>` : ''}${step.voice ? `<div class="voice-example"><div class="voice-label">💬 声かけ例</div>「${step.voice}」</div>` : ''}</div>`;
+        area.innerHTML = html;
+    }
+
+    function renderPelvisTheory(area) {
+        let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">骨盤・胸郭理論 - 詳細評価と施術方針</h2>';
+        html += `<div class="section"><div class="section-title">骨盤前傾（Anterior Pelvic Tilt）</div><div class="subsection"><div class="subsection-title">🎯 ターゲットマッスル</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;"><div><div style="font-weight:600;color:var(--deep-green);margin-bottom:10px;">短縮している筋肉（リリース必要）</div><ul class="point-list">${pelvisTheory.pelvisAnterior.targetMuscles.shortened.map(m=>`<li>${m}</li>`).join('')}</ul></div><div><div style="font-weight:600;color:var(--accent-brown);margin-bottom:10px;">弱化している筋肉（再活性化必要）</div><ul class="point-list">${pelvisTheory.pelvisAnterior.targetMuscles.weakened.map(m=>`<li>${m}</li>`).join('')}</ul></div></div></div><div class="subsection"><div class="subsection-title">🔍 前傾タイプの特徴</div><ul class="point-list">${pelvisTheory.pelvisAnterior.characteristics.map(c=>`<li>${c}</li>`).join('')}</ul></div><div class="info-box"><div class="info-label">✋ 施術アプローチ</div><ul class="point-list">${pelvisTheory.pelvisAnterior.approach.map(a=>`<li>${a}</li>`).join('')}</ul></div></div>`;
+        html += `<div class="section"><div class="section-title">骨盤後傾（Posterior Pelvic Tilt）</div><div class="subsection"><div class="subsection-title">🎯 ターゲットマッスル</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;"><div><div style="font-weight:600;color:var(--deep-green);margin-bottom:10px;">短縮している筋肉（リリース必要）</div><ul class="point-list">${pelvisTheory.pelvisPosterior.targetMuscles.shortened.map(m=>`<li>${m}</li>`).join('')}</ul></div><div><div style="font-weight:600;color:var(--accent-brown);margin-bottom:10px;">弱化している筋肉（再活性化必要）</div><ul class="point-list">${pelvisTheory.pelvisPosterior.targetMuscles.weakened.map(m=>`<li>${m}</li>`).join('')}</ul></div></div></div><div class="subsection"><div class="subsection-title">🔍 後傾タイプの特徴</div><ul class="point-list">${pelvisTheory.pelvisPosterior.characteristics.map(c=>`<li>${c}</li>`).join('')}</ul></div><div class="info-box"><div class="info-label">✋ 施術アプローチ</div><ul class="point-list">${pelvisTheory.pelvisPosterior.approach.map(a=>`<li>${a}</li>`).join('')}</ul></div></div>`;
+        html += `<div class="section"><div class="section-title">胸郭の評価と臓器の関係</div><div class="subsection"><div class="subsection-title">📐 肋骨下角による評価</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;"><div class="info-box" style="background:#FFF4E6;"><div class="info-label" style="color:#D97706;">胸郭が開いている（肋骨下角90度以上）</div><div style="margin-top:10px;"><div style="font-weight:600;margin-bottom:5px;">関連臓器：</div><div>${pelvisTheory.ribcage.open.organs}</div><div style="font-weight:600;margin:10px 0 5px 0;">状態：</div><div>${pelvisTheory.ribcage.open.state}</div><div style="font-weight:600;margin:10px 0 5px 0;">メカニズム：</div><div>${pelvisTheory.ribcage.open.mechanism}</div><div style="font-weight:600;margin:10px 0 5px 0;">特徴：</div><ul class="point-list">${pelvisTheory.ribcage.open.characteristics.map(c=>`<li>${c}</li>`).join('')}</ul></div></div><div class="info-box" style="background:#EFF6FF;"><div class="info-label" style="color:#2563EB;">胸郭が閉じている（肋骨下角90度以下）</div><div style="margin-top:10px;"><div style="font-weight:600;margin-bottom:5px;">関連臓器：</div><div>${pelvisTheory.ribcage.closed.organs}</div><div style="font-weight:600;margin:10px 0 5px 0;">状態：</div><div>${pelvisTheory.ribcage.closed.state}</div><div style="font-weight:600;margin:10px 0 5px 0;">メカニズム：</div><div>${pelvisTheory.ribcage.closed.mechanism}</div><div style="font-weight:600;margin:10px 0 5px 0;">特徴：</div><ul class="point-list">${pelvisTheory.ribcage.closed.characteristics.map(c=>`<li>${c}</li>`).join('')}</ul></div></div></div></div><div class="info-box"><div class="info-label">✋ 胸郭へのアプローチ</div><ul class="point-list">${pelvisTheory.ribcage.approach.map(a=>`<li>${a}</li>`).join('')}</ul></div></div>`;
+        html += `<div class="section"><div class="section-title">骨盤と胸郭の相互関係</div><div class="info-box" style="background:#FDF4FF;border-left-color:#A855F7;"><div class="info-label" style="color:#A855F7;">🧵 DFL（深層フロントライン）の連動</div>${pelvisTheory.pelvisRibcageRelation.dflConnection}</div><div class="subsection"><div class="subsection-title">🔄 典型的なパターン</div>${pelvisTheory.pelvisRibcageRelation.patterns.map(p=>`<div class="voice-example" style="margin:15px 0;"><div class="voice-label">${p.type}</div><div style="margin-top:10px;"><div><strong>関連臓器：</strong>${p.organs}</div><div style="margin-top:5px;"><strong>状態：</strong>${p.state}</div><div style="margin-top:5px;"><strong>アプローチ：</strong>${p.approach}</div></div></div>`).join('')}</div></div>`;
+        area.innerHTML = html;
+    }
+
+    function renderTheory(area) {
+        let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">理論講義ライブラリ</h2>';
+        html += `<div class="section"><div class="section-title">${theoryData.fascialLines.title}</div>${theoryData.fascialLines.content.map(line=>`<div class="subsection"><div class="subsection-title">${line.name}</div><div class="detail-grid"><div class="detail-item"><div class="detail-label">🧵 走行</div><div class="detail-value">${line.path}</div></div>${line.organs?`<div class="detail-item"><div class="detail-label">🫀 関連臓器</div><div class="detail-value">${line.organs}</div></div>`:''}<div class="detail-item"><div class="detail-label">⚙️ 機能</div><div class="detail-value">${line.function}</div></div><div class="detail-item"><div class="detail-label">⚠️ 不均衡時</div><div class="detail-value">${line.imbalance}</div></div></div></div>`).join('')}</div>`;
+        html += `<div class="section"><div class="section-title">${theoryData.nerves.title}</div>${theoryData.nerves.content.map(nerve=>`<div class="subsection"><div class="subsection-title">${nerve.name}</div><div class="detail-grid"><div class="detail-item"><div class="detail-label">📍 走行</div><div class="detail-value">${nerve.path}</div></div><div class="detail-item"><div class="detail-label">⚙️ 機能</div><div class="detail-value">${nerve.function}</div></div><div class="detail-item"><div class="detail-label">🫀 支配臓器</div><div class="detail-value">${nerve.organs}</div></div><div class="detail-item"><div class="detail-label">✋ 施術技法</div><div class="detail-value">${nerve.technique}</div></div></div></div>`).join('')}</div>`;
+        html += `<div class="section"><div class="section-title">${theoryData.polyvagal.title}</div>${theoryData.polyvagal.content.map((level,i)=>`<div class="subsection"><div class="subsection-title">${i+1}. ${level.level}</div><div class="detail-grid"><div class="detail-item"><div class="detail-label">🧠 心理状態</div><div class="detail-value">${level.state}</div></div><div class="detail-item"><div class="detail-label">🫀 生理状態</div><div class="detail-value">${level.physiology}</div></div><div class="detail-item"><div class="detail-label">✋ 施術技法</div><div class="detail-value">${level.technique}</div></div></div></div>`).join('')}</div>`;
+        html += `<div class="section"><div class="section-title">${theoryData.csf.title}</div><ul class="point-list">${theoryData.csf.content.map(c=>`<li>${c}</li>`).join('')}</ul></div>`;
+        html += `<div class="section"><div class="section-title">${theoryData.chakra.title}</div>${theoryData.chakra.content.map(ch=>`<div class="subsection"><div class="subsection-title">${ch.chakra}</div><div class="detail-grid"><div class="detail-item"><div class="detail-label">📍 位置</div><div class="detail-value">${ch.location}</div></div><div class="detail-item"><div class="detail-label">🎯 テーマ</div><div class="detail-value">${ch.theme}</div></div><div class="detail-item"><div class="detail-label">🫀 関連臓器</div><div class="detail-value">${ch.organs}</div></div><div class="detail-item"><div class="detail-label">✋ 施術技法</div><div class="detail-value">${ch.technique}</div></div></div></div>`).join('')}</div>`;
+        area.innerHTML = html;
+    }
+
+    function renderReflex(area) {
+        let html = '<h2 style="color: var(--deep-green); margin-bottom: 30px;">反射点マップ</h2>';
+        html += `<div class="section"><div class="section-title">背面の反射点</div><table><tr><th>反射点位置</th><th>対応臓器</th><th>詳細な位置</th></tr>${reflexMap.back.map(r=>`<tr><td style="font-weight:600;">${r.point}</td><td><span class="badge">${r.organ}</span></td><td>${r.location}</td></tr>`).join('')}</table></div>`;
+        html += `<div class="section"><div class="section-title">前面の反射点</div><table><tr><th>反射点位置</th><th>対応臓器</th><th>詳細な位置</th></tr>${reflexMap.front.map(r=>`<tr><td style="font-weight:600;">${r.point}</td><td><span class="badge">${r.organ}</span></td><td>${r.location}</td></tr>`).join('')}</table></div>`;
+        html += `<div class="section"><div class="section-title">四肢の反射点</div><table><tr><th>反射点位置</th><th>対応臓器</th><th>詳細な位置</th></tr>${reflexMap.limbs.map(r=>`<tr><td style="font-weight:600;">${r.point}</td><td><span class="badge">${r.organ}</span></td><td>${r.location}</td></tr>`).join('')}</table></div>`;
+        area.innerHTML = html;
+    }
+
+    function renderStudents(area) {
+        const students = studentData;
+        let html = `<h2 style="color: var(--deep-green); margin-bottom: 30px;">受講者管理</h2><div style="margin-bottom:20px;"><button class="btn btn-secondary" onclick="addStudent()">➕ 新規受講者追加</button></div>`;
+        if (students.length === 0) {
+            html += `<div style="text-align:center;padding:50px;color:var(--accent-brown);">まだ受講者が登録されていません</div>`;
+        } else {
+            students.forEach((student, index) => {
+                html += `<div class="section"><div class="section-title">${student.name}<button class="btn btn-secondary" style="float:right;font-size:13px;padding:6px 14px;" onclick="editStudent(${index})">編集</button></div><div class="subsection"><div class="subsection-title">基本情報</div><div><strong>合宿日程：</strong>${student.date || '未設定'}</div><div style="margin-top:10px;"><strong>特記事項：</strong>${student.notes || 'なし'}</div></div>${student.memo ? `<div class="info-box"><div class="info-label">📝 指導メモ</div>${student.memo}</div>` : ''}</div>`;
+            });
         }
+        area.innerHTML = html;
+    }
 
-        // 次のステップ
-        function nextStep() {
-            if (currentProtocolStep < 70) {
-                currentProtocolStep++;
-                renderContent();
-            }
-        }
-
-        // 初期表示
+    function addStudent() {
+        const name = prompt('受講者の名前を入力してください：');
+        if (!name) return;
+        const date = prompt('合宿日程（例：2026年4月1日〜4日）：');
+        const notes = prompt('特記事項（アレルギー、体調など）：');
+        studentData.push({ name, date: date || '', notes: notes || '', memo: '' });
         renderContent();
-    </script>
+    }
+
+    function editStudent(index) {
+        const student = studentData[index];
+        const memo = prompt(student.name + 'さんの指導メモを入力：', student.memo || '');
+        if (memo !== null) {
+            studentData[index].memo = memo;
+            renderContent();
+        }
+    }
+
+    function prevStep() {
+        if (currentProtocolStep > 1) { currentProtocolStep--; renderContent(); }
+    }
+
+    function nextStep() {
+        if (currentProtocolStep < 70) { currentProtocolStep++; renderContent(); }
+    }
+
+    // 初期表示
+    renderContent();
+</script>
+```
+
 </body>
 </html>
