@@ -802,6 +802,87 @@
             html += `<div class="section"><div class="section-title">骨盤後傾（Posterior Pelvic Tilt）</div><div class="subsection"><div class="subsection-title">🎯 ターゲットマッスル</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;"><div><div style="font-weight:600;color:var(--deep-green);margin-bottom:10px;">短縮している筋肉（リリース必要）</div><ul class="point-list">${pelvisTheory.pelvisPosterior.targetMuscles.shortened.map(m=>`<li>${m}</li>`).join('')}</ul></div><div><div style="font-weight:600;color:var(--accent-brown);margin-bottom:10px;">弱化している筋肉（再活性化必要）</div><ul class="point-list">${pelvisTheory.pelvisPosterior.targetMuscles.weakened.map(m=>`<li>${m}</li>`).join('')}</ul></div></div></div><div class="subsection"><div class="subsection-title">🔍 後傾タイプの特徴</div><ul class="point-list">${pelvisTheory.pelvisPosterior.characteristics.map(c=>`<li>${c}</li>`).join('')}</ul></div><div class="info-box"><div class="info-label">✋ 施術アプローチ</div><ul class="point-list">${pelvisTheory.pelvisPosterior.approach.map(a=>`<li>${a}</li>`).join('')}</ul></div></div>`;
             html += `<div class="section"><div class="section-title">胸郭の評価と臓器の関係</div><div class="subsection"><div class="subsection-title">📐 肋骨下角による評価</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;"><div class="info-box" style="background:#FFF4E6;"><div class="info-label" style="color:#D97706;">胸郭が開いている（肋骨下角90度以上）</div><div style="margin-top:10px;"><div style="font-weight:600;margin-bottom:5px;">関連臓器：</div><div>${pelvisTheory.ribcage.open.organs}</div><div style="font-weight:600;margin:10px 0 5px 0;">状態：</div><div>${pelvisTheory.ribcage.open.state}</div><div style="font-weight:600;margin:10px 0 5px 0;">メカニズム：</div><div>${pelvisTheory.ribcage.open.mechanism}</div><div style="font-weight:600;margin:10px 0 5px 0;">特徴：</div><ul class="point-list">${pelvisTheory.ribcage.open.characteristics.map(c=>`<li>${c}</li>`).join('')}</ul></div></div><div class="info-box" style="background:#EFF6FF;"><div class="info-label" style="color:#2563EB;">胸郭が閉じている（肋骨下角90度以下）</div><div style="margin-top:10px;"><div style="font-weight:600;margin-bottom:5px;">関連臓器：</div><div>${pelvisTheory.ribcage.closed.organs}</div><div style="font-weight:600;margin:10px 0 5px 0;">状態：</div><div>${pelvisTheory.ribcage.closed.state}</div><div style="font-weight:600;margin:10px 0 5px 0;">メカニズム：</div><div>${pelvisTheory.ribcage.closed.mechanism}</div><div style="font-weight:600;margin:10px 0 5px 0;">特徴：</div><ul class="point-list">${pelvisTheory.ribcage.closed.characteristics.map(c=>`<li>${c}</li>`).join('')}</ul></div></div></div></div><div class="info-box"><div class="info-label">✋ 胸郭へのアプローチ</div><ul class="point-list">${pelvisTheory.ribcage.approach.map(a=>`<li>${a}</li>`).join('')}</ul></div></div>`;
             html += `<div class="section"><div class="section-title">骨盤と胸郭の相互関係</div><div class="info-box" style="background:#FDF4FF;border-left-color:#A855F7;"><div class="info-label" style="color:#A855F7;">🧵 DFL（深層フロントライン）の連動</div>${pelvisTheory.pelvisRibcageRelation.dflConnection}</div><div class="subsection"><div class="subsection-title">🔄 典型的なパターン</div>${pelvisTheory.pelvisRibcageRelation.patterns.map(p=>`<div class="voice-example" style="margin:15px 0;"><div class="voice-label">${p.type}</div><div style="margin-top:10px;"><div><strong>関連臓器：</strong>${p.organs}</div><div style="margin-top:5px;"><strong>状態：</strong>${p.state}</div><div style="margin-top:5px;"><strong>アプローチ：</strong>${p.approach}</div></div></div>`).join('')}</div></div>`;
+
+            // 肩甲骨評価セクション
+            html += `<div class="section"><div class="section-title">肩甲骨評価 - 6タイプ判定とターゲットマッスル</div>
+            <div class="info-box" style="background:#F0FDF4;border-left-color:#16A34A;"><div class="info-label" style="color:#16A34A;">🔑 評価の基準点</div>
+            肩甲骨評価の基準点は<strong>第2胸椎（T2）</strong>。上角の位置・脊柱との距離で6タイプに分類。肩甲骨は「上肢の土台」であり、<strong>呼吸の深さ・姿勢・臓器・心の余裕</strong>を映す鏡。</div>
+
+            <div class="subsection"><div class="subsection-title">① 挙上タイプ（きょじょう）</div>
+            <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">📐 判定基準</div><div class="detail-value">上角が第2胸椎より上にある</div></div>
+            <div class="detail-item"><div class="detail-label">🎯 短縮している筋肉（リリース必要）</div><div class="detail-value">僧帽筋上部、肩甲挙筋、小菱形筋、大菱形筋</div></div>
+            <div class="detail-item"><div class="detail-label">💫 弱化している筋肉（再活性化必要）</div><div class="detail-value">僧帽筋下部、小胸筋</div></div>
+            <div class="detail-item"><div class="detail-label">🫀 関連する内臓・状態</div><div class="detail-value">ストレス・緊張・心のエリアの反射</div></div>
+            </div></div>
+
+            <div class="subsection"><div class="subsection-title">② 下制タイプ（かせい）</div>
+            <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">📐 判定基準</div><div class="detail-value">上角が第2胸椎より下にある</div></div>
+            <div class="detail-item"><div class="detail-label">🎯 短縮している筋肉</div><div class="detail-value">僧帽筋下部、小胸筋</div></div>
+            <div class="detail-item"><div class="detail-label">💫 弱化している筋肉</div><div class="detail-value">僧帽筋上部、肩甲挙筋、菱形筋</div></div>
+            <div class="detail-item"><div class="detail-label">🫀 関連する内臓・状態</div><div class="detail-value">右：肝・胆の反応　左：胃・脾の反応</div></div>
+            </div></div>
+
+            <div class="subsection"><div class="subsection-title">③ 内転タイプ（ないてん）</div>
+            <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">📐 判定基準</div><div class="detail-value">内側縁と脊柱の距離が3指以下</div></div>
+            <div class="detail-item"><div class="detail-label">🎯 短縮している筋肉</div><div class="detail-value">僧帽筋中部、大菱形筋、小菱形筋</div></div>
+            <div class="detail-item"><div class="detail-label">💫 弱化している筋肉</div><div class="detail-value">前鋸筋、小胸筋</div></div>
+            <div class="detail-item"><div class="detail-label">🫀 関連する内臓・状態</div><div class="detail-value">胸を開く動きに関与、肺・肝のエリア</div></div>
+            </div></div>
+
+            <div class="subsection"><div class="subsection-title">④ 外転タイプ（がいてん）</div>
+            <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">📐 判定基準</div><div class="detail-value">内側縁と脊柱の距離が4指以上</div></div>
+            <div class="detail-item"><div class="detail-label">🎯 短縮している筋肉</div><div class="detail-value">前鋸筋、小胸筋</div></div>
+            <div class="detail-item"><div class="detail-label">💫 弱化している筋肉</div><div class="detail-value">僧帽筋中部、菱形筋</div></div>
+            <div class="detail-item"><div class="detail-label">🫀 関連する内臓・状態</div><div class="detail-value">猫背・巻き肩の主因</div></div>
+            </div></div>
+
+            <div class="subsection"><div class="subsection-title">⑤ 上方回旋タイプ（じょうほうかいせん）</div>
+            <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">📐 判定基準</div><div class="detail-value">下角が外側上方に回転</div></div>
+            <div class="detail-item"><div class="detail-label">🎯 短縮している筋肉</div><div class="detail-value">僧帽筋（上部・中部・下部）、前鋸筋</div></div>
+            <div class="detail-item"><div class="detail-label">💫 弱化している筋肉</div><div class="detail-value">大菱形筋、小菱形筋、小胸筋</div></div>
+            <div class="detail-item"><div class="detail-label">🫀 関連する内臓・状態</div><div class="detail-value">腕を上げる動作と連動</div></div>
+            </div></div>
+
+            <div class="subsection"><div class="subsection-title">⑥ 下方回旋タイプ（かほうかいせん）</div>
+            <div class="detail-grid">
+            <div class="detail-item"><div class="detail-label">📐 判定基準</div><div class="detail-value">下角が内側下方に回転</div></div>
+            <div class="detail-item"><div class="detail-label">🎯 短縮している筋肉</div><div class="detail-value">大菱形筋、小菱形筋、肩甲挙筋、小胸筋</div></div>
+            <div class="detail-item"><div class="detail-label">💫 弱化している筋肉</div><div class="detail-value">僧帽筋、前鋸筋</div></div>
+            <div class="detail-item"><div class="detail-label">🫀 関連する内臓・状態</div><div class="detail-value">呼吸の浅さ、感情の溜め込み</div></div>
+            </div></div>
+
+            <div class="subsection"><div class="subsection-title">⚠️ 特殊評価：巻き肩（Maki-gata）</div>
+            <div class="info-box" style="background:#FFF7ED;border-left-color:#EA580C;"><div class="info-label" style="color:#EA580C;">心を守るための無意識の防衛反応として重視</div>
+            <div style="margin-top:8px;"><strong>判定方法：</strong>横向きに立ち、耳たぶよりも肩峰が前に出ている状態</div>
+            <div style="margin-top:8px;"><strong>精神的背景：</strong>傷つきたくない・攻撃されたくない・自分の気持ちを見せたくないという感情の閉じ込め</div></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px;">
+            <div><div style="font-weight:600;color:var(--deep-green);margin-bottom:8px;">短縮・緊張（前面・腕）</div><ul class="point-list"><li>小胸筋・大胸筋（特に上部）</li><li>前鋸筋・肩甲下筋</li><li>上腕二頭筋</li></ul></div>
+            <div><div style="font-weight:600;color:var(--accent-brown);margin-bottom:8px;">弱化・伸張（背面）</div><ul class="point-list"><li>棘上筋・棘下筋</li><li>小円筋・三角筋後部</li></ul></div>
+            </div></div>
+
+            <div class="subsection"><div class="subsection-title">🫀 肩甲骨周辺の五臓反射（背面）</div>
+            <table>
+            <tr><th>エリア</th><th>対応臓器</th></tr>
+            <tr><td>僧帽筋上部エリア</td><td><span class="badge">心</span></td></tr>
+            <tr><td>僧帽筋中部（肩甲骨間）</td><td><span class="badge">肺</span><span class="badge">肝</span></td></tr>
+            <tr><td>僧帽筋下部（右）</td><td><span class="badge">肝</span><span class="badge">胆</span></td></tr>
+            <tr><td>僧帽筋下部（左）</td><td><span class="badge">胃</span><span class="badge">脾</span></td></tr>
+            <tr><td>肩甲骨内側（菱形筋付近）</td><td>呼吸が浅い・感情を溜め込みやすい状態</td></tr>
+            </table></div>
+
+            <div class="info-box"><div class="info-label">💨 呼吸と肩甲骨の連動</div>
+            <div><strong>吸気時：</strong>肩甲骨は外転・上方回旋・軽く挙上する</div>
+            <div style="margin-top:5px;"><strong>呼気時：</strong>肩甲骨は内転・下方回旋・軽く下制する</div>
+            <div style="margin-top:5px;">このリズムが乱れている場合は、<strong>自律神経（特に副交感神経）の働きが低下</strong>しているサイン</div>
+            </div>
+
+            </div>`;
+
             area.innerHTML = html;
         }
 
